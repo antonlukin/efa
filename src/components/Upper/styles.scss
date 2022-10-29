@@ -1,0 +1,90 @@
+.upper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.5rem 0;
+
+  .upper-logo {
+    display: block;
+    position: relative;
+
+    width: 8.5rem;
+    height: auto;
+    max-width: 100%;
+
+    span {
+      display: block;
+      position: absolute;
+      bottom: 100%;
+
+      width: 100%;
+      opacity: 0.5;
+
+      font-size: 0.75rem;
+      font-weight: 300;
+
+      white-space: nowrap;
+
+      color: var(--color-text);
+
+      @media screen and (max-width: 767px) {
+        font-size: 0.675rem;
+      }
+
+      @media screen and (max-width: 479px) {
+        font-size: 0.5375rem;
+      }
+    }
+
+    svg {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      fill: var(--color-text);
+    }
+
+    @media screen and (max-width: 767px) {
+      width: 7.5rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      width: 6.25rem;
+    }
+  }
+
+  .upper-lang {
+    display: flex;
+    align-items: center;
+
+    button {
+      display: block;
+      cursor: pointer;
+
+      margin: 0 0.5rem;
+      padding: 0.25rem 0.5rem 0.125rem;
+      line-height: 1;
+
+      color: var(--color-text);
+      background-color: transparent;
+      border: none;
+
+      transition: color 0.25s;
+
+      &:hover {
+        color: var(--color-accent);
+      }
+
+      @media screen and (max-width: 767px) {
+        margin: 0 0.25rem;
+      }
+    }
+
+    span {
+      height: 1rem;
+      border-right: solid 2px var(--color-text);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+:root {
+  --color-background: #242424;
+  --color-text: #ffffff;
+  --color-black: #000000;
+  --color-links: #91FF6A;
+  --color-hover: #52BD2C;
+  --color-accent: #FA67B6;
+  --color-gray: #747474;
+  --color-dark: #312f2f;
+  --color-darkgray: #434343;
+
+  --gradient-right: linear-gradient(to right, rgba(36, 36, 36, 0), rgb(36, 36, 36));
+  --gradient-left: linear-gradient(to left, rgba(36, 36, 36, 0), rgb(36, 36, 36));
+  --gradient-attack: linear-gradient(152.28deg, #696565 5.3%, #272727 100%);
+
+  --width-content: 42.5rem;
+  --width-site: 71rem;
+  --width-wide: 80rem;
+  --width-max: calc(100% - 2rem);
+
+  --font-general: 'Now', sans-serif;
+  --font-caption: 'Eklektyk', serif;
+}

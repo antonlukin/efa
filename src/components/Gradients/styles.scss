@@ -1,0 +1,81 @@
+.gradients {
+  display: block;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  .gradient-1 {
+    position: absolute;
+    top: 12rem;
+    left: calc(50% - 45rem);
+
+    width: 40rem;
+    height: 40rem;
+
+    background-image: radial-gradient(circle, rgba(189, 255, 0, 0.175) 0%, rgba(189, 255, 0, 0) 50%);
+  }
+
+  .gradient-2 {
+    position: absolute;
+    top: 10rem;
+    left: calc(50% - 36rem);
+
+    width: 30rem;
+    height: 30rem;
+
+    background-image: radial-gradient(circle, rgba(255, 0, 168, 0.175) 0%, rgba(255, 0, 168, 0) 50%);
+  }
+
+  .gradient-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: radial-gradient(circle, rgb(145, 255, 106, 1) -20%, rgba(255, 255, 255, 0) 70%);
+    background-repeat: no-repeat;
+    background-position: calc(50% + 25rem) -25rem;
+    background-size: 50rem 50rem;
+  }
+
+  .gradient-4 {
+    position: absolute;
+    top: 44rem;
+    left: calc(50% - 50rem);
+
+    width: 40rem;
+    height: 40rem;
+
+    background-image: radial-gradient(circle, rgba(14, 230, 100, 0.35) 0%, rgba(14, 230, 100, 0) 60%);
+  }
+
+  .gradient-5 {
+    position: absolute;
+    top: 40rem;
+    right: calc(50% - 50rem);
+
+    width: 24rem;
+    height: 24rem;
+
+    background-image: radial-gradient(circle, rgba(255, 0, 168, 0.175) 0%, rgba(255, 0, 168, 0) 50%);
+  }
+
+  .gradient-6 {
+    position: absolute;
+    bottom: 12rem;
+    left: calc(50% - 60rem);
+
+    width: 50rem;
+    height: 50rem;
+
+    background-image: radial-gradient(circle, rgba(14, 230, 100, 0.35) 0%, rgba(14, 230, 100, 0) 60%);
+  }
+}

@@ -1,0 +1,62 @@
+.divider {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
+  margin: 2rem auto 0;
+  padding-bottom: 12rem;
+
+  background-image: url('/images/decors/grass.png');
+  background-position: center bottom;
+  background-repeat: repeat-x;
+  background-size: auto;
+
+  .divider-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+
+    user-select: none;
+    gap: 4rem;
+
+    width: 100%;
+    padding: 0.125rem 0 0.375rem;
+    overflow: hidden;
+
+    font-family: var(--font-caption);
+    font-weight: 700;
+    font-size: 3.25rem;
+    line-height: 1.125;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: var(--color-black);
+
+    span {
+      color: transparent;
+      white-space: nowrap;
+
+      text-stroke: 1px var(--color-text);
+      -webkit-text-stroke: 1px var(--color-text);
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: 359px) {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    padding-bottom: 10rem;
+  }
+}

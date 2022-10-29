@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Air Pollution",
+        "description": "<p>Nine out of ten people breathe high-pollutant air. Harmful particles can penetrate deep into the lungs and cardiovascular system, causing diseases such as stroke, heart disease, lung cancer and respiratory infections, including pneumonia. According to WHO, some 4.2 million people die each year from air pollution alone. The main sources of air pollution are emissions from fuel combustion, industrial dust and waste from factories and plants, agriculture, as well as domestic waste incineration, forest and steppe fires, volcanic eruptions. Statistics showed that it was possible to reduce emissions, in particular, by switching to renewable sources of energy.</p>",
+        "strikes": [
+            "Try to walk more, ride a bicycle or use public transport in the city. If you cannot refrain from using a personal vehicle, and you constantly commute from one city to another, for example, for work, look for traveling companions – it will be cheaper and more environmentally friendly.",
+            "Fly only when it is really necessary (and not when lowcosters lure you in with a bargain price) - if there is an opportunity, it is always better to travel by train. This is the most eco-friendly mode of transport. You will be surprised, but the elimination of frequent flights will reduce your carbon footprint more than any other measure.",
+            "If you often travel by train and commuter train, take advantage of discounts of up to 50% and rail travel subscriptions, which are included in the new plan of the Spanish government to save electricity and are effective from August 24, 2022.",
+            "Avoid household aerosols: hair spray, air fresheners, deodorants or sun creams in cans. They contain reflective particles (chlorofluorocarbons) that not only pollute the air but also deplete the planet’s ozone layer. All these products are available in other, less environmentally harmful packaging.",
+            "Try to stop smoking: according to the WHO, cigarettes contain about 7,000 pollutants, including radioactive and carcinogenic substances. Some of them are emitted during smoking, and some of them enter the soil and water bodies from discarded cigarette butts. Every year tobacco production accounts for about 84 million tons of CO2 emissions. So the main passive smoker is our planet.",
+            "Calculate your carbon footprint and determine how you can personally reduce it."
+        ]
+    },
+
+    {
+        "id": 3,
+        "title": "Air Pollution",
+        "description": "<p>Nine out of ten people breathe high-pollutant air. Harmful particles can penetrate deep into the lungs and cardiovascular system, causing diseases such as stroke, heart disease, lung cancer and respiratory infections, including pneumonia. According to WHO, some 4.2 million people die each year from air pollution alone. The main sources of air pollution are emissions from fuel combustion, industrial dust and waste from factories and plants, agriculture, as well as domestic waste incineration, forest and steppe fires, volcanic eruptions. Statistics showed that it was possible to reduce emissions, in particular, by switching to renewable sources of energy.</p>",
+        "strikes": [
+            "Try to walk more, ride a bicycle or use public transport in the city. If you cannot refrain from using a personal vehicle, and you constantly commute from one city to another, for example, for work, look for traveling companions – it will be cheaper and more environmentally friendly.",
+            "Fly only when it is really necessary (and not when lowcosters lure you in with a bargain price) - if there is an opportunity, it is always better to travel by train. This is the most eco-friendly mode of transport. You will be surprised, but the elimination of frequent flights will reduce your carbon footprint more than any other measure.",
+            "If you often travel by train and commuter train, take advantage of discounts of up to 50% and rail travel subscriptions, which are included in the new plan of the Spanish government to save electricity and are effective from August 24, 2022.",
+            "Avoid household aerosols: hair spray, air fresheners, deodorants or sun creams in cans. They contain reflective particles (chlorofluorocarbons) that not only pollute the air but also deplete the planet’s ozone layer. All these products are available in other, less environmentally harmful packaging.",
+            "Try to stop smoking: according to the WHO, cigarettes contain about 7,000 pollutants, including radioactive and carcinogenic substances. Some of them are emitted during smoking, and some of them enter the soil and water bodies from discarded cigarette butts. Every year tobacco production accounts for about 84 million tons of CO2 emissions. So the main passive smoker is our planet.",
+            "Calculate your carbon footprint and determine how you can personally reduce it."
+        ]
+    },
+
+    {
+        "id": 2,
+        "title": "Animal Exploitation",
+        "description": "Ethical treatment of animals is an important part of an environmentally conscious lifestyle. Humans do not live in isolation from other species, as the coronavirus pandemic once again showed. Therefore, our common future depends on the conservation of biodiversity. One of the central problems is overproduction of meat and overfishing. The New Economics Foundation’s 2020 report stated that Spain, Ireland, Portugal, and the Netherlands were leaders in overfishing.",
+        "strikes": [
+            "Before discarding recyclable bottles, cover them with lids, and cut the plastic rings designed to hold six aluminum cans. So the animals don’t get stuck in them.",
+            "Install an inexpensive stopper on the chimney so that birds and squirrels do not get there.",
+            "If possible, give up clothes and shoes made of leather and fur.",
+            "Give up foie gras and other delicacies which are made with animals suffering. In many countries, including France and Spain, the production of foie gras was still not prohibited.",
+            "Since 2013, it has been prohibited to test cosmetics on animals in all European countries. But if you buy cosmetics from abroad, look for the Cruelty Free icon or the Leaping Bunny icon.",
+            "To make sure that a particular brand does not test products on animals in any of the countries, check the brand on the international database Beauty Without Bunnies.",
+            "Do not attend animal-cruelty-based shows and do not take your children there, to make them empathize with animals and know that the suffering of living beings is not entertainment."
+        ]
+    }
+]

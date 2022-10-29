@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Eklektyk';
+  src:
+    url('../fonts/Eklektyk-Stencil.woff2') format('woff2'),
+    url('../fonts/Eklektyk-Stencil.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Now';
+  src:
+    url('../fonts/Now-Medium.woff2') format('woff2'),
+    url('../fonts/Now-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Now';
+  src:
+    url('../fonts/Now-Light.woff2') format('woff2'),
+    url('../fonts/Now-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: block;
+}

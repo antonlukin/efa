@@ -1,0 +1,91 @@
+.team {
+  display: block;
+  position: relative;
+  z-index: 2;
+
+  width: var(--width-content);
+  max-width: var(--width-max);
+  margin: 6.25rem auto 2rem;
+
+  .team-amount {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: var(--font-caption);
+
+    line-height: 1;
+
+
+    text-align: center;
+
+    strong {
+      color: var(--color-links);
+    }
+
+    @media screen and (max-width: 767px) {
+      font-size: 3.25rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 2.5rem;
+    }
+
+    @media screen and (max-width: 359px) {
+      font-size: 2rem;
+    }
+  }
+
+  .team-results {
+    width: 100%;
+    overflow: hidden;
+
+    text-align: center;
+    font-size: 1.5rem;
+
+    background-color: var(--color-dark);
+
+    border-collapse: collapse;
+    border-radius: 1.5rem;
+
+    td {
+      height: 3.75rem;
+      padding: 0.5rem 1rem 0.25rem;
+
+      &:first-child {
+        width: 20%;
+      }
+
+      &:last-child {
+        width: 20%;
+      }
+    }
+
+    thead td {
+      padding-bottom: 0.5rem;
+      font-size: 1rem;
+      vertical-align: bottom;
+
+      opacity: 0.375;
+      background-color: var(--color-darkgray);
+
+      @media screen and (max-width: 359px) {
+        font-size: 0.875rem;
+      }
+    }
+
+    tr:nth-child(2n) td {
+      background-color: var(--color-darkgray);
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 1.25rem;
+    }
+
+    @media screen and (max-width: 359px) {
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    margin: 4.25rem auto 0;
+  }
+}

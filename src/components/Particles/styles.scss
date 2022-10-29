@@ -1,0 +1,185 @@
+.particles {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+  }
+
+  [data-particle='can'] {
+    top: -2rem;
+    left: calc(50% + 6rem);
+
+    width: 24vw;
+    max-width: 15rem;
+    height: auto;
+
+    @media screen and (max-width: 479px) {
+      top: 4rem;
+      left: -1rem;
+
+      width: 8rem;
+      max-width: 32vw;
+
+      transform: scale(-1, 1);
+    }
+  }
+
+  [data-particle='tube'] {
+    top: 20rem;
+    left: calc(50% - 18.75rem);
+
+    width: 12rem;
+
+    @media screen and (max-width: 1023px) {
+      top: 40vw;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  [data-particle='wave'] {
+    top: 24rem;
+    left: calc(50% + 22.5rem);
+
+    width: 24rem;
+
+    @media screen and (max-width: 1023px) {
+      top: 20vw;
+      left: auto;
+      right: -4vw;
+      width: 12rem;
+    }
+
+    @media screen and (max-width: 479px) {
+      top: 40vw;
+      left: calc(100% - 6rem);
+      width: 10rem;
+    }
+  }
+
+  [data-particle='ball'] {
+    top: 20rem;
+    left: calc(50% - 34rem);
+
+    width: 16rem;
+    transition: ease 0.125s;
+
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  [data-particle='bucket'] {
+    top: 48rem;
+    left: calc(50% - 38rem);
+
+    width: 16rem;
+
+    @media screen and (max-width: 1023px) {
+      top: calc(24rem + 60vw);
+      left: calc(50% - 30rem);
+
+      transform: rotate(270deg) scale(1, -1);
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  [data-particle='spoon'] {
+    top: 52rem;
+    left: calc(50% - 32rem);
+
+    width: 10rem;
+
+    @media screen and (max-width: 1023px) {
+      top: calc(10rem + 60vw);
+      left: calc(50% - 30rem);
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  [data-particle='fork'] {
+    top: 54rem;
+    right: calc(50% - 32rem);
+
+    width: 10rem;
+
+    @media screen and (max-width: 1023px) {
+      top: calc(18rem + 60vw);
+      right: calc(50% - 28rem);
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  [data-particle='splash'] {
+    top: 115rem;
+    left: calc(50% - 40rem);
+
+    width: 22.5rem;
+
+    @media screen and (max-width: 1023px) {
+      top: 135rem;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  [data-particle='unsplash'] {
+    top: 120rem;
+    right: calc(50% - 40rem);
+
+    width: 22.5rem;
+
+    transform: rotate(135deg);
+
+    @media screen and (max-width: 1023px) {
+      top: 145rem;
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  [data-particle='wash'] {
+    top: 240rem;
+    left: calc(50% - 36rem);
+
+    width: 12.5rem;
+
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  [data-particle='paper'] {
+    top: 224rem;
+    right: calc(50% - 38rem);
+
+    width: 12.5rem;
+
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+}
