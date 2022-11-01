@@ -9,6 +9,16 @@
 }
 
 @font-face {
+  font-family: 'Damn';
+  src:
+    url('../fonts/Damn.woff2') format('woff2'),
+    url('../fonts/Damn.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
   font-family: 'Now';
   src:
     url('../fonts/Now-Medium.woff2') format('woff2'),

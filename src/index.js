@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Fight from './pages/Fight';
-import Uniform from './pages/Uniform';
 
 import './styles/fonts.scss';
 import './styles/variables.scss';
@@ -19,7 +18,6 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/fight/" element={<Fight />} />
-        <Route path="/uniform/" element={<Uniform />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

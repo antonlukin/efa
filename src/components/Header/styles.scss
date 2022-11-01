@@ -36,7 +36,6 @@
       margin-top: 0.5rem;
       padding: 1rem 0 0.75rem;
 
-
       text-transform: uppercase;
       white-space: nowrap;
 
@@ -46,13 +45,13 @@
       background-size: auto;
 
       transform: translateX(-0.0375em);
+      will-change: transform;
 
       @media screen and (max-width: 479px) {
         white-space: normal;
         transform: none;
 
-        background-image: url('/images/decors/smaller.svg');
-        background-position: center 90%;
+        background-position: 100% 100%;
         background-size: contain;
       }
     }
@@ -91,6 +90,15 @@
 
     margin: 0 auto;
 
+    img {
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+
+    img[data-loaded] {
+      opacity: 1;
+    }
+
     img[data-image='adult'] {
       display: block;
 
@@ -113,18 +121,6 @@
 
       @media screen and (max-width: 479px) {
         display: block;
-      }
-    }
-
-    img[data-particle='tube'] {
-      position: absolute;
-      top: 40%;
-      left: calc(50% - 20rem);
-
-      width: 12rem;
-
-      @media screen and (max-width: 767px) {
-        display: none;
       }
     }
   }

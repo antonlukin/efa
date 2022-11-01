@@ -4,9 +4,17 @@
   z-index: 2;
 
   width: 100%;
-  margin: 6.25rem auto 0;
+  margin: 1.25rem auto 0;
 
   overflow: hidden;
+
+  background-image:
+    radial-gradient(circle, rgba(14, 230, 100, 0.35) 0%, rgba(14, 230, 100, 0) 70%),
+    radial-gradient(circle, rgba(255, 0, 168, 0.35) 0%, rgba(255, 0, 168, 0) 70%);
+
+  background-position: calc(50% - 4rem) calc(100% - 4rem), calc(50% + 4rem) calc(100% - 10rem);
+  background-size: 30rem 30rem, 30rem 30rem;
+  background-repeat: no-repeat;
 
   .motivation-start {
     max-width: var(--width-max);
@@ -69,6 +77,16 @@
 
       @media screen and (max-width: 479px) {
         padding-left: 1.25rem;
+        font-size: 1.375rem;
+      }
+
+      @media screen and (max-width: 359px) {
+        padding-left: 1.25rem;
+        font-size: 1.25rem;
+      }
+
+      @media screen and (max-width: 479px) {
+        padding-left: 1.25rem;
       }
     }
 
@@ -97,14 +115,6 @@
     max-width: 100%;
     margin: 2.5rem auto;
     overflow: hidden;
-
-    background-image:
-      radial-gradient(circle, rgba(14, 230, 100, 0.35) 0%, rgba(14, 230, 100, 0) 70%),
-      radial-gradient(circle, rgba(255, 0, 168, 0.35) 0%, rgba(255, 0, 168, 0) 70%);
-
-    background-position: 0 0, 100% 100%;
-    background-size: 30rem 30rem, 30rem 30rem;
-    background-repeat: no-repeat;
 
     img {
       display: block;
@@ -145,11 +155,7 @@
     }
   }
 
-  @media screen and (max-width: 767px) {
-    margin: 4.25rem auto 0;
-  }
-
   @media screen and (max-width: 479px) {
-    margin-bottom: -2rem;
+    margin: 0 auto -2rem;
   }
 }

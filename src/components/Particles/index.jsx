@@ -44,12 +44,10 @@ const Paritcles = function() {
   return (
     <div className="particles">
       <ParallaxProvider>
-        <Parallax speed={-10}>
-          <img data-particle="tube" src={ParticleTube} alt="Particle tube" />
-        </Parallax>
-        <img data-particle="can" src={ParticleCan} alt="Particle can" />
-        <img data-particle="wave" src={ParticleWave} alt="Particle wave" />
         <img data-particle="ball" src={ParticleBall} alt="Particle ball" />
+        <img data-particle="tube" src={ParticleTube} alt="Particle tube" />
+        <img data-particle="wave" src={ParticleWave} alt="Particle wave" />
+        <img data-particle="can" src={ParticleCan} alt="Particle can" />
         <img data-particle="bucket" src={ParticleBucket} alt="Particle bucket" />
         <img data-particle="spoon" src={ParticleSpoon} alt="Particle spoon" />
         <img data-particle="fork" src={ParticleFork} alt="Particle fork" />

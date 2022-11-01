@@ -18,8 +18,23 @@ const Header = function() {
       </h1>
 
       <div className="header-mesh">
-        <img data-image="adult" src={DecorAdult} alt="Mesh adult" />
-        <img data-image="child" src={DecorChild} alt="Mesh child" />
+        <img
+          src={DecorAdult}
+          alt="Mesh adult"
+          width="887"
+          height="484"
+          data-image="adult"
+          onLoad={(e) => e.target.dataset.loaded = 'loaded'}
+        />
+
+        <img
+          src={DecorChild}
+          alt="Mesh child"
+          width="490"
+          height="383"
+          data-image="child"
+          onLoad={(e) => e.target.dataset.loaded = 'loaded'}
+        />
       </div>
 
       <div className="header-separator">

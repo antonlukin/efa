@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Navigation } from 'swiper';
-import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Lead from '../../components/Lead';
+import Enemy from '../../components/Enemy';
 
 import 'swiper/scss';
 
@@ -13,30 +13,44 @@ import './slider.scss';
 
 const Opposing = function() {
   const slidesAmount = 11;
+
   const [page, setPage] = useState(1);
+  const [current, setCurrent] = useState(null);
+  const [swiper, setSwiper] = useState(null)
 
   const updatePages = (swiperCore) => {
     setPage(swiperCore.realIndex + 1);
   }
 
-  const swiperOpts = {
-    allowTouchMove: true,
-    slidesPerView: 'auto',
-    loop: false,
-    centeredSlides: true,
-    modules: [Navigation],
-    navigation: true,
-    onSlideChange: updatePages,
-    breakpoints: {
-      120: {
-        loop: true,
-      },
-      1024: {
-        loop: false,
-        centeredSlides: false,
-      }
+  useEffect(() => {
+    let saved = window.localStorage.getItem('enemy');
+
+    if (saved === null) {
+      saved = 1;
     }
-  }
+
+    saved = parseInt(saved);
+    setCurrent(saved);
+
+    const options = {
+      slidesPerView: 'auto',
+      loop: true,
+      allowTouchMove: false,
+      centeredSlides: true,
+      modules: [Navigation],
+      navigation: true,
+      initialSlide: (saved - 1),
+      breakpoints: {
+        1024: {
+          loop: false,
+          centeredSlides: false,
+        }
+      },
+      onSlideChange: updatePages,
+    }
+
+    setSwiper(options);
+  }, []);
 
   return (
     <section className="opposing">
@@ -52,32 +66,15 @@ const Opposing = function() {
         tap on card to see more
       </p>
 
-      <Swiper className="opposing-slider" {...swiperOpts}>
-        {[...Array(slidesAmount)].map((el, i) =>
-          <SwiperSlide key={i} className={(i === 0) ? 'swiper-slide-start' : null}>
-            <div className="swiper-slide-inner">
-              <div className="swiper-slide-front">
-                <img src={require(`../../images/cards/${i + 1}.png`)} alt="Front of the card" />
-              </div>
-
-              <div className="swiper-slide-back">
-                <img src={require(`../../images/backs/${i + 1}.png`)} alt="Back of the card" />
-
-                <figure>
-                  <h5>
-                    <strong>{i + 1}</strong>
-                    <span>/ {slidesAmount}</span>
-                  </h5>
-
-                  <p>This player plays both on the earth's surface, and in water, and in the air. Playing against him is not easy, but necessary, because in the future plastic waste will affect the health of not only the planet, but also people.</p>
-                </figure>
-
-                <Link to="/fight/">open</Link>
-              </div>
-            </div>
-          </SwiperSlide>
-        )}
-      </Swiper>
+      {swiper &&
+        <Swiper className="opposing-slider" {...swiper}>
+          {[...Array(slidesAmount)].map((el, i) =>
+            <SwiperSlide key={i} className={i === (current - 1) ? 'is-next' : null}>
+              <Enemy id={i} current={current} slidesAmount={slidesAmount} />
+            </SwiperSlide>
+          )}
+        </Swiper>
+      }
 
       <nav className="opposing-pagination">
         <strong>{page}</strong>/

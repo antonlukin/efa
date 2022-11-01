@@ -1,7 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 
-import { useNavigate } from 'react-router-dom';
-
 import Upper from '../Upper';
 import Button from '../Button';
 import smoothScroll from '../../utils/scroller';
@@ -10,26 +8,25 @@ import AttackData from '../../data/attack';
 
 import './styles.scss';
 
-const Attack = function() {
+const Attack = function({current, setCurrent}) {
   const slidesAmount = 11;
 
-  const [current, setCurrent] = useState(1);
   const [strikes, setStrikes] = useState([]);
   const [styles, setStyles] = useState({});
   const [switcher, setSwitcher] = useState('');
   const [workout, setWorkout] = useState(null);
 
   const figure = useRef();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const needle = AttackData.find(o => o.id === current);
     setWorkout(needle);
 
     setStrikes([]);
-    setStyles([]);
+    setStyles({});
+
     setSwitcher('Attack');
-  }, [setWorkout, current]);
+  }, [current]);
 
   useEffect(() => {
     let to = document.body;
@@ -42,11 +39,16 @@ const Attack = function() {
   }, [strikes]);
 
   const nextWorkout = () => {
-    setCurrent(current + 1);
+    const next = current + 1;
 
-    if (current >= AttackData.length) {
-      return navigate('/uniform/');
-    }
+    document.body.classList.add('is-loading');
+
+    setTimeout(() => {
+      document.body.classList.remove('is-loading');
+      setCurrent(next);
+    }, 500);
+
+    window.localStorage.setItem('enemy', next);
   }
 
   const updateStrike = (e) => {
@@ -66,11 +68,13 @@ const Attack = function() {
     }, 500);
 
     if (currentStrike >= totalStrikes) {
-      setSwitcher('Next player');
-    }
+      let label = 'Next player';
 
-    if (current >= AttackData.length) {
-      setSwitcher('Get your uniform');
+      if (current >= AttackData.length) {
+        label = 'Get your uniform';
+      }
+
+      setSwitcher(label);
     }
 
     setStrikes(workout.strikes.slice(0, currentStrike));
@@ -96,7 +100,13 @@ const Attack = function() {
 
           <div className="attack-mesh">
             <figure ref={figure}>
-              <img src={require(`../../images/meshes/${workout.id}.png`)} alt={workout.title} style={styles.mesh} />
+              <img
+                src={require(`../../images/meshes/${workout.id}.png`)}
+                alt={workout.title}
+                width="307"
+                height="429"
+                style={styles.mesh}
+              />
               <figcaption>Damage</figcaption>
 
               <strong>

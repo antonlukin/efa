@@ -1,13 +1,14 @@
-.button{
+.button {
   display: flex;
   align-items: center;
+  justify-content: center;
 
   cursor: pointer;
 
   height: 4.25rem;
   padding: 0 4rem;
 
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 400;
   font-family: var(--font-general);
 
@@ -19,7 +20,21 @@
 
   transition: background-color 0.25s;
 
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
   &:hover {
     background-color: var(--color-hover);
+  }
+
+  @media screen and (max-width: 479px) {
+    height: 4rem;
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 359px) {
+    height: 3.25rem;
   }
 }

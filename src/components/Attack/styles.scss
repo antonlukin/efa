@@ -23,7 +23,7 @@
     z-index: 2;
 
     width: calc(100% / 3);
-    margin: 0 0 2rem;
+    margin: 0;
     padding: 0 4rem 0 0;
 
     figure {
@@ -119,6 +119,8 @@
       border: solid 1px var(--color-links);
       border-radius: 1rem;
 
+      will-change: transform;
+
       span {
         display: block;
         position: absolute;
@@ -146,7 +148,7 @@
       margin: 0;
       padding: 0;
 
-      background-image: var(--gradient-attack);
+      background-image: var(--gradient-forms);
     }
 
     @media screen and (max-width: 767px) {
@@ -181,12 +183,29 @@
       line-height: 1;
 
       text-transform: uppercase;
+
+      @media screen and (max-width: 767px) {
+        margin-top: 0;
+
+        font-size: 2.75rem;
+        line-height: 1.25;
+      }
+
+      @media screen and (max-width: 479px) {
+        font-size: 2.25rem;
+        line-height: 1.375;
+      }
+
+      @media screen and (max-width: 320px) {
+        font-size: 2rem;
+      }
     }
 
     h5 {
       display: flex;
       align-items: center;
 
+      width: 100%;
       margin: 0;
 
       font-size: 1.5rem;
@@ -196,12 +215,25 @@
       color: var(--color-gray);
 
       strong {
-        font-size: 2.5rem;
+        font-size: 1.75em;
         font-weight: inherit;
 
         color: var(--color-text);
 
         transform: translateY(-0.25rem);
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 1.375rem;
+      }
+
+      @media screen and (max-width: 767px) {
+        font-size: 1.25rem;
+      }
+
+      @media screen and (max-width: 479px) {
+        justify-content: center;
+        font-size: 1rem;
       }
     }
 
@@ -228,7 +260,7 @@
       opacity: 0;
 
       color: var(--color-text);
-      background-image: var(--gradient-attack);
+      background-image: var(--gradient-forms);
       background-clip: padding-box;
 
       border: solid 2px transparent;
@@ -266,7 +298,7 @@
         width: 100%;
         height: 100%;
 
-        background-image: var(--gradient-attack);
+        background-image: var(--gradient-forms);
         border-radius: inherit;
       }
 

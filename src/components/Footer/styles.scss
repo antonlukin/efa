@@ -7,7 +7,7 @@
   z-index: 2;
 
   width: var(--width-wide);
-  max-width: var(--width-max);
+  max-width: calc(100% - 3rem);
 
   margin: 1rem auto 1.5rem;
   padding: 0;
