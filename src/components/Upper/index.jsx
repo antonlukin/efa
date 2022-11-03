@@ -1,25 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 import { ReactComponent as ImageLogo } from '../../images/logo.svg';
+import transfer from '../../utils/transfer';
 
 import './styles.scss';
 
 const Upper = function({label}) {
   const navigate = useNavigate();
 
-  const goHome = (e) => {
+  const transferPage = (e) => {
     e.preventDefault();
-
-    document.body.classList.add('is-loading');
-
-    setTimeout(() => {
-      document.body.classList.remove('is-loading');
-      navigate('/');
-    }, 500);
+    transfer(navigate, '/');
   }
 
   return (
     <div className="upper">
-      <a className="upper-logo" href="/" onClick={goHome}>
+      <a className="upper-logo" href="/" onClick={transferPage}>
           {label &&
             <span>EFA Championship by</span>
           }

@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 import ParticleCan from '../../images/particles/can.png';
 import ParticleTube from '../../images/particles/tube.png';
@@ -15,46 +14,56 @@ import ParticlePaper from '../../images/particles/paper.png';
 import './styles.scss';
 
 const Paritcles = function() {
-  useEffect(() => {
-    const ball = document.querySelector('[data-particle="ball"]');
-    const ballTop = ball.offsetTop;
-    const ballLeft = ball.offsetLeft;
-
-    const rotateBall = () => {
-      const delta = Math.round(window.scrollY / window.screen.height * 100);
-
-      ball.style.transform = `rotate(${delta * 1.5}deg)`;
-
-      // if (ball.offsetTop < window.screen.height) {
-      //   ball.style.top = ballTop + delta * 4 + 'px';
-      //   ball.style.left = ballLeft + delta * 4 + 'px';
-      // }
-
-
-      // ball.style.left = `rotate(${y}deg)`;
-    }
-
-    // window.addEventListener('scroll', rotateBall);
-
-    return () => {
-      window.removeEventListener('scroll', rotateBall);
-    }
-  });
-
   return (
     <div className="particles">
       <ParallaxProvider>
-        <img data-particle="ball" src={ParticleBall} alt="Particle ball" />
-        <img data-particle="tube" src={ParticleTube} alt="Particle tube" />
-        <img data-particle="wave" src={ParticleWave} alt="Particle wave" />
-        <img data-particle="can" src={ParticleCan} alt="Particle can" />
-        <img data-particle="bucket" src={ParticleBucket} alt="Particle bucket" />
-        <img data-particle="spoon" src={ParticleSpoon} alt="Particle spoon" />
-        <img data-particle="fork" src={ParticleFork} alt="Particle fork" />
-        <img data-particle="splash" src={ParticleSplash} alt="Particle splash" />
-        <img data-particle="unsplash" src={ParticleSplash} alt="Particle unsplash" />
-        <img data-particle="wash" src={ParticleWash} alt="Wash wasg" />
-        <img data-particle="paper" src={ParticlePaper} alt="Particle paper" />
+        <Parallax data-particle="ball" rotate={[0, 360]}>
+          <img src={ParticleBall} alt="Particle ball" />
+        </Parallax>
+
+        <Parallax data-particle="tube" translateY={[20, -80]}>
+          <img src={ParticleTube} alt="Particle tube" />
+        </Parallax>
+
+        <Parallax data-particle="wave" translateY={[0, 50]}>
+          <img src={ParticleWave} alt="Particle wave" />
+        </Parallax>
+
+        <Parallax data-particle="can">
+          <img src={ParticleCan} alt="Particle can" />
+        </Parallax>
+
+        <Parallax data-particle="bucket" translateY={[0, 50]}>
+          <img src={ParticleBucket} alt="Particle bucket" />
+        </Parallax>
+
+        <Parallax data-particle="spoon" translateY={[-80, 80]}>
+          <img src={ParticleSpoon} alt="Particle spoon" />
+        </Parallax>
+
+        <Parallax data-particle="fork" translateY={[80, -10]}>
+          <img src={ParticleFork} alt="Particle fork" />
+        </Parallax>
+
+        <Parallax data-particle="splash">
+          <img src={ParticleSplash} alt="Particle splash" />
+        </Parallax>
+
+        <Parallax data-particle="unsplash">
+          <img src={ParticleSplash} alt="Particle unsplash" />
+        </Parallax>
+
+        <Parallax data-particle="wash" translateY={[-20, 80]}>
+          <img src={ParticleWash} alt="Particle Wash" />
+        </Parallax>
+
+        <Parallax data-particle="paper" translateY={[-80, 20]}>
+          <img src={ParticlePaper} alt="Particle paper" />
+        </Parallax>
+
+        <Parallax data-particle="sphere">
+          <img src={ParticleBall} alt="Particle sphere" />
+        </Parallax>
       </ParallaxProvider>
     </div>
   );

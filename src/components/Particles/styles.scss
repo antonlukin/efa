@@ -9,8 +9,12 @@
   height: 100%;
   overflow: hidden;
 
-  img {
+  & > * {
     position: absolute;
+  }
+
+  img {
+    display: block;
   }
 
   [data-particle='can'] {
@@ -33,7 +37,7 @@
   }
 
   [data-particle='tube'] {
-    top: 20rem;
+    top: 24rem;
     left: calc(50% - 18.75rem);
 
     width: 12rem;
@@ -48,7 +52,7 @@
   }
 
   [data-particle='wave'] {
-    top: 24rem;
+    top: 18rem;
     left: calc(50% + 22.5rem);
 
     width: 24rem;
@@ -130,7 +134,7 @@
   }
 
   [data-particle='splash'] {
-    top: 115rem;
+    top: 110rem;
     left: calc(50% - 40rem);
 
     width: 22.5rem;
@@ -150,7 +154,9 @@
 
     width: 22.5rem;
 
-    transform: rotate(135deg);
+    img {
+      transform: rotate(135deg);
+    }
 
     @media screen and (max-width: 1023px) {
       top: 145rem;
@@ -182,4 +188,16 @@
       display: none;
     }
   }
+
+  [data-particle='sphere'] {
+    bottom: 20rem;
+    left: calc(50% - 40rem);
+
+    width: 15rem;
+
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+
 }

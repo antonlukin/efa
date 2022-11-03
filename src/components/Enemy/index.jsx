@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
+import transfer from '../../utils/transfer';
+
 import 'swiper/scss';
 import './styles.scss';
 
@@ -12,13 +14,9 @@ const Enemy = function({id, current, slidesAmount}) {
 
   const navigate = useNavigate();
 
-  const changePage = () => {
-    document.body.classList.add('is-loading');
-
-    setTimeout(() => {
-      navigate('/fight/');
-      document.body.classList.remove('is-loading');
-    }, 500)
+  const transferPage = (e) => {
+    e.preventDefault();
+    transfer(navigate, '/fight/')
   }
 
   return (
@@ -42,7 +40,7 @@ const Enemy = function({id, current, slidesAmount}) {
           <p>This player plays both on the earth's surface, and in water, and in the air. Playing against him is not easy, but necessary, because in the future plastic waste will affect the health of not only the planet, but also people.</p>
         </figure>
 
-        <button onClick={changePage}>open</button>
+        <button onClick={transferPage}>open</button>
       </div>
     </div>
   );

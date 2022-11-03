@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import Attack from '../components/Attack';
+import Gradients from '../components/Gradients';
 import Uniform from '../components/Uniform';
 
 import AttackData from '../data/attack';
@@ -27,6 +28,8 @@ const Fight = function() {
         ? <Uniform />
         : <Attack current={current} setCurrent={setCurrent} />
       }
+
+      <Gradients isPage={true} />
     </>
   );
 }

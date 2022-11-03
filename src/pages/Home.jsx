@@ -19,7 +19,7 @@ const Home = function() {
       <Divider />
       <Footer />
       <Particles />
-      <Gradients />
+      <Gradients isPage={false} />
     </>
   );
 }
