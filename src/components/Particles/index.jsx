@@ -17,7 +17,7 @@ const Paritcles = function() {
   return (
     <div className="particles">
       <ParallaxProvider>
-        <Parallax data-particle="ball" rotate={[0, 360]}>
+        <Parallax data-particle="ball">
           <img src={ParticleBall} alt="Particle ball" />
         </Parallax>
 
@@ -37,7 +37,7 @@ const Paritcles = function() {
           <img src={ParticleBucket} alt="Particle bucket" />
         </Parallax>
 
-        <Parallax data-particle="spoon" translateY={[-80, 80]}>
+        <Parallax data-particle="spoon" translateY={[-40, 80]}>
           <img src={ParticleSpoon} alt="Particle spoon" />
         </Parallax>
 

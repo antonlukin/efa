@@ -1,61 +1,34 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Upper from '../Upper';
 import Button from '../Button';
-import smoothScroll from '../../utils/scroller';
 
-import AttackData from '../../data/attack';
+import smoothScroll from '../../utils/scroller';
+import AppContext from '../../context';
 
 import './styles.scss';
 
-const Attack = function({current, setCurrent}) {
-  const slidesAmount = 11;
-
-  const [strikes, setStrikes] = useState([]);
+const Attack = function({opened, current, setCurrent}) {
   const [styles, setStyles] = useState({});
+  const [strikes, setStrikes] = useState(0);
   const [switcher, setSwitcher] = useState('');
-  const [workout, setWorkout] = useState(null);
 
+  const enemies = useContext(AppContext);
   const figure = useRef();
-
-  useEffect(() => {
-    const needle = AttackData.find(o => o.id === current);
-    setWorkout(needle);
-
-    setStrikes([]);
-    setStyles({});
-
-    setSwitcher('Attack');
-  }, [current]);
-
-  useEffect(() => {
-    let to = document.body;
-
-    if (strikes.length > 0) {
-      to = document.body.scrollHeight;
-    }
-
-    smoothScroll(to);
-  }, [strikes]);
+  const { t } = useTranslation();
 
   const nextWorkout = () => {
-    const next = current + 1;
-
     document.body.classList.add('is-loading');
 
-    setTimeout(() => {
-      document.body.classList.remove('is-loading');
-      setCurrent(next);
-    }, 500);
+    const next = current + 1;
 
-    window.localStorage.setItem('enemy', next);
+    setTimeout(() => { setCurrent(next) }, 500);
   }
 
-  const updateStrike = (e) => {
-    e.preventDefault();
-
-    const totalStrikes = workout.strikes.length;
-    const currentStrike = strikes.length + 1;
+  const updateStrike = () => {
+    const totalStrikes = enemies[current - 1];
+    const currentStrike = strikes + 1;
 
     if (currentStrike > totalStrikes) {
       return nextWorkout();
@@ -67,32 +40,61 @@ const Attack = function({current, setCurrent}) {
       figure.current.removeAttribute('data-animate');
     }, 500);
 
-    if (currentStrike >= totalStrikes) {
-      let label = 'Next player';
+    setStrikes(currentStrike);
+  }
 
-      if (current >= AttackData.length) {
-        label = 'Get your uniform';
-      }
+  useEffect(() => {
+    let list = 0;
 
-      setSwitcher(label);
+    if (opened) {
+      list = enemies[current - 1];
     }
 
-    setStrikes(workout.strikes.slice(0, currentStrike));
+    setStrikes(list);
+  }, [current, opened, enemies]);
+
+  useEffect(() => {
+    const totalStrikes = enemies[current - 1];
+
+    const getLabel = () => {
+      let label = 'Attack';
+
+      if (strikes >= totalStrikes) {
+        label = 'Next player';
+
+        if (current >= enemies.length) {
+          label = 'Get your uniform';
+        }
+      }
+
+      return label;
+    }
+
+    let to = document.body.scrollHeight;
+
+    if (opened || strikes < 1) {
+      to = document.body;
+    }
+
+    smoothScroll(to);
+
+    const label = getLabel();
+    setSwitcher(label);
 
     setStyles({
       mesh: {
-        filter: `drop-shadow(0 0 ${20 / totalStrikes * currentStrike}px #f00)`,
+        filter: `drop-shadow(0 0 ${20 / totalStrikes * strikes}px #f00)`,
       },
 
       filled: {
-        right: `${100 - (currentStrike / (totalStrikes)) * 100}%`
+        left: `-${(strikes / (totalStrikes)) * 100}%`
       }
     });
-  }
+  }, [strikes, opened, current, enemies]);
 
   return (
     <div className="attack">
-      {workout &&
+      {current &&
         <>
           <header className="attack-header">
             <Upper label={true} />
@@ -101,13 +103,13 @@ const Attack = function({current, setCurrent}) {
           <div className="attack-mesh">
             <figure ref={figure}>
               <img
-                src={require(`../../images/meshes/${workout.id}.png`)}
-                alt={workout.title}
+                src={require(`../../images/meshes/${current}.png`)}
+                alt={t(`attack.${current - 1}.title`)}
                 width="307"
                 height="429"
                 style={styles.mesh}
               />
-              <figcaption>Damage</figcaption>
+              <figcaption>Health</figcaption>
 
               <strong>
                 <span style={styles.filled}></span>
@@ -118,17 +120,16 @@ const Attack = function({current, setCurrent}) {
           <div className="attack-texts">
             <h5>
               <strong>{current}</strong>
-              <span>/ {slidesAmount}</span>
+              <span>/ {enemies.length}</span>
             </h5>
 
-            <h2>{workout.title}</h2>
+            <h2>{t(`attack.${current - 1}.title`)}</h2>
+            <div dangerouslySetInnerHTML={ { __html: t(`attack.${current - 1}.description`) } } />
 
-            <div dangerouslySetInnerHTML={ { __html: workout.description } } />
-
-            {strikes &&
+            {strikes > 0 &&
               <ul>
-                {strikes.map((strike, i) =>
-                  <li key={i}>{strike}</li>
+                {[...Array(strikes)].map((strike, i) =>
+                  <li key={i}>{t(`attack.${current - 1}.strikes.${i}`)}</li>
                 )}
               </ul>
             }

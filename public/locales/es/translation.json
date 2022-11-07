@@ -1,0 +1,41 @@
+{
+  "header": {
+    "slogan": "Lucha por el futuro"
+  },
+  "summary": {
+    "start": [
+      "Nuestro planeta es un campo de fútbol en el que estamos perdiendo. El rival destruye la naturaleza, contamina los océanos, nos quita el futuro.",
+      "Lo creamos nosotros mismos, y somos nosotros quienes podemos vencerlo."
+    ]
+  },
+  "motivation": {
+    "title": "¿Qué hacer?",
+    "description": "¡Venceremos al rival únicamente si actuamos juntos como equipo!",
+    "list": [
+      "Conoce a tu enemigo",
+      "Aprende a ganarle",
+      "Consigue el uniforme del equipo ecológico"
+    ]
+  },
+  "opposing": {
+    "title": "Equipo opuesto",
+    "description": "Cada jugador del equipo representa un asunto global de medio ambiente. Conoce más sobre cada uno y lee los tips para reducir su influencia.",
+    "helper": "toque en la tarjeta para ver más"
+  },
+  "team": {
+    "title": "Equipo ecológico",
+    "start": [
+      "Es un equipo de jugadores para los que eso sí importa. Están conscientes de los problemas medioambientales y están dispuestos a actuar.",
+      "Analiza a todos los jugadores opositores para recibir el uniforme con tu apellido y número favorito."
+    ],
+    "amount": "personas ya se sumaron al equipo ecológico",
+    "results": {
+      "name": "Nombre",
+      "line": "Línea",
+      "number": "Número"
+    }
+  },
+  "divider": {
+    "separator": "Un objetivo para los humanos"
+  }
+}

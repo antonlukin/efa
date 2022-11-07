@@ -1,17 +1,16 @@
-import { Fade } from 'react-awesome-reveal';
+import { useTranslation } from 'react-i18next';
+import Fade from '@successtar/react-reveal/Fade';
 
 import './styles.scss';
 
 const Summary = function() {
+  const { t } = useTranslation();
+
   return (
     <section className="summary">
-      <Fade cascade fraction={0} triggerOnce={true}>
-        <p>
-          Our planet is a <a href="/">football field</a> on which <a href="/">we lose</a>.
-          The rival destroys nature, pollutes the oceans, deprives us of the future.
-        </p>
-
-        <p>We created this enemy ourselves and we can defeat him.</p>
+      <Fade>
+        <p dangerouslySetInnerHTML={{ __html: t('summary.start.0')}} />
+        <p dangerouslySetInnerHTML={{ __html: t('summary.start.1')}} />
       </Fade>
     </section>
   );

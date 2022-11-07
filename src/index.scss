@@ -39,3 +39,11 @@ img {
 a {
   text-decoration: none;
 }
+
+[data-parallax] {
+  opacity: 0;
+
+  &[data-parallax="visible"] {
+    animation: fade-in 0.5s forwards;
+  }
+}

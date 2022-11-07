@@ -1,14 +1,18 @@
+import { useTranslation } from 'react-i18next';
+
 import './styles.scss';
 
 const Divider = function() {
+  const { t } = useTranslation();
+
   return (
     <div className="divider">
       <div className="divider-separator">
-        <span>Goal for the humans</span>
-        <span>Goal for the humans</span>
-        <span>Goal for the humans</span>
-        <span>Goal for the humans</span>
-        <span>Goal for the humans</span>
+        <span dangerouslySetInnerHTML={{ __html: t('divider.separator')}} />
+        <span dangerouslySetInnerHTML={{ __html: t('divider.separator')}} />
+        <span dangerouslySetInnerHTML={{ __html: t('divider.separator')}} />
+        <span dangerouslySetInnerHTML={{ __html: t('divider.separator')}} />
+        <span dangerouslySetInnerHTML={{ __html: t('divider.separator')}} />
       </div>
     </div>
   );

@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import { ReactComponent as ImageLogo } from '../../images/logo.svg';
 import transfer from '../../utils/transfer';
 
@@ -6,11 +8,17 @@ import './styles.scss';
 
 const Upper = function({label}) {
   const navigate = useNavigate();
+  const { i18n } = useTranslation();
 
   const transferPage = (e) => {
     e.preventDefault();
-    transfer(navigate, '/');
+
+    transfer(() => navigate('/'));
   }
+
+  const changeLanguage = (lng) => {
+    transfer(() => i18n.changeLanguage(lng));
+  };
 
   return (
     <div className="upper">
@@ -21,10 +29,10 @@ const Upper = function({label}) {
           <ImageLogo />
       </a>
 
-      <div className="upper-lang">
-        <button href="/">Eng</button>
+      <div className="upper-lang" data-lang={i18n.language}>
+        <button onClick={() => changeLanguage('en')}>Eng</button>
         <span></span>
-        <button href="/">Esp</button>
+        <button onClick={() => changeLanguage('es')}>Esp</button>
       </div>
     </div>
   );

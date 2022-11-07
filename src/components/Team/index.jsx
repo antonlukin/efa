@@ -1,34 +1,30 @@
+import { useTranslation } from 'react-i18next';
 import Lead from '../../components/Lead';
 
 import './styles.scss';
 
 const Team = function() {
+  const { t } = useTranslation();
+
   return (
     <section className="team">
       <Lead className="team-start">
-        <h2>Eco-team</h2>
-        <p>
-          This is a team of players <a href="/">who care</a>.
-          They are aware of the environmental problems,
-          know how to fight them and ready to take action.
-        </p>
+        <h2>{t('team.title')}</h2>
 
-        <p>
-          Study all the opponent's players to get
-          an <a href="/">eco-team</a> uniform with your last name and favorite number.
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: t('team.start.0')}} />
+        <p dangerouslySetInnerHTML={{ __html: t('team.start.1')}} />
       </Lead>
 
       <h3 className="team-amount">
-        <strong>1246</strong> people already joined the Eco-team
+        <strong>1246</strong> <span dangerouslySetInnerHTML={{ __html: t('team.amount')}} />
       </h3>
 
       <table className="team-results">
         <thead>
           <tr>
-            <td>Line</td>
-            <td>Name</td>
-            <td>Number</td>
+            <td>{t('team.results.line')}</td>
+            <td>{t('team.results.name')}</td>
+            <td>{t('team.results.number')}</td>
           </tr>
         </thead>
 

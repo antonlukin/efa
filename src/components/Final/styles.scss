@@ -1,0 +1,23 @@
+.final {
+  display: block;
+  position: relative;
+  z-index: 2;
+
+  width: var(--width-site);
+  max-width: calc(100% - 3rem);
+  margin: 0 auto;
+  padding: 1.5rem 0 2.5rem;
+
+  .final-header {
+    width: 100%;
+
+    @media screen and (max-width: 1023px) {
+      width: var(--width-content);
+      margin: 0 auto 2rem;
+    }
+  }
+
+  .final-grid {
+
+  }
+}

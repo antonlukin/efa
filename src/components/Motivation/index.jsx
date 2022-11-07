@@ -1,4 +1,5 @@
-import { Fade } from 'react-awesome-reveal';
+import { useTranslation } from 'react-i18next';
+import Fade from '@successtar/react-reveal/Fade';
 
 import Lead from '../../components/Lead';
 
@@ -8,18 +9,20 @@ import DecorRotation from '../../images/decors/rotation.png';
 import './styles.scss';
 
 const Motivation = function() {
+  const { t } = useTranslation();
+
   return (
     <section className="motivation">
       <Lead className="motivation-start">
-        <h2>What to Do?</h2>
-        <p>Only by acting together as a team we can defeat the rival!</p>
+        <h2>{t('motivation.title')}</h2>
+        <p dangerouslySetInnerHTML={{ __html: t('motivation.description')}} />
       </Lead>
 
-      <Fade fraction={0.5} triggerOnce={true}>
+      <Fade>
         <ul className="motivation-list">
-          <li><span>Get to know the enemy</span></li>
-          <li>Learn how to beat it</li>
-          <li>Get a uniform of the eco-team</li>
+          <li>{t('motivation.list.0')}</li>
+          <li>{t('motivation.list.1')}</li>
+          <li>{t('motivation.list.2')}</li>
         </ul>
       </Fade>
 

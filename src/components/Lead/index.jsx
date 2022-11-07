@@ -1,4 +1,4 @@
-import { Fade } from 'react-awesome-reveal';
+import Fade from '@successtar/react-reveal/Fade';
 
 import './styles.scss';
 
@@ -7,7 +7,7 @@ const Lead = function({children, className}) {
 
   return (
     <div className={classes.join(' ')}>
-      <Fade fraction={0.5} triggerOnce={true}>
+      <Fade>
         {children}
       </Fade>
     </div>

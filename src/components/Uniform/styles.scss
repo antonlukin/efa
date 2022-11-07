@@ -75,12 +75,33 @@
 
       canvas {
         display: block;
+        position: absolute;
+
         max-width: 100%;
+        transition: opacity 0.375s;
       }
 
       figcaption {
         display: flex;
-        margin-top: 2rem;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        &[data-side="front"] canvas:last-child {
+          opacity: 0;
+        }
+
+        &[data-side="back"] canvas:first-child {
+          opacity: 0;
+        }
+      }
+
+      nav {
+        display: flex;
+        margin: 1rem 0;
       }
 
       button {

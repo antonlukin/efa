@@ -14,9 +14,8 @@ const Enemy = function({id, current, slidesAmount}) {
 
   const navigate = useNavigate();
 
-  const transferPage = (e) => {
-    e.preventDefault();
-    transfer(navigate, '/fight/')
+  const transferPage = (enemy) => {
+    transfer(() => navigate(`/fight/${enemy}`));
   }
 
   return (
@@ -40,7 +39,7 @@ const Enemy = function({id, current, slidesAmount}) {
           <p>This player plays both on the earth's surface, and in water, and in the air. Playing against him is not easy, but necessary, because in the future plastic waste will affect the health of not only the planet, but also people.</p>
         </figure>
 
-        <button onClick={transferPage}>open</button>
+        <button onClick={() => transferPage(id + 1)}>open</button>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,6 +19,8 @@ const Opposing = function() {
   const [current, setCurrent] = useState(null);
   const [swiper, setSwiper] = useState(null)
 
+  const { t } = useTranslation();
+
   const updatePages = (swiperCore) => {
     setPage(swiperCore.realIndex + 1);
   }
@@ -35,7 +38,7 @@ const Opposing = function() {
     const options = {
       slidesPerView: 'auto',
       loop: true,
-      allowTouchMove: false,
+      allowTouchMove: true,
       centeredSlides: true,
       modules: [Navigation],
       navigation: true,
@@ -55,21 +58,16 @@ const Opposing = function() {
   return (
     <section className="opposing">
       <Lead className="opposing-start">
-        <h2>Opposing team</h2>
-        <p>
-          Each <a href="/">player</a> on this team represents one of the <a href="/">global environmental issues</a>.
-          Find out more about each of them and get the tips to reduce their influence.
-        </p>
+        <h2 dangerouslySetInnerHTML={{ __html: t('opposing.title')}} />
+        <p dangerouslySetInnerHTML={{ __html: t('opposing.description')}} />
       </Lead>
 
-      <p className="opposing-helper">
-        tap on card to see more
-      </p>
+      <p className="opposing-helper" dangerouslySetInnerHTML={{ __html: t('opposing.helper')}} />
 
       {swiper &&
         <Swiper className="opposing-slider" {...swiper}>
           {[...Array(slidesAmount)].map((el, i) =>
-            <SwiperSlide key={i} className={i === (current - 1) ? 'is-next' : null}>
+            <SwiperSlide key={i} className='is-next'>
               <Enemy id={i} current={current} slidesAmount={slidesAmount} />
             </SwiperSlide>
           )}

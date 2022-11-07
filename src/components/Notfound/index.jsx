@@ -11,9 +11,8 @@ import './styles.scss';
 const Notfound = function() {
   const navigate = useNavigate();
 
-  const transferPage = (e) => {
-    e.preventDefault();
-    transfer(navigate, '/')
+  const transferPage = () => {
+    transfer(() => navigate('/'));
   }
 
   return (

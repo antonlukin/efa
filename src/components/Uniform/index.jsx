@@ -15,7 +15,9 @@ const Uniform = function() {
   const [label, setLabel] = useState({name: '', number: ''});
   const [reverted, setReverted] = useState(false);
 
-  const canvas = useRef();
+  const canvasFrontside = useRef();
+  const canvasBackside = useRef();
+  const canvasParent = useRef();
 
   useEffect(() => {
     const imageFront = new Image();
@@ -72,13 +74,7 @@ const Uniform = function() {
       ctx.fillText(text, position.x, position.y, position.x);
     }
 
-    const redrawCanvas = () => {
-      const figure = canvas.current.parentNode;
-
-      const offset = Math.min(figure.offsetWidth, figure.offsetHeight);
-
-      const size = offset / 1.25;
-
+    const initCanvas = (canvas, image, size) => {
       canvas.current.width = size * window.devicePixelRatio;
       canvas.current.height = size * window.devicePixelRatio;
       canvas.current.style.width = size + "px";
@@ -90,29 +86,47 @@ const Uniform = function() {
       ctx.textAlign = 'center';
       ctx.fillStyle = '#000';
 
+      ctx.drawImage(image, 0, 0, canvas.current.width, canvas.current.height);
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+      return ctx;
+    }
+
+    const drawBackCanvas = (size) => {
+      const ctx = initCanvas(canvasBackside, backside, size);
+
+      writeNumber(ctx, size, label.number);
+      writeName(ctx, size, label.name);
+    }
+
+    const drawFrontCanvas = (size) => {
+      const ctx = initCanvas(canvasFrontside, frontside, size);
+
+      writeFront(ctx, size, label.number);
+    }
+
+    const drawCanvas = () => {
+      const parent = canvasParent.current;
+      const offset = Math.min(parent.offsetWidth, parent.offsetHeight);
+
+      const size = offset / 1.125;
+
       if (reverted) {
-        ctx.drawImage(frontside, 0, 0, canvas.current.width, canvas.current.height);
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-
-        writeFront(ctx, size, label.number);
-      } else {
-        ctx.drawImage(backside, 0, 0, canvas.current.width, canvas.current.height);
-        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-
-        writeNumber(ctx, size, label.number);
-        writeName(ctx, size, label.name);
+        return drawFrontCanvas(size);
       }
+
+      return drawBackCanvas(size);
     }
 
     if (frontside && backside) {
-      redrawCanvas();
+      drawCanvas();
 
       // Redraw canvas on resize
-      window.addEventListener('resize', redrawCanvas);
+      window.addEventListener('resize', drawCanvas);
     }
 
     return () => {
-      window.removeEventListener('resize', redrawCanvas);
+      window.removeEventListener('resize', drawCanvas);
     }
   }, [label, frontside, backside, reverted]);
 
@@ -128,6 +142,17 @@ const Uniform = function() {
     }
   }
 
+  const saveUniform = (e) => {
+    e.preventDefault();
+
+    const link = document.createElement('a');
+    document.body.appendChild(link);
+
+    link.setAttribute('download', 'T-Shirt.png');
+    link.setAttribute('href', canvasFrontside.current.toDataURL("image/png"));
+    link.click();
+  }
+
   return (
     <div className="uniform">
       <header className="uniform-header">
@@ -138,9 +163,12 @@ const Uniform = function() {
         <h2>Welcome to the eco-team!</h2>
 
         <figure>
-          <canvas ref={canvas} />
+          <figcaption ref={canvasParent} data-side={reverted ? 'front' : 'back'}>
+            <canvas ref={canvasFrontside} />
+            <canvas ref={canvasBackside} />
+          </figcaption>
 
-          <figcaption>
+          <nav>
             <button
               onClick={() => setReverted(true)}
               disabled={reverted ? true : false}
@@ -153,7 +181,7 @@ const Uniform = function() {
               >
               T-Shirt backside
             </button>
-          </figcaption>
+          </nav>
         </figure>
 
         <fieldset>
@@ -177,7 +205,12 @@ const Uniform = function() {
             />
           </p>
 
-          <Button disabled={label.name && label.number ? false : true}>Get the kit!</Button>
+          <Button
+            disabled={label.name && label.number ? false : true}
+            onClick={saveUniform}
+          >
+            Get the kit!
+          </Button>
         </fieldset>
       </div>
     </div>

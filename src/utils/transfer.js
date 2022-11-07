@@ -1,6 +1,6 @@
-export default function transfer(navigate, path) {
+export default function transfer(callback) {
   setTimeout(() => {
-    navigate(path);
+    callback();
 
     setTimeout(() => {
       document.body.classList.remove('is-loading');

@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import Upper from '../Upper';
 
 import DecorAdult from '../../images/decors/adult.png';
@@ -6,6 +8,8 @@ import DecorChild from '../../images/decors/child.png';
 import './styles.scss';
 
 const Header = function() {
+  const { t } = useTranslation();
+
   return (
     <div className="header">
       <div className="header-upper">
@@ -38,11 +42,11 @@ const Header = function() {
       </div>
 
       <div className="header-separator">
-        <span>Fight for the future</span>
-        <span>Fight for the future</span>
-        <span>Fight for the future</span>
-        <span>Fight for the future</span>
-        <span>Fight for the future</span>
+        <span>{t('header.slogan')}</span>
+        <span>{t('header.slogan')}</span>
+        <span>{t('header.slogan')}</span>
+        <span>{t('header.slogan')}</span>
+        <span>{t('header.slogan')}</span>
       </div>
     </div>
   );
