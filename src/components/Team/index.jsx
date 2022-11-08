@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+
 import Lead from '../../components/Lead';
 
 import './styles.scss';
@@ -9,13 +10,13 @@ const Team = function() {
   return (
     <section className="team">
       <Lead className="team-start">
-        <h2>{t('team.title')}</h2>
+        <h2 data-aos="fade">{t('team.title')}</h2>
 
-        <p dangerouslySetInnerHTML={{ __html: t('team.start.0')}} />
-        <p dangerouslySetInnerHTML={{ __html: t('team.start.1')}} />
+        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('team.start.0')}} />
+        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('team.start.1')}} />
       </Lead>
 
-      <h3 className="team-amount">
+      <h3 className="team-amount" data-aos="fade">
         <strong>1246</strong> <span dangerouslySetInnerHTML={{ __html: t('team.amount')}} />
       </h3>
 

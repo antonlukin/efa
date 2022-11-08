@@ -18,6 +18,9 @@ body {
   color: var(--color-text);
   background-color: var(--color-background);
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   &.is-loading {
     animation: fade-out 0.25s forwards;
   }

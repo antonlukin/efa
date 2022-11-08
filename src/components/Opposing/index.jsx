@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Lead from '../../components/Lead';
 import Enemy from '../../components/Enemy';
 
+import AOS from 'aos';
+
 import 'swiper/scss';
 
 import './styles.scss';
@@ -42,6 +44,8 @@ const Opposing = function() {
       centeredSlides: true,
       modules: [Navigation],
       navigation: true,
+      preloadImages: true,
+      updateOnImagesReady: true,
       initialSlide: (saved - 1),
       breakpoints: {
         1024: {
@@ -50,6 +54,9 @@ const Opposing = function() {
         }
       },
       onSlideChange: updatePages,
+      onImagesReady: () => {
+        AOS.refresh();
+      }
     }
 
     setSwiper(options);
@@ -58,8 +65,8 @@ const Opposing = function() {
   return (
     <section className="opposing">
       <Lead className="opposing-start">
-        <h2 dangerouslySetInnerHTML={{ __html: t('opposing.title')}} />
-        <p dangerouslySetInnerHTML={{ __html: t('opposing.description')}} />
+        <h2 data-aos="fade" dangerouslySetInnerHTML={{ __html: t('opposing.title')}} />
+        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('opposing.description')}} />
       </Lead>
 
       <p className="opposing-helper" dangerouslySetInnerHTML={{ __html: t('opposing.helper')}} />

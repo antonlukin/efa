@@ -1,5 +1,3 @@
-import Fade from '@successtar/react-reveal/Fade';
-
 import { ReactComponent as IconTelegram } from '../../images/icons/telegram.svg';
 import { ReactComponent as IconTwitter } from '../../images/icons/twitter.svg';
 import { ReactComponent as IconVK } from '../../images/icons/vk.svg';
@@ -8,14 +6,12 @@ import './styles.scss';
 
 const Footer = function() {
   return (
-    <footer className="footer">
+    <footer className="footer" data-aos="fade">
       <div className="footer-description">
         <h4>&copy; Made by <a href="/">Tiger Soda</a></h4>
 
-        <Fade>
-          <p>We create meaningful digital experiences through impactful storytelling and inventive design. Let's change the world together.</p>
-          <p>Special thanks to Íñigo Vitón García Profesión: Biólogo, miembro de Ecologistas en Acción</p>
-        </Fade>
+        <p>We create meaningful digital experiences through impactful storytelling and inventive design. Let's change the world together.</p>
+        <p>Special thanks to Íñigo Vitón García Profesión: Biólogo, miembro de Ecologistas en Acción</p>
       </div>
 
       <div className="footer-social">
@@ -25,15 +21,11 @@ const Footer = function() {
           <a href="/"><IconVK /></a>
         </figure>
 
-        <Fade>
-          <p>Share the project, each new member of the eco-team is significant to make a change</p>
-        </Fade>
+        <p>Share the project, each new member of the eco-team is significant to make a change</p>
 
-        <Fade>
-          <p>
-            <a href="/">see project sources</a>
-          </p>
-        </Fade>
+        <p>
+          <a href="/">see project sources</a>
+        </p>
       </div>
     </footer>
   );

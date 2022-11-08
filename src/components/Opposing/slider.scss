@@ -1,5 +1,5 @@
 .swiper {
-  position: relative;;
+  position: relative;
 
   .swiper-wrapper {
     align-items: center;
@@ -12,6 +12,12 @@
     max-width: calc(100% - 3rem);
     margin: 0 1.75rem;
 
+    transition: transform 0.25s;
+
+    &:hover {
+      transform: scale(1.075);
+    }
+
     @media screen and (max-width: 1023px) {
       margin: 0 1.25rem;
     }
@@ -22,14 +28,6 @@
 
     @media screen and (max-width: 479px) {
       margin: 0 0.5rem;
-    }
-  }
-
-  .swiper-slide-active {
-    width: 24rem;
-
-    @media screen and (max-width: 1023px) {
-      width: 20rem;
     }
   }
 

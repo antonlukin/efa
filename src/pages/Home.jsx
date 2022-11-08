@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import Header from '../components/Header';
 import Summary from '../components/Summary';
 import Motivation from '../components/Motivation';
@@ -8,7 +10,14 @@ import Footer from '../components/Footer';
 import Particles from '../components/Particles';
 import Gradients from '../components/Gradients';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Home = function() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
       <Header />

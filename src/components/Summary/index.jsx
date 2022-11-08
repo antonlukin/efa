@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import Fade from '@successtar/react-reveal/Fade';
 
 import './styles.scss';
 
@@ -8,10 +7,8 @@ const Summary = function() {
 
   return (
     <section className="summary">
-      <Fade>
-        <p dangerouslySetInnerHTML={{ __html: t('summary.start.0')}} />
-        <p dangerouslySetInnerHTML={{ __html: t('summary.start.1')}} />
-      </Fade>
+      <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.0')}} />
+      <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.1')}} />
     </section>
   );
 }

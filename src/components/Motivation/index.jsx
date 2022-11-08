@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import Fade from '@successtar/react-reveal/Fade';
 
 import Lead from '../../components/Lead';
 
@@ -14,17 +13,15 @@ const Motivation = function() {
   return (
     <section className="motivation">
       <Lead className="motivation-start">
-        <h2>{t('motivation.title')}</h2>
-        <p dangerouslySetInnerHTML={{ __html: t('motivation.description')}} />
+        <h2 data-aos="fade">{t('motivation.title')}</h2>
+        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('motivation.description')}} />
       </Lead>
 
-      <Fade>
-        <ul className="motivation-list">
-          <li>{t('motivation.list.0')}</li>
-          <li>{t('motivation.list.1')}</li>
-          <li>{t('motivation.list.2')}</li>
-        </ul>
-      </Fade>
+      <ul data-aos="fade" className="motivation-list">
+        <li>{t('motivation.list.0')}</li>
+        <li>{t('motivation.list.1')}</li>
+        <li>{t('motivation.list.2')}</li>
+      </ul>
 
       <figure className="motivation-shirt">
         <img data-image="shirt" src={DecorShirt} alt="Motivation t-shirt" />
