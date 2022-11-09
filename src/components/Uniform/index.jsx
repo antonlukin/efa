@@ -1,10 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Upper from '../Upper';
 import Button from '../Button';
 
 import UniformFront from '../../images/uniforms/front.png';
 import UniformBack from '../../images/uniforms/back.png';
+
+import AppContext from '../../context';
 
 import './styles.scss';
 
@@ -18,6 +21,36 @@ const Uniform = function() {
   const canvasFrontside = useRef();
   const canvasBackside = useRef();
   const canvasParent = useRef();
+
+  const context = useContext(AppContext);
+  const navigate = useNavigate();
+
+  const changeName = (e) => {
+    if (e.target.validity.valid) {
+      setLabel({...label, name: e.target.value});
+    }
+  }
+
+  const changeNumber = (e) => {
+    if (e.target.validity.valid) {
+      setLabel({...label, number: e.target.value});
+    }
+  }
+
+  const saveUniform = (e) => {
+    e.preventDefault();
+
+    context.uniform = canvasBackside.current.toDataURL("image/png");
+
+    navigate('/kit/');
+
+    // const link = document.createElement('a');
+    // document.body.appendChild(link);
+
+    // link.setAttribute('download', 'T-Shirt.png');
+    // link.setAttribute('href', canvasFrontside.current.toDataURL("image/png"));
+    // link.click();
+  }
 
   useEffect(() => {
     const imageFront = new Image();
@@ -129,29 +162,6 @@ const Uniform = function() {
       window.removeEventListener('resize', drawCanvas);
     }
   }, [label, frontside, backside, reverted]);
-
-  const changeName = (e) => {
-    if (e.target.validity.valid) {
-      setLabel({...label, name: e.target.value});
-    }
-  }
-
-  const changeNumber = (e) => {
-    if (e.target.validity.valid) {
-      setLabel({...label, number: e.target.value});
-    }
-  }
-
-  const saveUniform = (e) => {
-    e.preventDefault();
-
-    const link = document.createElement('a');
-    document.body.appendChild(link);
-
-    link.setAttribute('download', 'T-Shirt.png');
-    link.setAttribute('href', canvasFrontside.current.toDataURL("image/png"));
-    link.click();
-  }
 
   return (
     <div className="uniform">

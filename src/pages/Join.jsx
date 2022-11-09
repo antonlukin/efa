@@ -6,7 +6,8 @@ import Uniform from '../components/Uniform';
 import AppContext from '../context';
 
 const Join = function() {
-  const enemies = useContext(AppContext);
+  const context = useContext(AppContext);
+  const enemies = context.enemies;
 
   const navigate = useNavigate();
 

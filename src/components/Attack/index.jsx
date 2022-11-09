@@ -14,7 +14,9 @@ const Attack = function({opened, current, setCurrent}) {
   const [strikes, setStrikes] = useState(0);
   const [switcher, setSwitcher] = useState('');
 
-  const enemies = useContext(AppContext);
+  const context = useContext(AppContext);
+  const enemies = context.enemies;
+
   const figure = useRef();
   const { t } = useTranslation();
 

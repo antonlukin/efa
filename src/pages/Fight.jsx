@@ -10,7 +10,8 @@ const Fight = function() {
   const [current, setCurrent] = useState(null);
   const [opened, setOpened] = useState(false);
 
-  const enemies = useContext(AppContext);
+  const context = useContext(AppContext);
+  const enemies = context.enemies;
 
   const navigate = useNavigate();
   const path = useParams();
@@ -48,6 +49,10 @@ const Fight = function() {
       if (id < enemy) {
         setOpened(true);
         enemy = id;
+      }
+
+      if (enemy > enemies.length) {
+        return navigate(`/join/`);
       }
 
       if (enemy <= enemies.length) {

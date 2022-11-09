@@ -1,6 +1,4 @@
-import { ReactComponent as IconTelegram } from '../../images/icons/telegram.svg';
-import { ReactComponent as IconTwitter } from '../../images/icons/twitter.svg';
-import { ReactComponent as IconVK } from '../../images/icons/vk.svg';
+import Sharing from '../Sharing';
 
 import './styles.scss';
 
@@ -15,11 +13,7 @@ const Footer = function() {
       </div>
 
       <div className="footer-social">
-        <figure>
-          <a href="/"><IconTelegram /></a>
-          <a href="/"><IconTwitter /></a>
-          <a href="/"><IconVK /></a>
-        </figure>
+        <Sharing />
 
         <p>Share the project, each new member of the eco-team is significant to make a change</p>
 
