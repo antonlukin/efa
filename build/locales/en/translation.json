@@ -4,7 +4,7 @@
   },
   "summary": {
     "start": [
-      "Our planet is a <a href=\"/\">football field</a> on which <a href=\"/\">we lose</a>. The rival destroys nature, pollutes the oceans, deprives us of the future.",
+      "Our planet is a <a target=\"_blank\" rel=\"noopener\" href=\"/\">football field</a> on which <a target=\"_blank\" rel=\"noopener\" href=\"/\">we lose</a>. The rival destroys nature, pollutes the oceans, deprives us of the future.",
       "We created this enemy ourselves and we can defeat him."
     ]
   },
@@ -25,8 +25,8 @@
   "team": {
     "title": "Eco-team",
     "start": [
-      "This is a team of players <a href=\"/\">who care</a>. They are aware of the environmental problems, know how to fight them and ready to take action.",
-      "Study all the opponent's players to get an <a href=\"/\">eco-team</a> uniform with your last name and favorite number."
+      "This is a team of players <a target=\"_blank\" rel=\"noopener\" href=\"/\">who care</a>. They are aware of the environmental problems, know how to fight them and ready to take action.",
+      "Study all the opponent's players to get an <a target=\"_blank\" rel=\"noopener\" href=\"/\">eco-team</a> uniform with your last name and favorite number."
     ],
     "amount": "people already joined the Eco-team",
     "results": {
@@ -38,39 +38,155 @@
   "divider": {
     "separator": "Goal for the humans"
   },
-  "attack": [
+  "footer": {
+    "made": "© Made by ",
+    "description": [
+      "We create meaningful digital experiences through impactful storytelling and inventive design. Let's change the world together.",
+      "Special thanks to Íñigo Vitón García Profesión: Biólogo, miembro de Ecologistas en Acción"
+    ],
+    "social": "Share the project, each new member of the eco-team is significant to make a change",
+    "sources": "see project sources"
+  },
+  "attack": {
+    "attack": "Attack",
+    "next": "Next player",
+    "get": "Get your uniform",
+    "health": "Health"
+  },
+  "uniform": {
+    "welcome": "Welcome to the eco-team!",
+    "name": "Your name",
+    "number": "Your number",
+    "get": "Get the kit!"
+  },
+  "fight": [
     {
-      "title": "Air Pollution",
-      "description": "<p>Nine out of ten people breathe high-pollutant air. Harmful particles can penetrate deep into the lungs and cardiovascular system, causing diseases such as stroke, heart disease, lung cancer and respiratory infections, including pneumonia. According to WHO, some 4.2 million people die each year from air pollution alone. The main sources of air pollution are emissions from fuel combustion, industrial dust and waste from factories and plants, agriculture, as well as domestic waste incineration, forest and steppe fires, volcanic eruptions. Statistics showed that it was possible to reduce emissions, in particular, by switching to renewable sources of energy.</p>",
+      "title": "Food Habits",
+      "description": "<p>What we eat affects not only our health, but also the health of the planet. It takes a giant industrial chain to put steak or avocado on our table. Too much food is <a target=\"_blank\" rel=\"noopener\" href=\"https://consumoresponsable.org/desperdicioalimentario/documentos/guia-desperdicio-alimentario.pdf\">produced</a>: 60% more than needed, with 40,000 people dying of hunger every day. Every year, we dump tons of food in the garbage.</p>",
       "strikes": [
-        "Try to walk more, ride a bicycle or use public transport in the city. If you cannot refrain from using a personal vehicle, and you constantly commute from one city to another, for example, for work, look for traveling companions – it will be cheaper and more environmentally friendly.",
-        "Fly only when it is really necessary (and not when lowcosters lure you in with a bargain price) - if there is an opportunity, it is always better to travel by train. This is the most eco-friendly mode of transport. You will be surprised, but the elimination of frequent flights will reduce your carbon footprint more than any other measure.",
-        "If you often travel by train and commuter train, take advantage of discounts of up to 50% and rail travel subscriptions, which are included in the new plan of the Spanish government to save electricity and are effective from August 24, 2022.",
-        "Avoid household aerosols: hair spray, air fresheners, deodorants or sun creams in cans. They contain reflective particles (chlorofluorocarbons) that not only pollute the air but also deplete the planet’s ozone layer. All these products are available in other, less environmentally harmful packaging.",
-        "Try to stop smoking: according to the WHO, cigarettes contain about 7,000 pollutants, including radioactive and carcinogenic substances. Some of them are emitted during smoking, and some of them enter the soil and water bodies from discarded cigarette butts. Every year tobacco production accounts for about 84 million tons of CO2 emissions. So the main passive smoker is our planet.",
-        "Calculate your carbon footprint and determine how you can personally reduce it."
+        "Stick to the Mediterranean diet - it is recommended by doctors all over the world for a reason! If possible, avoid fast food, semi-processed and super-processed products, try to reduce the amount of meat in the diet.",
+        "Plan your rations for the week and make the necessary purchases in advance. Do not go to the store on an empty stomach - so you are more likely to fall for advertising tricks and buy unnecessary things. Remember, throwing away food is like throwing money away.",
+        "We do not even notice how much food we throw away. To calculate this, try to monitor your diet for at least a week and record observations in the <a target=\"_blank\" rel=\"noopener\" href=\"https://enraizaderechos.org/wp-content/uploads/2022/05/Ficha-diario-desperdicio.pdf\">form</a> here.",
+        "Sharing food is a good tradition, and not just in a bar. Instead of the usual restaurant food delivery services, use apps like<a target=\"_blank\" rel=\"noopener\" href=\"https://toogoodtogo.es/es\"> Too Good To Go</a> or <a target=\"_blank\" rel=\"noopener\" href=\"https://play.google.com/store/apps/details?id=com.webStrong.saveFood&amp;hl=es_DO&amp;gl=US\">Safe Food</a>.",
+        "Store food correctly: it is better to put dairy products on the top shelves of the refrigerator, prepared dishes — on the middle ones, meat and fish — on the bottom ones, where it’s the coldest. The optimal temperature in the refrigerator is about 5ºC, and in the freezer it is 18ºC. Here are some more <a target=\"_blank\" rel=\"noopener\" href=\"https://consumoresponsable.org/desperdicioalimentario/documentos/guia-desperdicio-alimentario.pdf\">tips</a> on how to extend the life of products."
       ]
     },
     {
-      "title": "Animal Exploitation",
-      "description": "<p>Ethical treatment of animals is an important part of an environmentally conscious lifestyle. Humans do not live in isolation from other species, as the coronavirus pandemic once again showed. Therefore, our common future depends on the conservation of biodiversity. One of the central problems is overproduction of meat and overfishing. The New Economics Foundation’s 2020 report stated that Spain, Ireland, Portugal, and the Netherlands were leaders in overfishing.</p>",
+      "title": "Deforestation",
+      "description": "<p>There remains fewer and fewer intact forests on Earth that are untouched by humans. And such forests are what is needed to regulate climate and conserve biodiversity. Preserving ancient forests is more important than cultivating new ones: planting new forests can replenish wood reserves, but you cannot recreate the unique ecosystem that has been shaped for centuries. Since 1990, 420 million hectares of forest have been lost due to human activities, including land clearing for agricultural land and industrial logging. On average, the planet <a target=\"_blank\" rel=\"noopener\" href=\"https://www.fao.org/state-of-forests/en/\">loses</a> 10 million hectares a year. That’s more than all of Andalusia.</p>",
+      "strikes": [
+        "Buy paper with the maximum content of recycled materials. Such goods are marked with a special <a target=\"_blank\" rel=\"noopener\" href=\"https://www.aec.es/web/guest/centro-conocimiento/certificacion-angel-azul\">Angel Azul</a> sign. This certification system was developed in Germany. Throw paper and cardboard into the blue container. They can almost always be recycled.",
+        "In the kitchen, try to use towels and napkins made from fabric instead of paper. It is better to use a board, instead of paper for notes.",
+        "Always print documents on both sides and remove unnecessary pages before sending them to print. it is a good practice to use an electronic signature. Here’s how to <a target=\"_blank\" rel=\"noopener\" href=\"https://firmaelectronica.gob.es/\">create</a> a certified electronic signature in Spain.",
+        "Instead of paper books choose e-books, as well as second-hand editions, library books or books from book-crossing.",
+        "If you have a fireplace fired by wood or sawdust, buy raw materials with the <a target=\"_blank\" rel=\"noopener\" href=\"https://es.fsc.org/es-es\">FSC label</a> (approved by the Forest Stewardship Council). Also choose furniture with this certificate.",
+        "There are various reforestation initiatives - for example, the Berlin startup Ecosia offers to simply install <a target=\"_blank\" rel=\"noopener\" href=\"https://www.ecosia.org/\">an extension</a> for the browser. With every search request you make or with every click on an ad banner, you help raise money for forest restoration around the world."
+      ]
+    },
+    {
+      "title": "Plastic pollution",
+      "description": "<p>We’ve already become a civilization of plastics. By 2015, people had <a target=\"_blank\" rel=\"noopener\" href=\"https://ourworldindata.org/plastic-pollution\">produced</a> 7.8 billion tons of plastic – that is, for every living person now there is a ton of plastic. Given that 91% of plastic is not recycled, and such materials take more than 400 years to <a target=\"_blank\" rel=\"noopener\" href=\"https://education.nationalgeographic.org/resource/whopping-91-percent-plastic-isnt-recycled\">decompose</a>, most of the plastic waste is still with us.</p><p>About 6.4 million tons of plastic pollute the world’s oceans every year, killing millions of animals, birds and fish. Seals, whales, turtles and other marine animals swallow garbage and are entangled in fishing gear and packaging rings. Particles of microplastics get into the water and air, and end up in our body. Australian scientists have <a target=\"_blank\" rel=\"noopener\" href=\"https://d2ouvy59p0dg6k.cloudfront.net/downloads/plastic_ingestion_web_spreads.pdf\">estimated</a> that on average, a person can consume about 5 grams of plastic every week - an equivalent of a credit card.</p>",
+      "strikes": [
+        "To reduce the amount of plastic in your life to a minimum - try to revise your habits. When you go shopping, take a shopping bag with you. Give preference to shops where you can buy products by weight. And if you often order takeout coffee, you could use a thermos or a tumbler.",
+        "Carry a stainless steel water bottle. <a target=\"_blank\" rel=\"noopener\" href=\"https://www.sanidad.gob.es/profesionales/saludPublica/saludAmbLaboral/calidadAguas/consumoHumano.htm\">According</a> to the Ministry of Health, 98.5 percent of tap water in Spain is clean and safe drinking water. And under the new <a target=\"_blank\" rel=\"noopener\" href=\"https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809\">law</a>, from January 1, 2023 bars and restaurants are obliged to serve you tap water for free (if you ask).",
+        "It is better to store food in containers made of glass, ceramic or stainless steel. Unlike plastic containers, they do not emit harmful substances when heated, and also last longer.",
+        "If you arrange an outdoor picnic, take reusable (or, at the very least, cardboard) dishes. Remember to clean up after the party.",
+        "For your beauty care try to choose products from natural components: for example, scrubs and washcloths without polyethylene (PE), polypropylene (PP) and nylon. Instead of a disposable razor, it is better to use a reusable gadget with replaceable blades or an electric razor. Instead of a plastic toothbrush – a wooden brush. A menstrual bowl can be an eco-friendly alternative to pads and tampons: one cup can last 5-10 years."
+      ]
+    },
+    {
+      "title": "Air Emissions",
+      "description": "<p>Nine out of ten people breathe high-pollutant air. Harmful particles can penetrate deep into the lungs and cardiovascular system, causing diseases such as stroke, heart disease, lung cancer and respiratory infections, including pneumonia. <a target=\"_blank\" rel=\"noopener\" href=\"https://www.who.int/health-topics/air-pollution#tab=tab_1\">According</a> to WHO, some 4.2 million people die each year from air pollution alone. The main sources of air pollution are emissions from fuel combustion, industrial dust and waste from factories and plants, agriculture, as well as domestic waste incineration, forest and steppe fires, volcanic eruptions. Statistics <a target=\"_blank\" rel=\"noopener\" href=\"https://www.eea.europa.eu/themes/air/country-fact-sheets/2021-country-fact-sheets/spain\">showed</a> that it was possible to reduce emissions, in particular, by switching to renewable sources of energy.</p>",
+      "strikes": [
+        "Try to walk more, ride a bicycle or use public transport in the city. If you cannot refrain from using a personal vehicle, and you constantly commute from one city to another, for example, for work, look for <a target=\"_blank\" rel=\"noopener\" href=\"http://compartir.org/\">traveling companions</a> – it will be cheaper and more environmentally friendly.",
+        "Fly only when it is really necessary (and not when lowcosters lure you in with a bargain price) - if there is an opportunity, it is always better to travel by train. This is the most eco-friendly mode of transport. You will be surprised, but the elimination of frequent flights will reduce <a target=\"_blank\" rel=\"noopener\" href=\"https://stay-grounded.org/get-information/#footprint\">your carbon footprint</a> more than any other measure.",
+        "If you often travel by train and commuter train, take advantage of discounts of up to 50% and rail travel <a target=\"_blank\" rel=\"noopener\" href=\"https://elpais.com/economia/2022-08-01/el-gobierno-aplicara-descuentos-del-50-a-13-trayectos-cortos-del-ave.html\">subscriptions</a>, which are included in the new plan of the Spanish government to save electricity and are effective from August 24, 2022.",
+        "Avoid household aerosols: hair spray, air fresheners, deodorants or sun creams in cans. They contain reflective particles (chlorofluorocarbons) that not only pollute the air but also deplete the planet’s ozone layer. All these products are available in other, less environmentally harmful packaging.",
+        "Try to stop smoking: <a target=\"_blank\" rel=\"noopener\" href=\"https://www.who.int/es/news/item/31-05-2022-who-raises-alarm-on-tobacco-industry-environmental-impact\">according</a> to the WHO, cigarettes contain about 7,000 pollutants, including radioactive and carcinogenic substances. Some of them are emitted during smoking, and some of them enter the soil and water bodies from discarded cigarette butts. Every year tobacco production <a target=\"_blank\" rel=\"noopener\" href=\"https://www.who.int/es/news/item/31-05-2022-who-raises-alarm-on-tobacco-industry-environmental-impact\">accounts for</a> about 84 million tons of CO2 emissions. So the main passive smoker is our planet.",
+        "<a target=\"_blank\" rel=\"noopener\" href=\"https://www.fundacionaquae.org/calculadora-carbono/\">Calculate</a> your carbon footprint and determine how you can personally reduce it."
+      ]
+    },
+    {
+      "title": "Unsustainable agriculture",
+      "description": "<p>Scientists have <a target=\"_blank\" rel=\"noopener\" href=\"https://www.ucm.es/data/cont/docs/3-2020-02-03-informe-agroecologia-2019.pdf\">estimated</a> that the agricultural sector accounts for about 24 percent of emissions. Because of cultivation of vast soil areas and deforestation for agriculture purposes, the structure of the soil is beginning to change. Plants cease to retain groundwater, the fertile layer is weathered and dehydrated. The use of pesticides to increase crop yields and destroy pests results in the accumulation of harmful substances in the soil and plants themselves, as well as in the meat and milk of animals that eat such plants. In addition, the digestion of cattle is accompanied by the release of methane, a greenhouse gas, into the environment.</p>",
+      "strikes": [
+        "Eat more local, seasonal vegetables and fruits - ideally purchased from manufacturers. This way you do not overpay for its transportation, and therefore, for harmful emissions. It is advisable to buy products by weight and, of course, carry a shopper bag.",
+        "Look for “green” labels - they are a sign of quality. All over Europe, Etiqueta Ecológica Europea (<a target=\"_blank\" rel=\"noopener\" href=\"https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home_en\">EU Ecolabel</a>) indicates that the product is produced without the use of pesticides, does not contain artificial colorants, flavor enhancers, or genetically modified components. Next to the label there should be the ES-ECO-XXX-YY format code. Where the first two letters are the code of the EU country, followed by the abbreviation ECO, BIO, ORG, OKO, and then the code of the certifying organization and region code.",
+        "If you want to go even further - join local <a target=\"_blank\" rel=\"noopener\" href=\"https://www.ecoagricultor.com/grupos-de-consumo/\">consumer groups</a>: these are associations of eco-conscious citizens who regularly buy wholesale products from manufacturers."
+      ]
+    },
+    {
+      "title": "Planned obsolescence",
+      "description": "<p>As early as in the beginning of the 20th century, lightbulb manufacturers agreed to limit the life of their products. After all, producing things that can serve decades is unprofitable for business. To sell new products, the manufacturer needs to convince potential buyers that the old ones have outlived their usefulness. Queuing for new sneakers and smartphones is an example of how fashion controls mass consciousness. Planned obsolescence directly harms the environment: obsolete products are sent to landfills, and new ones need natural resources to produce. For example, to make one pair of jeans you need to grow a kilogram of cotton, which will take at least 10,000 liters of water. It takes one person ten years to drink that much.</p>",
+      "strikes": [
+        "Switch to Slow fashion. Create a capsule wardrobe from quality things that will last a long time. An extra year of service for an item is about a 24% <a target=\"_blank\" rel=\"noopener\" href=\"https://es.greenpeace.org/es/que-puedes-hacer-tu/consumo/ropa-calzado/\">reduction</a> in CO2 emissions.",
+        "Do not use shopping as therapy. Do not go shopping in a state of anxiety, and before you buy an item, think carefully how much you need it.",
+        "When possible, buy clothes in local shops and showrooms. Here is a non-exhaustive <a target=\"_blank\" rel=\"noopener\" href=\"https://sostenibleosustentable.com/es/moda-sostenible/marcas-ropa-sostenible-hecha-espana/\">list</a> of eco-friendly brands made in Spain.",
+        "Read labels - it is important to <a target=\"_blank\" rel=\"noopener\" href=\"https://sostenibleosustentable.com/es/moda-sostenible/sellos-certificaciones-moda-sostenible-textil-organico/\">learn to distinguish sustainable brands</a> from companies that practice greenwashing (imitation of sustainability for marketing purposes). For example, the <a target=\"_blank\" rel=\"noopener\" href=\"https://global-standard.org/the-standard\">GOTS</a> (Global Organic Textile Standard) certificate indicates that the fabric contains at least 70% organic cotton. On the devices look for the <a target=\"_blank\" rel=\"noopener\" href=\"https://feniss.org/sello-issop/\">Sello ISSOP</a> sign – an indicator that the company adheres to the principles of sustainability and avoids the planned obsolescence.",
+        "Wash things inside out, so they wear out less. Before you throw away an item with a defect, try to fix it. For example, to carry the dress to the atelier or to repair the toaster that is out of order.",
+        "Before using the technological devices, read the instructions. This will help to use the device correctly and will prevent it from going out of order. Store manuals in a convenient place and refer to them in any unclear situation: for example, if the printer displays an error or stopped switching on.",
+        "Even if you don’t need an item anymore, you can give it a second life: sell or exchange it at the swap/flea market, give it away to charity, find a new use for it or recycle it."
+      ]
+    },
+    {
+      "title": "Water Overexploitation",
+      "description": "<p>Dirty water <a target=\"_blank\" rel=\"noopener\" href=\"https://www.un.org/waterforlifedecade/quality.shtml\">kills</a> more people every year than wars and other forms of violence. Up to 80% of wastewater is returned to water bodies without treatment and cleansing. Two million tons of industrial, agricultural and other waste are discharged into rivers and seas each day with wastewater. Our sources of drinking water <a target=\"_blank\" rel=\"noopener\" href=\"https://www.livescience.com/29673-how-much-water-on-earth.html\">are limited</a> - we have access to only 1% of the Earth’s fresh water.</p>",
+      "strikes": [
+        "Take a shower, not a bath. This way you spend 15 times less water. Make a rule to close the tap when brushing your teeth, shaving, washing your hands, head or cleaning dishes with a sponge. See for yourself: when we brush our teeth with an open faucet, we spend about 6 liters, and with the closed - less than half a liter.",
+        "In the bathroom, keep a trash can next to the toilet, so as not to use the toilet for getting rid of trash. Don’t flush anything down the toilet except biodegradable toilet paper and human wastes. Every time we flush the toilet, it <a target=\"_blank\" rel=\"noopener\" href=\"https://ayudaenaccion.org/blog/sostenibilidad/ahorrar-agua-medio-ambiente/\">uses</a> nine to ten liters of water. You can install a special filtration system at home to reuse the water from the shower to flush the toilet, or you can do it manually.",
+        "Repair the plumbing in time, so that there are no leaks. 11,000 liters of water will drip from the leaking tap within a year.",
+        "If you use a dishwasher, fill it up completely. By the way, do not rinse the dishes before loading them into the machine.",
+        "If you have street plants, water them at night. During the day up to 30% of the water will evaporate. When in the yard or garden, try not to run water from the hose idly.",
+        "Avoid dry cleaning. It often requires using perchloroethylene, toxic chlorine-containing liquid.",
+        "Calculate how much water you waste in vein  (Water Footprint <a target=\"_blank\" rel=\"noopener\" href=\"https://www.watercalculator.org/wfc2/esp/\">calculator</a>). You can control water consumption with special nozzles."
+      ]
+    },
+    {
+      "title": "Waste Disposal",
+      "description": "<p>Eight recycled cereal packs can be turned into a book, 22 plastic bottles – into a T-shirt, and 80 aluminum cans – into a bicycle tire. In 2019, 1,505,661 tons of packaging and waste paper were <a target=\"_blank\" rel=\"noopener\" href=\"https://www.elmundo.es/ciencia-y-salud/ciencia/2020/05/14/5ebc1467fdddff8d348b4571.html\">recycled</a> in Spain. Eighty percent of the population sort their trash. But still not everybody does it right.</p>",
+      "strikes": [
+        "Are you having doubts about which container to throw an item in? Use artificial intelligence: the <a target=\"_blank\" rel=\"noopener\" href=\"https://www.ecoembes.com/proyectos-destacados/chatbot-aire/\">AIRE</a> bot will tell you how to sort the trash correctly.",
+        "Check yourself: Do you know well which items are sent to the <a target=\"_blank\" rel=\"noopener\" href=\"https://ecoembesdudasreciclaje.es/contenedores-de-reciclaje/contenedor-amarillo/\">yellow container</a>. For example, plastic toys, baby pacifiers, kitchen utensils, plastic buckets, coffee capsules, ballpoint pens need to be thrown into a gray tank (other waste). Tetra Pak packaging should be thrown into a yellow container (plastic), and diapers - in a gray container for other waste.",
+        "Brown organic waste container is only for what the compost is made of: food waste and used napkins.",
+        "Wine corks are tossed into a yellow container if they are made of plastic, or brown if they are made of natural cork.",
+        "Under no circumstances the pills are  flushed down the toilet. All expired medicines should be taken to the nearest pharmacy and handed over to the pharmacist or thrown in the <a target=\"_blank\" rel=\"noopener\" href=\"https://sigre.es/farmacias/#por-que-y-como-adherirse\">Punto SIGRE</a> container for medical waste disposal.",
+        "Do not throw dishes and light bulbs into the green container (glass). They need to be taken to Punto Limpio. Home appliances and electronics, batteries, light bulbs, CDs, mirrors can be handed in there as well. Use <a target=\"_blank\" rel=\"noopener\" href=\"https://www.ocu.org/consumo-familia/derechos-consumidor/calculadora/puntos-limpios\">this</a> search engine to find the nearest point to you."
+      ]
+    },
+    {
+      "title": "Animal exploitation",
+      "description": "<p>Ethical treatment of animals is an important part of an environmentally conscious lifestyle. Humans do not live in isolation from other species, as the coronavirus pandemic once again showed. Therefore, our common future depends on the conservation of biodiversity. One of the central problems is overproduction of meat and overfishing. The New Economics Foundation’s 2020 report <a target=\"_blank\" rel=\"noopener\" href=\"https://neweconomics.org/uploads/files/LtB_NE_Atlantic_2020.pdf\">stated</a> that Spain, Ireland, Portugal, and the Netherlands were leaders in overfishing.</p>",
       "strikes": [
         "Before discarding recyclable bottles, cover them with lids, and cut the plastic rings designed to hold six aluminum cans. So the animals don’t get stuck in them.",
         "Install an inexpensive stopper on the chimney so that birds and squirrels do not get there.",
         "If possible, give up clothes and shoes made of leather and fur.",
         "Give up foie gras and other delicacies which are made with animals suffering. In many countries, including France and Spain, the production of foie gras was still not prohibited.",
         "Since 2013, it has been prohibited to test cosmetics on animals in all European countries. But if you buy cosmetics from abroad, look for the Cruelty Free icon or the Leaping Bunny icon.",
-        "To make sure that a particular brand does not test products on animals in any of the countries, check the brand on the international database Beauty Without Bunnies.",
+        "To make sure that a particular brand does not test products on animals in any of the countries, check the brand on the international database <a target=\"_blank\" rel=\"noopener\" href=\"https://crueltyfree.peta.org/\">Beauty Without Bunnies</a>.",
         "Do not attend animal-cruelty-based shows and do not take your children there, to make them empathize with animals and know that the suffering of living beings is not entertainment."
       ]
     },
     {
-      "title": "Air Pollution 3",
-      "description": "<p>12 out of ten people breathe high-pollutant air. Harmful particles can penetrate deep into the lungs and cardiovascular system, causing diseases such as stroke, heart disease, lung cancer and respiratory infections, including pneumonia. According to WHO, some 4.2 million people die each year from air pollution alone. The main sources of air pollution are emissions from fuel combustion, industrial dust and waste from factories and plants, agriculture, as well as domestic waste incineration, forest and steppe fires, volcanic eruptions. Statistics showed that it was possible to reduce emissions, in particular, by switching to renewable sources of energy.</p>",
+      "title": "Intensive mining",
+      "description": "<p>The extraction, transportation and use of minerals and fuels cause significant damage to ecosystems. During exploration, forests are cut down, animals and birds leave their habitats. Nearby water bodies are polluted by discharges of untreated sewage from quarries and mines, which include salts, toxic substances, waste and metals. If oil leaks occur offshore, the spill is very difficult to clean up, resulting in the loss of a significant portion of marine life.</p><p>To extract gold or silver, the ore is chemically treated, resulting in toxic slag. Diamond mining involves deep open-pit mining and desertification of large areas. With the development of electronics, there is an increased demand for coltan - a solid solution that is needed to produce gadgets, including a smartphone or a computer from which you read this text. Most coltan deposits are in Africa, where mining has already led to “coltan wars” and human casualties. One of the few coltan mines in Europe is in Orense, Spain.</p>",
       "strikes": [
-        "Try to walk more, ride a bicycle or use public transport in the city. If you cannot refrain from using a personal vehicle, and you constantly commute from one city to another, for example, for work, look for traveling companions – it will be cheaper and more environmentally friendly.",
-        "Fly only when it is really necessary (and not when lowcosters lure you in with a bargain price) - if there is an opportunity, it is always better to travel by train. This is the most eco-friendly mode of transport. You will be surprised, but the elimination of frequent flights will reduce your carbon footprint more than any other measure.",
-        "If you often travel by train and commuter train, take advantage of discounts of up to 50% and rail travel subscriptions, which are included in the new plan of the Spanish government to save electricity and are effective from August 24, 2022."
+        "Choose gadgets, based on where and how they are produced, and what kind of guarantee the <a target=\"_blank\" rel=\"noopener\" href=\"https://elasombrario.publico.es/como-conseguir-moviles-mas-ecologicos-posibles/\">manufacturer</a> provides. There are eco-friendly smartphone manufacturers, but few have heard of them: German company Shift, Netherlandic Fairphone, American Teracube. You can see the rating of well-known brands in the Greenpeace <a target=\"_blank\" rel=\"noopener\" href=\"https://www.greenpeace.org/usa/reports/greener-electronics-2017/\">directory</a>.",
+        "Choose eco-friendly jewelry made of natural or recycled materials. Here is a non-exhaustive <a target=\"_blank\" rel=\"noopener\" href=\"https://ecologicosostenible.com/10-marcas-de-joyeria-ecologicas-y-sostenibles/\">list of brands</a> that offer handmade products."
+      ]
+    },
+    {
+      "title": "Fossil Fuels",
+      "description": "<p>Fossil fuels now <a target=\"_blank\" rel=\"noopener\" href=\"https://www.un.org/es/chronicle/article/el-papel-de-los-combustibles-fosiles-en-un-sistema-energetico-sostenible\">account</a> for 80 per cent of global primary electricity demand. If that share persists and demand almost doubles by 2050, emissions will exceed the amount needed to keep global warming within 2 degrees Celsius. Importantly, the energy sector has ways to reduce emissions. The most important of these are the reduction of energy consumption, the control of CO2 emissions, and the switch to other fuels.</p>",
+      "strikes": [
+        "When choosing housing for rent or purchase, pay attention to the <a target=\"_blank\" rel=\"noopener\" href=\"https://energia.gob.es/desarrollo/EficienciaEnergetica/CertificacionEnergetica/Paginas/certificacion.aspx\">European certificate</a> evaluating the energy efficiency of the building: from A (best option) to G. Energy efficiency depends on the materials used in construction, on lighting and heating systems.",
+        "The most energy-efficient buildings are those with well-insulated windows, most of which are facing south. Even if you live in an old house, install quality double-glazed windows: this saves you money on heating and air conditioning.",
+        "It is necessary to close the windows and shutters to escape the heat in the summer during the day. This will keep the indoor temperature lower than outside. The ceiling fan is a more eco-friendly option than the air conditioner. In winter it is enough to <a target=\"_blank\" rel=\"noopener\" href=\"https://es.greenpeace.org/es/que-puedes-hacer-tu/consumo/ahorro-energia/\">maintain</a> the house temperature of about 20ºC, in summer – about 26ºC.",
+        "Choose energy-saving appliances and electronics - Class A (green color on the label) – which will help save on electricity bills. You can check and compare the options using the independent rating at <a target=\"_blank\" rel=\"noopener\" href=\"https://eurotopten.es/\">Europtopten.es</a>.",
+        "Turn off electrical appliances and batteries, which you do not use - over a year it will <a target=\"_blank\" rel=\"noopener\" href=\"https://eurotopten.es/private/article/que-habitos-debemos-evitar-en-verano-si-queremos-mantener-fresco-nuestro-hogar\">save</a> up to 6% of electricity.",
+        "Place the refrigerator in a cool, ventilated place, away from the stove and other sources of heat, and periodically defrost it to make the appliance consume less energy. Close the refrigerator door tightly and try not to put hot products inside: let them cool first.",
+        "Replace incandescent bulbs with energy-saving LED light bulbs wherever possible - this will save up to 90% of energy, and they will last much longer.",
+        "Try to fill the washing machine at least three quarters of its capacity, leaving 7 cm between the clothes and the centrifuge. Quick washing cycle and washing at low temperatures will not only save money, but also keep things longer. And it is better to abandon the machine drying: over a year a family of four will <a target=\"_blank\" rel=\"noopener\" href=\"https://es.greenpeace.org/es/que-puedes-hacer-tu/consumo/ahorro-energia/\">save</a> 480 kWh and 120 kg of CO2 - it is like driving from Barcelona to Seville by car.",
+        "Life hack for the most advanced: You can install a solar panel on the roof or <a target=\"_blank\" rel=\"noopener\" href=\"https://es.greenpeace.org/es/noticias/como-pasarte-a-la-energia-ciudadana-renovable-en-5-pasos/\">join</a> with other eco-conscious citizens and join an energy cooperative to choose your own electricity provider and invest in clean energy."
       ]
     }
   ]

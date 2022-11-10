@@ -75,7 +75,7 @@ const Opposing = function() {
         <Swiper className="opposing-slider" {...swiper}>
           {[...Array(slidesAmount)].map((el, i) =>
             <SwiperSlide key={i} className='is-next'>
-              <Enemy id={i} current={current} slidesAmount={slidesAmount} />
+              <Enemy id={i} current={current} />
             </SwiperSlide>
           )}
         </Swiper>

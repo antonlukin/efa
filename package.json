@@ -14,6 +14,7 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "react-scroll-parallax": "^3.3.1",
+    "react-special-cursor": "^1.2.1",
     "sass": "^1.55.0",
     "sweet-scroll": "^4.0.0",
     "swiper": "^8.4.4"

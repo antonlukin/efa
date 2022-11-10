@@ -9,6 +9,7 @@ import Divider from '../components/Divider';
 import Footer from '../components/Footer';
 import Particles from '../components/Particles';
 import Gradients from '../components/Gradients';
+import Cursor from '../components/Cursor';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -28,6 +29,7 @@ const Home = function() {
       <Divider />
       <Footer />
       <Particles />
+      <Cursor />
       <Gradients isPage={false} />
     </>
   );

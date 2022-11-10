@@ -21,11 +21,14 @@ const Attack = function({opened, current, setCurrent}) {
   const { t } = useTranslation();
 
   const nextWorkout = () => {
-    document.body.classList.add('is-loading');
-
     const next = current + 1;
 
-    setTimeout(() => { setCurrent(next) }, 500);
+    setTimeout(() => {
+      setStrikes(0);
+      setCurrent(next);
+    }, 500);
+
+    document.body.classList.add('is-loading');
   }
 
   const updateStrike = () => {
@@ -59,13 +62,13 @@ const Attack = function({opened, current, setCurrent}) {
     const totalStrikes = enemies[current - 1];
 
     const getLabel = () => {
-      let label = 'Attack';
+      let label = t(`attack.attack`);
 
       if (strikes >= totalStrikes) {
-        label = 'Next player';
+        label = t(`attack.next`);
 
         if (current >= enemies.length) {
-          label = 'Get your uniform';
+          label = t(`attack.get`);
         }
       }
 
@@ -92,11 +95,11 @@ const Attack = function({opened, current, setCurrent}) {
         left: `-${(strikes / (totalStrikes)) * 100}%`
       }
     });
-  }, [strikes, opened, current, enemies]);
+  }, [strikes, opened, current, enemies, t]);
 
   return (
     <div className="attack">
-      {current &&
+      {current && current <= enemies.length &&
         <>
           <header className="attack-header">
             <Upper label={true} />
@@ -106,12 +109,12 @@ const Attack = function({opened, current, setCurrent}) {
             <figure ref={figure}>
               <img
                 src={require(`../../images/meshes/${current}.png`)}
-                alt={t(`attack.${current - 1}.title`)}
+                alt={t(`fight.${current - 1}.title`)}
                 width="307"
                 height="429"
                 style={styles.mesh}
               />
-              <figcaption>Health</figcaption>
+              <figcaption>{t(`attack.health`)}</figcaption>
 
               <strong>
                 <span style={styles.filled}></span>
@@ -125,13 +128,13 @@ const Attack = function({opened, current, setCurrent}) {
               <span>/ {enemies.length}</span>
             </h5>
 
-            <h2>{t(`attack.${current - 1}.title`)}</h2>
-            <div dangerouslySetInnerHTML={ { __html: t(`attack.${current - 1}.description`) } } />
+            <h2>{t(`fight.${current - 1}.title`)}</h2>
+            <div dangerouslySetInnerHTML={{__html: t(`fight.${current - 1}.description`)}} />
 
             {strikes > 0 &&
               <ul>
                 {[...Array(strikes)].map((strike, i) =>
-                  <li key={i}>{t(`attack.${current - 1}.strikes.${i}`)}</li>
+                  <li key={i} dangerouslySetInnerHTML={{__html: t(`fight.${current - 1}.strikes.${i}`)}} />
                 )}
               </ul>
             }

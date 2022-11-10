@@ -17,12 +17,14 @@ import './styles/animations.scss';
 
 import './index.scss';
 
-const enemies = [6, 7, 3];
+const context = {
+  enemies: [5, 6, 5, 6, 3, 7, 7, 6, 7, 2, 8]
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppContext.Provider value={{enemies: enemies}}>
+    <AppContext.Provider value={context}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

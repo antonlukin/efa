@@ -1,0 +1,27 @@
+.cursor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  top: 50%;
+  height: 50%;
+  z-index: 10;
+
+  width: 5rem;
+  height: 5rem;
+  opacity: 0.9;
+
+  text-transform: lowercase;
+
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  color: var(--color-black);
+  background-color: var(--color-links);
+
+  pointer-events: none;
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+}

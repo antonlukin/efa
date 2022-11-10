@@ -1,28 +1,21 @@
-import { useEffect, useRef, useState, useContext } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import Upper from '../Upper';
 import Button from '../Button';
 
-import UniformFront from '../../images/uniforms/front.png';
 import UniformBack from '../../images/uniforms/back.png';
-
-import AppContext from '../../context';
 
 import './styles.scss';
 
 const Uniform = function() {
-  const [frontside, setFrontside] = useState(null);
-  const [backside, setBackside] = useState(null);
-
+  const [tshirt, setTshirt] = useState(null);
   const [label, setLabel] = useState({name: '', number: ''});
-  const [reverted, setReverted] = useState(false);
 
-  const canvasFrontside = useRef();
-  const canvasBackside = useRef();
-  const canvasParent = useRef();
+  const canvas = useRef();
 
-  const context = useContext(AppContext);
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const changeName = (e) => {
@@ -37,35 +30,19 @@ const Uniform = function() {
     }
   }
 
-  const saveUniform = (e) => {
-    e.preventDefault();
-
-    context.uniform = canvasBackside.current.toDataURL("image/png");
+  const saveUniform = () => {
+    window.localStorage.setItem('uniform', canvas.current.toDataURL('image/png'));
 
     navigate('/kit/');
-
-    // const link = document.createElement('a');
-    // document.body.appendChild(link);
-
-    // link.setAttribute('download', 'T-Shirt.png');
-    // link.setAttribute('href', canvasFrontside.current.toDataURL("image/png"));
-    // link.click();
   }
 
   useEffect(() => {
-    const imageFront = new Image();
-    imageFront.src = UniformFront;
+    const image = new Image();
+    image.src = UniformBack;
 
-    const imageBack = new Image();
-    imageBack.src = UniformBack;
-
-    imageFront.addEventListener('load', () => {
-      setFrontside(imageFront);
-    })
-
-    imageBack.addEventListener('load', () => {
-      setBackside(imageBack);
-    })
+    image.addEventListener('load', () => {
+      setTshirt(image);
+    });
   }, []);
 
   useEffect(() => {
@@ -75,17 +52,6 @@ const Uniform = function() {
       position.y = size / 2 + size / 15;
 
       ctx.font = size / 3 + "px Damn";
-      const text = number.toUpperCase();
-
-      ctx.fillText(text, position.x, position.y, position.x);
-    }
-
-    const writeFront = (ctx, size, number) => {
-      const position = {};
-      position.x = size / 1.625;
-      position.y = size / 3;
-
-      ctx.font = size / 6 + "px Damn";
       const text = number.toUpperCase();
 
       ctx.fillText(text, position.x, position.y, position.x);
@@ -107,7 +73,12 @@ const Uniform = function() {
       ctx.fillText(text, position.x, position.y, position.x);
     }
 
-    const initCanvas = (canvas, image, size) => {
+    const drawCanvas = () => {
+      const parent = canvas.current.parentNode;
+      const offset = Math.min(parent.offsetWidth, parent.offsetHeight);
+
+      const size = offset / 1.125;
+
       canvas.current.width = size * window.devicePixelRatio;
       canvas.current.height = size * window.devicePixelRatio;
       canvas.current.style.width = size + "px";
@@ -119,39 +90,14 @@ const Uniform = function() {
       ctx.textAlign = 'center';
       ctx.fillStyle = '#000';
 
-      ctx.drawImage(image, 0, 0, canvas.current.width, canvas.current.height);
+      ctx.drawImage(tshirt, 0, 0, canvas.current.width, canvas.current.height);
       ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-
-      return ctx;
-    }
-
-    const drawBackCanvas = (size) => {
-      const ctx = initCanvas(canvasBackside, backside, size);
 
       writeNumber(ctx, size, label.number);
       writeName(ctx, size, label.name);
     }
 
-    const drawFrontCanvas = (size) => {
-      const ctx = initCanvas(canvasFrontside, frontside, size);
-
-      writeFront(ctx, size, label.number);
-    }
-
-    const drawCanvas = () => {
-      const parent = canvasParent.current;
-      const offset = Math.min(parent.offsetWidth, parent.offsetHeight);
-
-      const size = offset / 1.125;
-
-      if (reverted) {
-        return drawFrontCanvas(size);
-      }
-
-      return drawBackCanvas(size);
-    }
-
-    if (frontside && backside) {
+    if (tshirt) {
       drawCanvas();
 
       // Redraw canvas on resize
@@ -161,7 +107,7 @@ const Uniform = function() {
     return () => {
       window.removeEventListener('resize', drawCanvas);
     }
-  }, [label, frontside, backside, reverted]);
+  }, [label, tshirt]);
 
   return (
     <div className="uniform">
@@ -170,35 +116,17 @@ const Uniform = function() {
       </header>
 
       <div className="uniform-screen">
-        <h2>Welcome to the eco-team!</h2>
+        <h2>{t(`uniform.welcome`)}</h2>
 
         <figure>
-          <figcaption ref={canvasParent} data-side={reverted ? 'front' : 'back'}>
-            <canvas ref={canvasFrontside} />
-            <canvas ref={canvasBackside} />
-          </figcaption>
-
-          <nav>
-            <button
-              onClick={() => setReverted(true)}
-              disabled={reverted ? true : false}
-              >
-              T-Shirt frontside
-            </button>
-            <button
-              onClick={() => setReverted(false)}
-              disabled={reverted ? false : true}
-              >
-              T-Shirt backside
-            </button>
-          </nav>
+          <canvas ref={canvas} />
         </figure>
 
         <fieldset>
           <p>
             <input
               type="text"
-              placeholder="Your name"
+              placeholder={t(`uniform.name`)}
               value={label.name}
               pattern=".{1,14}"
               onChange={changeName}
@@ -208,7 +136,7 @@ const Uniform = function() {
           <p>
             <input
               type="text"
-              placeholder="Your number"
+              placeholder={t(`uniform.number`)}
               value={label.number}
               onChange={changeNumber}
               pattern="[0-9]{1,2}"
@@ -219,7 +147,7 @@ const Uniform = function() {
             disabled={label.name && label.number ? false : true}
             onClick={saveUniform}
           >
-            Get the kit!
+            {t(`uniform.get`)}
           </Button>
         </fieldset>
       </div>
