@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Parallax } from 'react-scroll-parallax';
 
 import Upper from '../Upper';
 
@@ -18,7 +19,7 @@ const Header = function() {
 
       <h1 className="header-title">
         <strong>EFA Championship </strong>
-        <span>(Championship of Eco-Friendly Actions)</span>
+        <span>Championship of Eco-Friendly Actions</span>
       </h1>
 
       <div className="header-mesh">
@@ -42,11 +43,13 @@ const Header = function() {
       </div>
 
       <div className="header-separator">
-        <span>{t('header.slogan')}</span>
-        <span>{t('header.slogan')}</span>
-        <span>{t('header.slogan')}</span>
-        <span>{t('header.slogan')}</span>
-        <span>{t('header.slogan')}</span>
+        <Parallax translateX={[-2, 2]}>
+          <span>{t('header.slogan')}</span>
+          <span>{t('header.slogan')}</span>
+          <span>{t('header.slogan')}</span>
+          <span>{t('header.slogan')}</span>
+          <span>{t('header.slogan')}</span>
+        </Parallax>
       </div>
     </div>
   );

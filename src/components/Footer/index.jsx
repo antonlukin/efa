@@ -17,9 +17,8 @@ const Footer = function() {
       </div>
 
       <div className="footer-social">
-        <Sharing />
-
         <p dangerouslySetInnerHTML={{ __html: t('footer.social')}} />
+        <Sharing />
 
         <p>
           <a href="/">{t('footer.sources')}</a>

@@ -17,11 +17,34 @@
   font-size: 1.25rem;
   font-weight: 500;
 
-  color: var(--color-black);
-  background-color: var(--color-links);
-
   pointer-events: none;
   border-radius: 50%;
 
   transform: translate(-50%, -50%);
+
+  p {
+    display: none;
+  }
+
+  &.is-open {
+    color: var(--color-black);
+    background-color: var(--color-links);
+
+    p:first-child {
+      display: block;
+    }
+  }
+
+  &.is-locked {
+    color: var(--color-black);
+    background-color: var(--color-text);
+
+    p:last-child {
+      display: block;
+    }
+  }
+
+  @media (hover: none) {
+    display: none;
+  }
 }

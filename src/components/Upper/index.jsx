@@ -20,6 +20,12 @@ const Upper = function({label}) {
     transfer(() => i18n.changeLanguage(lng));
   };
 
+  let language = 'en';
+
+  if (i18n.language === 'es') {
+    language = 'es';
+  }
+
   return (
     <div className="upper">
       <a className="upper-logo" href="/" onClick={transferPage}>
@@ -29,10 +35,10 @@ const Upper = function({label}) {
           <ImageLogo />
       </a>
 
-      <div className="upper-lang" data-lang={i18n.language}>
-        <button onClick={() => changeLanguage('en')}>Eng</button>
+      <div className="upper-lang">
+        <button data-current={language === 'en' ? 'true': null} onClick={() => changeLanguage('en')}>En</button>
         <span></span>
-        <button onClick={() => changeLanguage('es')}>Esp</button>
+        <button data-current={language === 'es' ? 'true': null} onClick={() => changeLanguage('es')}>Es</button>
       </div>
     </div>
   );

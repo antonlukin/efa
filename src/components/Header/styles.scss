@@ -133,7 +133,6 @@
     z-index: 2;
 
     user-select: none;
-    gap: 4rem;
 
     width: 100%;
     margin-top: -2rem;
@@ -149,6 +148,11 @@
 
     color: var(--color-black);
     background-image: linear-gradient(to right, var(--color-links), var(--color-accent));
+
+    div {
+      display: flex;
+      gap: 2rem;
+    }
 
     span {
       white-space: nowrap;

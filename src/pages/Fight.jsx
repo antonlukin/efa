@@ -24,7 +24,7 @@ const Fight = function() {
         return navigate(`/join/`);
       }
 
-      return navigate(`/fight/${enemy}`);
+      return navigate(`/fight/${enemy}/`);
     }
 
     const updateEnemy = () => {
@@ -42,8 +42,12 @@ const Fight = function() {
 
       const id = parseInt(path.id);
 
+      if (id < 1) {
+        return redirectEmpty(enemy);
+      }
+
       if (id > enemy) {
-        return navigate(`/fight/${enemy}`);
+        return navigate(`/fight/${enemy}/`);
       }
 
       if (id < enemy) {

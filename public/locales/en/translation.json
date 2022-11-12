@@ -4,7 +4,7 @@
   },
   "summary": {
     "start": [
-      "Our planet is a <a target=\"_blank\" rel=\"noopener\" href=\"/\">football field</a> on which <a target=\"_blank\" rel=\"noopener\" href=\"/\">we lose</a>. The rival destroys nature, pollutes the oceans, deprives us of the future.",
+      "Our planet is a football field on which we lose. The rival destroys nature, pollutes the oceans, deprives us of the future.",
       "We created this enemy ourselves and we can defeat him."
     ]
   },
@@ -25,8 +25,8 @@
   "team": {
     "title": "Eco-team",
     "start": [
-      "This is a team of players <a target=\"_blank\" rel=\"noopener\" href=\"/\">who care</a>. They are aware of the environmental problems, know how to fight them and ready to take action.",
-      "Study all the opponent's players to get an <a target=\"_blank\" rel=\"noopener\" href=\"/\">eco-team</a> uniform with your last name and favorite number."
+      "This is a team of players who care. They are aware of the environmental problems, know how to fight them and ready to take action.",
+      "Study all the opponent's players to get an eco-team uniform with your last name and favorite number."
     ],
     "amount": "people already joined the Eco-team",
     "results": {

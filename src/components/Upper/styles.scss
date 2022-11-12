@@ -67,6 +67,7 @@
       padding: 0.25rem 0.5rem 0.125rem;
 
       font-size: 1rem;
+      font-weight: 300;
       line-height: 1;
 
       color: var(--color-text);
@@ -74,6 +75,11 @@
       border: none;
 
       transition: color 0.25s;
+
+      &[data-current] {
+        pointer-events: none;
+        font-weight: 500;
+      }
 
       &:hover {
         color: var(--color-accent);
@@ -87,7 +93,7 @@
 
     span {
       height: 1rem;
-      border-right: solid 2px var(--color-text);
+      border-right: solid 1.5px var(--color-text);
     }
   }
 }

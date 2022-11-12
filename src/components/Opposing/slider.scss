@@ -10,12 +10,10 @@
 
     width: 20rem;
     max-width: calc(100% - 3rem);
-    margin: 0 1.75rem;
+    margin: 0 1.25rem;
 
-    transition: transform 0.25s;
-
-    &:hover {
-      transform: scale(1.075);
+    @media (hover: none) {
+      transform: none;
     }
 
     @media screen and (max-width: 1023px) {

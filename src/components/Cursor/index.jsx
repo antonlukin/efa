@@ -17,7 +17,7 @@ const Cursor = function() {
   const classes = ['cursor'];
 
   if (context.cursor) {
-    classes.push = [context.cursor];
+    classes.push(context.cursor);
   }
 
   return (
@@ -25,6 +25,7 @@ const Cursor = function() {
       {context.cursor &&
         <div className={classes.join(' ')} style={styles}>
           <p>Open</p>
+          <p>Locked</p>
         </div>
       }
     </>

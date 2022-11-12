@@ -13,12 +13,10 @@
     font-family: var(--font-caption);
 
     line-height: 1;
-
-
     text-align: center;
 
     strong {
-      color: var(--color-links);
+      color: var(--color-highlight);
     }
 
     @media screen and (max-width: 767px) {

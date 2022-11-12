@@ -39,7 +39,6 @@ const Opposing = function() {
 
     const options = {
       slidesPerView: 'auto',
-      loop: true,
       allowTouchMove: true,
       centeredSlides: true,
       modules: [Navigation],
@@ -51,6 +50,7 @@ const Opposing = function() {
         1024: {
           loop: false,
           centeredSlides: false,
+          allowTouchMove: false,
         }
       },
       onSlideChange: updatePages,
@@ -74,7 +74,7 @@ const Opposing = function() {
       {swiper &&
         <Swiper className="opposing-slider" {...swiper}>
           {[...Array(slidesAmount)].map((el, i) =>
-            <SwiperSlide key={i} className='is-next'>
+            <SwiperSlide key={i}>
               <Enemy id={i} current={current} />
             </SwiperSlide>
           )}

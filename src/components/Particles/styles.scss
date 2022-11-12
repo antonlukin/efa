@@ -3,7 +3,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
 
   width: 100%;
   height: 100%;
@@ -118,10 +117,26 @@
   }
 
   [data-particle='fork'] {
-    top: 54rem;
+    top: 60rem;
     right: calc(50% - 32rem);
 
     width: 10rem;
+
+    @media screen and (max-width: 1023px) {
+      top: calc(18rem + 60vw);
+      right: calc(50% - 28rem);
+    }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  [data-particle='earth'] {
+    top: 50rem;
+    right: calc(50% - 40rem);
+
+    width: 14rem;
 
     @media screen and (max-width: 1023px) {
       top: calc(18rem + 60vw);
@@ -155,7 +170,7 @@
     width: 22.5rem;
 
     img {
-      transform: rotate(135deg);
+      transform: rotate(135deg) scale(-1, 1);
     }
 
     @media screen and (max-width: 1023px) {
