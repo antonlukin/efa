@@ -47,6 +47,10 @@
       transform: translateX(-0.0375em);
       will-change: transform;
 
+      @media screen and (max-width: 767px) {
+        text-align: center;
+      }
+
       @media screen and (max-width: 479px) {
         white-space: normal;
         transform: none;

@@ -31,9 +31,22 @@ const Uniform = function() {
   }
 
   const saveUniform = () => {
-    window.localStorage.setItem('uniform', canvas.current.toDataURL('image/png'));
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(label),
+    }
 
-    navigate('/kit/');
+    const uploadResults = async () => {
+      const response = await fetch('/share/upload/', options);
+      console.log(await response.json());
+
+      navigate('/kit/');
+    }
+
+    uploadResults();
   }
 
   useEffect(() => {
@@ -49,7 +62,7 @@ const Uniform = function() {
     const writeNumber = (ctx, size, number) => {
       const position = {};
       position.x = size / 2 - size / 12;
-      position.y = size / 2 + size / 15;
+      position.y = size / 2 + size / 6;
 
       ctx.font = size / 3 + "px Damn";
       const text = number.toUpperCase();
@@ -60,7 +73,7 @@ const Uniform = function() {
     const writeName = (ctx, size, number) => {
       const position = {};
       position.x = size / 2 - size / 12;
-      position.y = size / 2 - size / 4.25;
+      position.y = size / 2 - size / 6;
 
       let fontsize = 50;
       const text = number.toUpperCase();
@@ -75,14 +88,15 @@ const Uniform = function() {
 
     const drawCanvas = () => {
       const parent = canvas.current.parentNode;
-      const offset = Math.min(parent.offsetWidth, parent.offsetHeight);
+      const offset = Math.min(parent.offsetWidth, parent.offsetHeight / 1.125);
 
-      const size = offset / 1.125;
+      const width = offset / 1080 * 870;
+      const height = offset;
 
-      canvas.current.width = size * window.devicePixelRatio;
-      canvas.current.height = size * window.devicePixelRatio;
-      canvas.current.style.width = size + "px";
-      canvas.current.style.height = size + "px";
+      canvas.current.width = width * window.devicePixelRatio;
+      canvas.current.height = height * window.devicePixelRatio;
+      canvas.current.style.width = width + "px";
+      canvas.current.style.height = height + "px";
 
       const ctx = canvas.current.getContext('2d');
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -93,8 +107,8 @@ const Uniform = function() {
       ctx.drawImage(tshirt, 0, 0, canvas.current.width, canvas.current.height);
       ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
 
-      writeNumber(ctx, size, label.number);
-      writeName(ctx, size, label.name);
+      writeNumber(ctx, width, label.number);
+      writeName(ctx, width, label.name);
     }
 
     if (tshirt) {
@@ -112,7 +126,7 @@ const Uniform = function() {
   return (
     <div className="uniform">
       <header className="uniform-header">
-        <Upper label={true} />
+        <Upper />
       </header>
 
       <div className="uniform-screen">

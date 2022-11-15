@@ -17,6 +17,12 @@ const Fight = function() {
   const path = useParams();
 
   useEffect(() => {
+    ['is-opened', 'is-locked'].forEach(cl => {
+      document.body.classList.remove(`cursor-hover--${cl}`);
+    });
+  }, []);
+
+  useEffect(() => {
     setOpened(false);
 
     const redirectEmpty = (enemy) => {

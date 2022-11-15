@@ -1,41 +1,30 @@
-import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import AppContext from '../../context';
 import transfer from '../../utils/transfer';
 
-import 'swiper/scss';
 import './styles.scss';
+import './cursor.scss';
 
 const Enemy = function({id, current}) {
   const navigate = useNavigate();
-  const context = useContext(AppContext);
-
-  const status = (id < current) ? 'is-open' : 'is-locked';
-
-  useEffect(() => {
-    context.cursor = null;
-  }, [context])
+  const { t } = useTranslation();
 
   const transferPage = () => {
     transfer(() => navigate(`/fight/${id + 1}/`));
   }
 
-  const mouseOver = () => {
-    context.cursor = status;
-  }
-
-  const mouseOut = () => {
-    context.cursor = null;
-  }
+  const opened = (id < current);
 
   const classes = ['enemy'];
-  classes.push(status);
+  classes.push(opened ? 'is-opened' : 'is-locked');
 
   return (
-    <div className={classes.join(' ')} onMouseEnter={mouseOver} onMouseLeave={mouseOut} onClick={transferPage}>
+    <div className={classes.join(' ')} onClick={opened ? transferPage : null}>
+      <h4>{t(`fight.${id}.title`)}</h4>
+
       {id < current
-        ? <img src={require(`../../images/cards/${id + 1}.png`)} alt="Front side of opened card" />
+        ? <img className="test" src={require(`../../images/cards/${id + 1}.png`)} alt="Front side of opened card" />
         : <img src={require(`../../images/locked/${id + 1}.png`)} alt="Front side of locked the card" />
       }
     </div>

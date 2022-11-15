@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 0.5rem 0;
+  min-height: 3rem;
+  padding: 0;
 
   .upper-logo {
     display: block;
@@ -52,6 +53,21 @@
 
     @media screen and (max-width: 479px) {
       width: 6.25rem;
+    }
+  }
+
+  .upper-back {
+    display: block;
+
+    button {
+      height: 3rem;
+      padding: 0 1.75rem;
+    }
+
+    svg {
+      margin-right: 1rem;
+      fill: var(--color-black);
+      transform: rotate(180deg);
     }
   }
 

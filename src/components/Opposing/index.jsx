@@ -8,6 +8,7 @@ import Lead from '../../components/Lead';
 import Enemy from '../../components/Enemy';
 
 import AOS from 'aos';
+import Cursor from '../../utils/cursor';
 
 import 'swiper/scss';
 
@@ -19,7 +20,7 @@ const Opposing = function() {
 
   const [page, setPage] = useState(1);
   const [current, setCurrent] = useState(null);
-  const [swiper, setSwiper] = useState(null)
+  const [swiper, setSwiper] = useState(null);
 
   const { t } = useTranslation();
 
@@ -56,6 +57,10 @@ const Opposing = function() {
       onSlideChange: updatePages,
       onImagesReady: () => {
         AOS.refresh();
+
+        new Cursor({
+          targets: ['.is-opened', '.is-locked'],
+        });
       }
     }
 

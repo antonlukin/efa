@@ -23,18 +23,16 @@ const context = {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <AppContext.Provider value={context}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/fight/" element={<Fight />} />
-          <Route path="/fight/:id" element={<Fight />} />
-          <Route path="/join/" element={<Join />} />
-          <Route path="/kit/" element={<Kit />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
-    </AppContext.Provider>
-  </React.StrictMode>
+  <AppContext.Provider value={context}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/fight/" element={<Fight />} />
+        <Route path="/fight/:id" element={<Fight />} />
+        <Route path="/join/" element={<Join />} />
+        <Route path="/kit/" element={<Kit />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </BrowserRouter>
+  </AppContext.Provider>
 );

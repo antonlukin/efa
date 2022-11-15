@@ -2409,6 +2409,11 @@ acorn@^8.2.4, acorn@^8.5.0, acorn@^8.7.1, acorn@^8.8.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.0.tgz#88c0187620435c7f6015803f5539dae05a9dbea8"
   integrity sha512-QOxyigPVrpZ2GXT+PFyZTl6TtOFc5egxHIP9IlQ+RbupQuX4RkT/Bee4/kQuC02Xkzg84JcT7oLYtDIQxp+v7w==
 
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+  integrity sha512-j5QzrmsokwWWp6kUcJQySpbG+xfOBqqKnup3OIk1pz+kB/80SLorZ9V8zHFLO92Lcd+hbvq8bT+zOGoPkmBV0Q==
+
 address@^1.0.1, address@^1.1.2:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/address/-/address-1.2.1.tgz#25bb61095b7522d65b357baa11bc05492d4c8acd"
@@ -3606,6 +3611,11 @@ csstype@^3.0.2, csstype@^3.0.9:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.1.1.tgz#841b532c45c758ee546a11d5bd7b7b473c8c30b9"
   integrity sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==
+
+custom-cursor@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/custom-cursor/-/custom-cursor-2.2.2.tgz#d9af520d073bd8efe802ef9c3797262b2c047cb8"
+  integrity sha512-CJHCErjpW9shUa/5StAvGwOuXZg9H80PtncN1rBp8XIIus1N3Q18u5JUDx8WTUMkFlg8BF7/pR66AxAgwRJfDA==
 
 damerau-levenshtein@^1.0.8:
   version "1.0.8"
@@ -7777,11 +7787,6 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
-react-custom-pointer@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-custom-pointer/-/react-custom-pointer-1.0.5.tgz#70e1f0c8fd4726f135d28dfbd43adeaa037e823c"
-  integrity sha512-KYsOe7oiSz6xHl4bcvkxFIlF6wV8lQLeyEGNK6FplIhiOZZo04pSM68JTjZ/92S5qizyatGZ8vgrfK1uGeKaow==
-
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"
@@ -9970,6 +9975,11 @@ yargs@^16.2.0:
     string-width "^4.2.0"
     y18n "^5.0.5"
     yargs-parser "^20.2.2"
+
+yarn@^1.22.19:
+  version "1.22.19"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+  integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
 
 yocto-queue@^0.1.0:
   version "0.1.0"

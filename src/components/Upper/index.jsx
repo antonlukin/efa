@@ -1,18 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import Button from '../Button';
 import { ReactComponent as ImageLogo } from '../../images/logo.svg';
+import { ReactComponent as IconChevron } from '../../images/icons/chevron.svg';
+
 import transfer from '../../utils/transfer';
 
 import './styles.scss';
 
-const Upper = function({label}) {
+const Upper = function({back = true}) {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
 
-  const transferPage = (e) => {
-    e.preventDefault();
-
+  const transferPage = () => {
     transfer(() => navigate('/'));
   }
 
@@ -28,12 +29,17 @@ const Upper = function({label}) {
 
   return (
     <div className="upper">
-      <a className="upper-logo" href="/" onClick={transferPage}>
-          {label &&
-            <span>EFA Championship by</span>
-          }
-          <ImageLogo />
-      </a>
+      {!back &&
+        <a className="upper-logo" href="/" onClick={transferPage}>
+            <ImageLogo />
+        </a>
+      }
+
+      {back &&
+        <div className="upper-back">
+          <Button onClick={transferPage}><IconChevron />main page</Button>
+        </div>
+      }
 
       <div className="upper-lang">
         <button data-current={language === 'en' ? 'true': null} onClick={() => changeLanguage('en')}>En</button>

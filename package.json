@@ -4,7 +4,9 @@
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
+    "add": "^2.0.6",
     "aos": "^3.0.0-beta.6",
+    "custom-cursor": "^2.2.2",
     "i18next": "^22.0.4",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.0.1",
@@ -17,7 +19,8 @@
     "react-special-cursor": "^1.2.1",
     "sass": "^1.55.0",
     "sweet-scroll": "^4.0.0",
-    "swiper": "^8.4.4"
+    "swiper": "^8.4.4",
+    "yarn": "^1.22.19"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,5 +45,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://clash.notset.org"
 }

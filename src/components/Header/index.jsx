@@ -14,12 +14,12 @@ const Header = function() {
   return (
     <div className="header">
       <div className="header-upper">
-        <Upper />
+        <Upper back={false} />
       </div>
 
       <h1 className="header-title">
-        <strong>EFA Championship </strong>
-        <span>Championship of Eco-Friendly Actions</span>
+        <strong>EFA World Cup </strong>
+        <span>Eco-friendly activities contest</span>
       </h1>
 
       <div className="header-mesh">

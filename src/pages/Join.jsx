@@ -12,6 +12,12 @@ const Join = function() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    ['is-opened', 'is-locked'].forEach(cl => {
+      document.body.classList.remove(`cursor-hover--${cl}`);
+    });
+  }, []);
+
+  useEffect(() => {
     const storage = window.localStorage.getItem('enemy') || 0;
 
     if (storage <= enemies.length) {

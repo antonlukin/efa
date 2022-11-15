@@ -11,7 +11,6 @@ import DecorCan from '../../images/decors/can.png';
 import { ReactComponent as IconDownload } from '../../images/icons/download.svg';
 import { ReactComponent as IconChevron } from '../../images/icons/chevron.svg';
 import { ReactComponent as IconView } from '../../images/icons/view.svg';
-import { ReactComponent as IconInstagram } from '../../images/icons/instagram.svg';
 
 import AppContext from '../../context';
 
@@ -43,7 +42,7 @@ const Grid = function() {
         </figure>
 
         <button>
-          <IconInstagram />
+          <IconDownload />
         </button>
       </div>
 

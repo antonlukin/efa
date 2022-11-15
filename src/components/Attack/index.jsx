@@ -1,9 +1,13 @@
 import { useState, useEffect, useRef, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import Upper from '../Upper';
 import Button from '../Button';
 
+import { ReactComponent as IconChevron } from '../../images/icons/chevron.svg';
+
+import transfer from '../../utils/transfer';
 import smoothScroll from '../../utils/scroller';
 import AppContext from '../../context';
 
@@ -18,6 +22,8 @@ const Attack = function({opened, current, setCurrent}) {
   const enemies = context.enemies;
 
   const figure = useRef();
+
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const nextWorkout = () => {
@@ -28,6 +34,7 @@ const Attack = function({opened, current, setCurrent}) {
       setCurrent(next);
     }, 500);
 
+    figure.current.querySelector('img').removeAttribute('data-loaded');
     document.body.classList.add('is-loading');
   }
 
@@ -46,6 +53,10 @@ const Attack = function({opened, current, setCurrent}) {
     }, 500);
 
     setStrikes(currentStrike);
+  }
+
+  const goFinish = () => {
+    transfer(() => navigate('/kit/'));
   }
 
   useEffect(() => {
@@ -102,7 +113,7 @@ const Attack = function({opened, current, setCurrent}) {
       {current && current <= enemies.length &&
         <>
           <header className="attack-header">
-            <Upper label={true} />
+            <Upper />
           </header>
 
           <div className="attack-mesh">
@@ -113,6 +124,7 @@ const Attack = function({opened, current, setCurrent}) {
                 width="307"
                 height="429"
                 style={styles.mesh}
+                onLoad={(e) => e.target.dataset.loaded = 'loaded'}
               />
               <figcaption>{t(`attack.health`)}</figcaption>
 
@@ -139,7 +151,13 @@ const Attack = function({opened, current, setCurrent}) {
               </ul>
             }
 
-            <Button onClick={updateStrike}>{switcher}</Button>
+            <figure>
+              <Button onClick={updateStrike}>{switcher}</Button>
+
+              {opened &&
+                <Button onClick={goFinish}>Your kit <IconChevron/></Button>
+              }
+            </figure>
           </div>
         </>
       }

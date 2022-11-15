@@ -1,0 +1,23 @@
+.cursor-hover--is-locked [data-cursor] {
+  z-index: 9;
+
+  width: 4rem;
+  height: 4rem;
+
+  background: #f0f;
+  border-radius: 50%;
+
+  animation: fade-in 0.25s;
+}
+
+.cursor-hover--is-opened [data-cursor] {
+  z-index: 9;
+
+  width: 4rem;
+  height: 4rem;
+
+  background: #0f0;
+  border-radius: 50%;
+
+  animation: fade-in 0.25s;
+}
