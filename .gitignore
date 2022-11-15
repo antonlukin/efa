@@ -1,0 +1,6 @@
+vendor/
+share/posters/
+share/works/
+share/stories/
+
+node_modules/
