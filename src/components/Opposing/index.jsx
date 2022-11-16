@@ -7,6 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Lead from '../../components/Lead';
 import Enemy from '../../components/Enemy';
 
+import { ReactComponent as IconChevron } from '../../images/icons/chevron.svg';
+
 import AOS from 'aos';
 import Cursor from '../../utils/cursor';
 
@@ -43,7 +45,10 @@ const Opposing = function() {
       allowTouchMove: true,
       centeredSlides: true,
       modules: [Navigation],
-      navigation: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
       preloadImages: true,
       updateOnImagesReady: true,
       initialSlide: (saved - 1),
@@ -83,6 +88,14 @@ const Opposing = function() {
               <Enemy id={i} current={current} />
             </SwiperSlide>
           )}
+
+          <div className="swiper-button-prev">
+            <IconChevron />
+          </div>
+
+          <div className="swiper-button-next">
+            <IconChevron />
+          </div>
         </Swiper>
       }
 

@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.7fefe37f.css",
-    "main.js": "/static/js/main.633e572c.js",
+    "main.css": "/static/css/main.5381b71d.css",
+    "main.js": "/static/js/main.69d77de3.js",
     "static/media/adult.png": "/static/media/adult.458d33379f056d9fe78f.png",
+    "static/media/tshirt-en.png": "/static/media/tshirt-en.7d0362c435f15056e726.png",
     "static/media/child.png": "/static/media/child.978e305447e456ef4181.png",
-    "static/media/back.png": "/static/media/back.8705dd55d9bfe9bcfb9e.png",
-    "static/media/notfound.png": "/static/media/notfound.ee4b3e61feaeda8d9c06.png",
+    "static/media/uniform.png": "/static/media/uniform.8705dd55d9bfe9bcfb9e.png",
+    "static/media/notfound-en.png": "/static/media/notfound-en.ee4b3e61feaeda8d9c06.png",
+    "static/media/notfound-es.png": "/static/media/notfound-es.ee4b3e61feaeda8d9c06.png",
     "static/media/splash.png": "/static/media/splash.98b7d5c0b23a6fa87c99.png",
-    "static/media/shirt.png": "/static/media/shirt.7ab8c9b57cf31f85c418.png",
+    "static/media/tshirt-es.png": "/static/media/tshirt-es.7ab8c9b57cf31f85c418.png",
+    "static/media/rounder-es.png": "/static/media/rounder-es.b6762164dad23085e9e9.png",
     "static/media/can.png": "/static/media/can.08bbee80a6670e95e4e0.png",
     "static/media/3.png": "/static/media/3.b10a823caa197fcdd9f8.png",
     "static/media/6.png": "/static/media/6.5a604948903e4bb93580.png",
@@ -18,7 +21,7 @@
     "static/media/2.png": "/static/media/2.5da20957c03196eb5831.png",
     "static/media/10.png": "/static/media/10.d86e94fdb5529161d205.png",
     "static/media/11.png": "/static/media/11.902f6e9946c1741982fb.png",
-    "static/media/rotation.png": "/static/media/rotation.f4d8df4c4df60db3af95.png",
+    "static/media/rounder-en.png": "/static/media/rounder-en.f4d8df4c4df60db3af95.png",
     "static/media/1.png": "/static/media/1.b7f462572adebe99b105.png",
     "static/media/ball.png": "/static/media/ball.2aae5f979f3095f530aa.png",
     "static/media/4.png": "/static/media/4.e157fa7360d3cfa3e32d.png",
@@ -29,6 +32,7 @@
     "static/media/cup.png": "/static/media/cup.f048a09f091539fa2d4e.png",
     "static/media/Eklektyk-Stencil.woff2": "/static/media/Eklektyk-Stencil.bc94f43728fe01911d0a.woff2",
     "static/media/megaphone.png": "/static/media/megaphone.ed14844ba130760677d9.png",
+    "static/media/iphone.png": "/static/media/iphone.4d4d1ef3861fd8873013.png",
     "static/media/wash.png": "/static/media/wash.1ef9c69cbb10feede5c8.png",
     "static/media/paper.png": "/static/media/paper.55c70f68d3774cb652d0.png",
     "static/media/skin.png": "/static/media/skin.c2843184a99e9551aca3.png",
@@ -40,6 +44,7 @@
     "static/media/Damn.woff": "/static/media/Damn.7b96d42b3c0dc935cca4.woff",
     "static/media/Now-Medium.woff2": "/static/media/Now-Medium.f8407098d3c29ff302d2.woff2",
     "static/media/Now-Light.woff2": "/static/media/Now-Light.c194935be01c32000a7b.woff2",
+    "static/media/cursor.png": "/static/media/cursor.41a00661f9892442fee4.png",
     "static/media/Damn.woff2": "/static/media/Damn.b8eb98bc88b2f66259a9.woff2",
     "static/media/spoon.png": "/static/media/spoon.e145f35ae6e3253aa37e.png",
     "static/media/logo.svg": "/static/media/logo.9eb1729bb3be7e8dd441c8b6f2f19d22.svg",
@@ -51,12 +56,12 @@
     "static/media/download.svg": "/static/media/download.f94c01b2b8b391c8e3695cfe717a4107.svg",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "static/media/facebook.svg": "/static/media/facebook.4d7bd65b067783f81991e532f647e0d9.svg",
-    "static/media/chevron.svg": "/static/media/chevron.55c6e9eee0f534596ff0e7d68cb29388.svg",
-    "main.7fefe37f.css.map": "/static/css/main.7fefe37f.css.map",
-    "main.633e572c.js.map": "/static/js/main.633e572c.js.map"
+    "static/media/chevron.svg": "/static/media/chevron.1455599e503c035c8a46f277801369d2.svg",
+    "main.5381b71d.css.map": "/static/css/main.5381b71d.css.map",
+    "main.69d77de3.js.map": "/static/js/main.69d77de3.js.map"
   },
   "entrypoints": [
-    "static/css/main.7fefe37f.css",
-    "static/js/main.633e572c.js"
+    "static/css/main.5381b71d.css",
+    "static/js/main.69d77de3.js"
   ]
 }

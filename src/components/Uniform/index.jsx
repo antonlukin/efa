@@ -5,7 +5,9 @@ import { useTranslation } from 'react-i18next';
 import Upper from '../Upper';
 import Button from '../Button';
 
-import UniformBack from '../../images/uniforms/back.png';
+import DecorsUniform from '../../images/decors/uniform.png';
+
+import transfer from '../../utils/transfer';
 
 import './styles.scss';
 
@@ -30,7 +32,7 @@ const Uniform = function() {
     }
   }
 
-  const saveUniform = () => {
+  const saveUniform = (event) => {
     const options = {
       method: 'POST',
       headers: {
@@ -39,11 +41,29 @@ const Uniform = function() {
       body: JSON.stringify(label),
     }
 
-    const uploadResults = async () => {
-      const response = await fetch('/share/upload/', options);
-      console.log(await response.json());
+    const showError = (error) => {
+      console.error(error);
+    }
 
-      navigate('/kit/');
+    const uploadResults = async () => {
+      event.target.dataset.loading = true;
+
+      try {
+        const answer = await fetch('/share/upload/', options);
+        const result = await answer.json();
+
+        delete event.target.dataset.loading;
+
+        if (!result.success) {
+          return showError(result.data);
+        }
+
+        localStorage.setItem('share', JSON.stringify(result.data));
+
+        transfer(() => navigate('/kit/'));
+      } catch(error) {
+        showError(error)
+      }
     }
 
     uploadResults();
@@ -51,7 +71,7 @@ const Uniform = function() {
 
   useEffect(() => {
     const image = new Image();
-    image.src = UniformBack;
+    image.src = DecorsUniform;
 
     image.addEventListener('load', () => {
       setTshirt(image);

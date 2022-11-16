@@ -17,22 +17,28 @@ import './styles/animations.scss';
 
 import './index.scss';
 
-const context = {
-  enemies: [5, 6, 5, 6, 3, 7, 7, 6, 7, 2, 8]
+const App = function() {
+  const context = {
+    enemies: [5, 6, 5, 6, 3, 7, 7, 6, 7, 2, 8]
+  }
+
+  return (
+    <AppContext.Provider value={context}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/fight/" element={<Fight />} />
+          <Route path="/fight/:id" element={<Fight />} />
+          <Route path="/join/" element={<Join />} />
+          <Route path="/kit/" element={<Kit />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </BrowserRouter>
+    </AppContext.Provider>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <AppContext.Provider value={context}>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/fight/" element={<Fight />} />
-        <Route path="/fight/:id" element={<Fight />} />
-        <Route path="/join/" element={<Join />} />
-        <Route path="/kit/" element={<Kit />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-    </BrowserRouter>
-  </AppContext.Provider>
+  <App />
 );

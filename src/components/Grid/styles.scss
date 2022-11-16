@@ -9,7 +9,7 @@
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
   gap: 1rem;
 
-  & > div {
+  & > * {
     position: relative;
     cursor: pointer;
 
@@ -23,7 +23,7 @@
   figure {
     display: flex;
     flex-flow: row wrap;
-    align-content: flex-end;
+    align-items: flex-end;
     position: relative;
 
     width: 100%;
@@ -77,8 +77,9 @@
 
     img {
       width: 100%;
+      max-width: 14rem;
       height: auto;
-      margin-bottom: 2rem;
+      margin: 0 auto 2rem;
     }
 
     button {
@@ -95,7 +96,30 @@
     margin-bottom: 2rem;
 
     figure {
+      position: relative;
       padding-bottom: 2.5rem;
+    }
+
+    p {
+      display: block;
+      position: relative;
+
+      width: 8.75rem;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+
+    p img:last-child {
+      position: absolute;
+      z-index: -1;
+      top: calc(50% - 0.25rem);
+      left: 50%;
+
+      width: calc(100% - 1rem);
+      height: auto;
+
+      transform: translate(-50%, -50%);
     }
 
     button {
@@ -240,6 +264,10 @@
     margin-bottom: 2rem;
 
     cursor: default;
+
+    figure {
+      align-content: flex-end;
+    }
 
     figcaption {
       width: 100%;

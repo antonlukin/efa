@@ -4,12 +4,18 @@ import { ReactComponent as IconFacebook } from '../../images/icons/facebook.svg'
 
 import './styles.scss';
 
-function Sharing() {
+function Sharing({name}) {
+  let url = 'https://clash.notset.org/';
+
+  if (name) {
+    url = `${url}share/${name}`;
+  }
+
   return (
     <nav className="sharing">
-      <a href="/"><IconFacebook /></a>
-      <a href="/"><IconTelegram /></a>
-      <a href="/"><IconTwitter /></a>
+      <a href={'https://www.facebook.com/sharer/sharer.php?u=' + url}><IconFacebook /></a>
+      <a href={'https://t.me/share/url?url=' + url}><IconTelegram /></a>
+      <a href={'https://twitter.com/intent/tweet?text=' + url}><IconTwitter /></a>
     </nav>
   );
 }

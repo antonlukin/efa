@@ -47,11 +47,15 @@
     "social": "Share the project, each new member of the eco-team is significant to make a change",
     "sources": "see project sources"
   },
+  "notfound": {
+    "title": "This page doesn't exist"
+  },
   "attack": {
     "attack": "Attack!",
     "next": "Next player",
     "get": "Get your uniform",
-    "health": "Health"
+    "health": "Health",
+    "kit": "Get your kit"
   },
   "uniform": {
     "welcome": "Welcome to the eco-team!",

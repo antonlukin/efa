@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -21,11 +22,15 @@ const Upper = function({back = true}) {
     transfer(() => i18n.changeLanguage(lng));
   };
 
-  let language = 'en';
+  useEffect(() => {
+    let language = 'en';
 
-  if (i18n.language === 'es') {
-    language = 'es';
-  }
+    if (i18n.language === 'es') {
+      language = 'es';
+    }
+
+    i18n.changeLanguage(language);
+  }, [i18n]);
 
   return (
     <div className="upper">
@@ -42,9 +47,9 @@ const Upper = function({back = true}) {
       }
 
       <div className="upper-lang">
-        <button data-current={language === 'en' ? 'true': null} onClick={() => changeLanguage('en')}>En</button>
+        <button data-current={i18n.language === 'en' ? 'true': null} onClick={() => changeLanguage('en')}>En</button>
         <span></span>
-        <button data-current={language === 'es' ? 'true': null} onClick={() => changeLanguage('es')}>Es</button>
+        <button data-current={i18n.language === 'es' ? 'true': null} onClick={() => changeLanguage('es')}>Es</button>
       </div>
     </div>
   );

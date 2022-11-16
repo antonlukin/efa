@@ -9,6 +9,7 @@ import AppContext from '../context';
 const Fight = function() {
   const [current, setCurrent] = useState(null);
   const [opened, setOpened] = useState(false);
+  const [skipped, setSkipped] = useState(false);
 
   const context = useContext(AppContext);
   const enemies = context.enemies;
@@ -27,7 +28,7 @@ const Fight = function() {
 
     const redirectEmpty = (enemy) => {
       if (enemy > enemies.length) {
-        return navigate(`/join/`);
+        return navigate('/kit/');
       }
 
       return navigate(`/fight/${enemy}/`);
@@ -93,13 +94,19 @@ const Fight = function() {
 
       updateUrl();
     }
+
+    const storage = localStorage.getItem('share');
+
+    if (storage !== null) {
+      setSkipped(true);
+    }
   }, [current, navigate, opened, enemies]);
 
   return (
     <>
       {current &&
         <>
-          <Attack opened={opened} current={current} setCurrent={setCurrent} />
+          <Attack skipped={skipped} opened={opened} current={current} setCurrent={setCurrent} />
           <Gradients isPage={true} />
         </>
       }

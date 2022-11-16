@@ -45,16 +45,20 @@
     height: 4rem;
     margin-top: -2rem;
 
-    background-color: var(--color-links);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 50%;
+    background-color: var(--color-text);
     border-radius: 50%;
 
     transition: background-color 0.25s;
 
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+
+      fill: var(-color-text);
+    }
+
     &:hover {
-      background-color: var(--color-hover);
+      background-color: var(--color-accent);
     }
 
     @media screen and (max-width: 1023px) {
@@ -73,7 +77,10 @@
 
   .swiper-button-prev {
     left: 2.5rem;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAbCAMAAAA9O+1hAAAAPFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADQLyYwAAAAE3RSTlMAECAwQFBfYHB/gI+Qn6+/z9/vc+fMmgAAAHRJREFUeNq0j7cCQzEIA4HXu7H+/1vTxkznlJtB0tkbSxgjik54mdodXQ5VqyEW1YFdbsqgQpejyy61G2KsmrFQjw79+IuQLsJmkyDXK3YxSKQ2euunStDjVYlvZ9WZXTbLHc7lskWu43JqkZu5HD69Dx8AAJhSCgI1/bhoAAAAAElFTkSuQmCC');
+
+    svg {
+      transform: rotate(180deg);
+    }
 
     @media screen and (max-width: 1023px) {
       left: calc(50% - 12rem);
@@ -86,7 +93,6 @@
 
   .swiper-button-next {
     right: 2.5rem;
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAAAQlBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACO4fbyAAAAFXRSTlMAECAwQFBfYG9wf4CPkJ+gr7/P3+8OgMMtAAAAbElEQVR42u3RBRUEQRAD0SzzUHf8Sz1SkGPa76BeYfcI9QpVYqkh2mg1RAu9g6hzznKaUY6rywfEtfakuHyJW7OC57hMjQ+QzLQGiiqw1OqxWEHRGBdIen9GkMlB6dFBo3PSg6AZrIaqwu4VjqElCxXrqLzYAAAAAElFTkSuQmCC');
 
     @media screen and (max-width: 1023px) {
       right: calc(50% - 12rem);

@@ -47,11 +47,15 @@
     "social": "Comparte el proyecto, cada nuevo miembro del equipo ecológico puede hacer un cambio significativo",
     "sources": "ver fuentes del proyecto"
   },
+  "notfound": {
+    "title": "Esta pagina no existe"
+  },
   "attack": {
     "attack": "¡Pelea!",
     "next": "Siguiente",
     "get": "Obten tu uniforme",
-    "health": "Salud"
+    "health": "Salud",
+    "kit": "Obten tu equipo"
   },
   "uniform": {
     "welcome": "¡Bienvenido al equipo ecológico!",

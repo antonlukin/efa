@@ -2,13 +2,10 @@ import { useTranslation } from 'react-i18next';
 
 import Lead from '../../components/Lead';
 
-import DecorShirt from '../../images/decors/shirt.png';
-import DecorRotation from '../../images/decors/rotation.png';
-
 import './styles.scss';
 
 const Motivation = function() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   return (
     <section className="motivation">
@@ -24,8 +21,8 @@ const Motivation = function() {
       </ul>
 
       <figure className="motivation-shirt">
-        <img data-image="shirt" src={DecorShirt} alt="Motivation t-shirt" />
-        <img data-image="rotation" src={DecorRotation} alt="Get it" />
+        <img data-image="shirt" src={require(`../../images/decors/tshirt-${i18n.language}.png`)} alt="" />
+        <img data-image="rotation" src={require(`../../images/decors/rounder-${i18n.language}.png`)} alt="" />
       </figure>
     </section>
   );

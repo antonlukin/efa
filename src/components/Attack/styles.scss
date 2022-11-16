@@ -305,14 +305,18 @@
       margin: 0;
       padding: 0;
 
+      button svg {
+        display: block;
+        margin-left: 1rem;
+        fill: var(--color-black);
+      }
+
       button:not(:first-child) {
         color: var(--color-links);
         background-color: transparent;
         border: solid 2px var(--color-links);
 
         svg {
-          display: block;
-          margin-left: 1rem;
           fill: var(--color-links);
         }
 

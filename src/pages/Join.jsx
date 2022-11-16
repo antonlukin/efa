@@ -25,6 +25,14 @@ const Join = function() {
     }
   }, [navigate, enemies]);
 
+  useEffect(() => {
+    const storage = localStorage.getItem('share');
+
+    if (storage !== null) {
+      navigate('/kit/');
+    }
+  }, [navigate]);
+
   return (
     <Uniform />
   );

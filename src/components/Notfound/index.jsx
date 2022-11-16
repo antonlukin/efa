@@ -1,10 +1,12 @@
-import Upper from '../Upper';
+import { useTranslation } from 'react-i18next';
 
-import UniformNotfound from '../../images/uniforms/notfound.png';
+import Upper from '../Upper';
 
 import './styles.scss';
 
 const Notfound = function() {
+  const { i18n } = useTranslation();
+
   return (
     <div className="notfound">
       <header className="notfound-header">
@@ -13,7 +15,7 @@ const Notfound = function() {
 
       <section className="notfound-tshirt">
         <figure>
-          <img src={UniformNotfound} alt="Uniform backside" />
+          <img data-image="rotation" src={require(`../../images/decors/notfound-${i18n.language}.png`)} alt="" />
         </figure>
       </section>
     </div>

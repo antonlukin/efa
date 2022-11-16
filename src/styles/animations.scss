@@ -45,3 +45,13 @@
     transform: translate3d(4px, 0, 0);
   }
 }
+
+@keyframes loading-stripes {
+  0% {
+    background-position: 0;
+  }
+
+  100% {
+    background-position: 50px;
+  }
+}

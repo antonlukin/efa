@@ -29,6 +29,18 @@
     background-color: var(--color-accent);
   }
 
+  &[data-loading] {
+    pointer-events: none;
+
+    background-color: var(--color-accent);
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 75%, transparent 75%, transparent);
+    background-size: 50px 50px;
+
+    border-color: rgba(0, 0, 0, 0.3);
+
+    animation: loading-stripes 1.5s linear infinite;
+  }
+
   @media screen and (max-width: 479px) {
     height: 4rem;
     font-size: 1rem;

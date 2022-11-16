@@ -13,7 +13,7 @@ import AppContext from '../../context';
 
 import './styles.scss';
 
-const Attack = function({opened, current, setCurrent}) {
+const Attack = function({skipped, opened, current, setCurrent}) {
   const [styles, setStyles] = useState({});
   const [strikes, setStrikes] = useState(0);
   const [switcher, setSwitcher] = useState('');
@@ -152,10 +152,12 @@ const Attack = function({opened, current, setCurrent}) {
             }
 
             <figure>
-              <Button onClick={updateStrike}>{switcher}</Button>
+              {(!skipped || current < enemies.length) &&
+                <Button onClick={updateStrike}>{switcher}</Button>
+              }
 
-              {opened &&
-                <Button onClick={goFinish}>Your kit <IconChevron/></Button>
+              {skipped &&
+                <Button onClick={goFinish}>{t(`attack.kit`)} <IconChevron/></Button>
               }
             </figure>
           </div>
