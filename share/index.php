@@ -130,7 +130,6 @@ final class Sharing
                 'color'      => '#000000',
             ));
 
-
             $work->text($data['number'], array(
                 'x' => 160,
                 'y' => 295,
@@ -159,8 +158,8 @@ final class Sharing
             $poster->save($this->dir . "/posters/{$name}.jpg", 90);
 
             $response = [
-                'work' => $this->url . "/share/works/{$name}.png",
-                'poster' => $this->url . "/share/posters/{$name}.jpg",
+                'name'  => $name,
+                'work'  => $this->url . "/share/works/{$name}.png",
                 'story' => $this->url . "/share/stories/{$name}.jpg",
             ];
 
