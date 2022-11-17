@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 import Upper from '../Upper';
 import Grid from '../Grid';
 
 import './styles.scss';
 
 const Final = function({share}) {
+  const { t } = useTranslation();
+
   return (
     <>
       {share &&
@@ -13,8 +17,8 @@ const Final = function({share}) {
           </header>
 
           <section className="final-title">
-            <h2>Congratulations!</h2>
-            <p>You beat the opponent and now you are a member of the eco-friendly team.</p>
+            <h2>{t('final.title')}</h2>
+            <p>{t('final.description')}</p>
           </section>
 
           <section className="final-grid">

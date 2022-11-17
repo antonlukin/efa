@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -21,16 +20,6 @@ const Upper = function({back = true}) {
   const changeLanguage = (lng) => {
     transfer(() => i18n.changeLanguage(lng));
   };
-
-  useEffect(() => {
-    let language = 'en';
-
-    if (i18n.language === 'es') {
-      language = 'es';
-    }
-
-    i18n.changeLanguage(language);
-  }, [i18n]);
 
   return (
     <div className="upper">

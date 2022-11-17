@@ -9,6 +9,7 @@ const Summary = function() {
     <section className="summary">
       <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.0')}} />
       <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.1')}} />
+      <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.2')}} />
     </section>
   );
 }

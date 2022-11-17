@@ -4,7 +4,8 @@
   },
   "summary": {
     "start": [
-      "Nuestro planeta es un campo de fútbol en el que estamos perdiendo. El rival destruye la naturaleza, contamina los océanos, nos quita el futuro.",
+      "Nuestro planeta es un campo de fútbol en el que estamos perdiendo. ",
+      "El rival destruye la naturaleza, contamina los océanos, nos quita el futuro.",
       "Lo creamos nosotros mismos, y somos nosotros quienes podemos vencerlo."
     ]
   },
@@ -50,18 +51,27 @@
   "notfound": {
     "title": "Esta pagina no existe"
   },
+  "grid": {
+    "uniform": "Puedes descargar tu uniforme a tu dispositivo",
+    "stories": "Publica una historia con el uniforme en tu Instagram",
+    "learn": "Lee más sobre Tiger Soda",
+    "sources": "Ve las fuentes del proyecto",
+    "guide": "Descarga la guía de los consejos de la batalla",
+    "standings": "See yourself in the standings",
+    "share": "Share the project"
+  },
   "attack": {
     "attack": "¡Pelea!",
     "next": "Siguiente",
-    "get": "Obten tu uniforme",
+    "get": "¡Consigue tu camiseta!",
     "health": "Salud",
-    "kit": "Obten tu equipo"
+    "kit": " Consigue tu pack"
   },
   "uniform": {
     "welcome": "¡Bienvenido al equipo ecológico!",
     "name": "Introduce el nombre",
     "number": "Introduce el número",
-    "get": "¡Consigue el kit!"
+    "get": " ¡Consigue tu pack!"
   },
   "fight": [
     {

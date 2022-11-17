@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import Sharing from '../Sharing';
 
 import DecorEarth from '../../images/decors/earth.png';
@@ -14,12 +16,14 @@ import { ReactComponent as IconView } from '../../images/icons/view.svg';
 import './styles.scss';
 
 const Grid = function({share}) {
+  const { t } = useTranslation();
+
   return (
     <div className="grid">
       <a className="grid-uniform" href={share.work} download="t-shirt.png">
         <figure>
-          <img src={share.work} alt="Your form" />
-          <figcaption>You can download Your form on device</figcaption>
+          <img src={share.work} alt={t('grid.uniform')} />
+          <figcaption>{t('grid.uniform')}</figcaption>
         </figure>
 
         <button>
@@ -30,10 +34,10 @@ const Grid = function({share}) {
       <a className="grid-stories" href={share.story} download="story.png">
         <figure>
           <p>
-            <img src={DecorIphone} alt="Story" />
-            <img src={share.story} alt="Story" />
+            <img src={share.story} alt={t('grid.stories')} />
+            <img src={DecorIphone} alt={t('grid.stories')} />
           </p>
-          <figcaption>Post story with form to Your Instagram</figcaption>
+          <figcaption>{t('grid.stories')}</figcaption>
         </figure>
 
         <button>
@@ -43,8 +47,8 @@ const Grid = function({share}) {
 
       <a className="grid-learn" href="/" target="_blank" rel="noreferrer">
         <figure>
-          <img src={DecorCan} alt="Can decor" />
-          <figcaption>Learn more about Tiger Soda</figcaption>
+          <img src={DecorCan} alt={t('grid.learn')} />
+          <figcaption>{t('grid.learn')}</figcaption>
         </figure>
 
         <button>
@@ -54,8 +58,8 @@ const Grid = function({share}) {
 
       <a className="grid-sources" href="/" target="_blank" rel="noreferrer">
         <figure>
-          <img src={DecorEarth} alt="Earth decor" />
-          <figcaption>See the project’s sources</figcaption>
+          <img src={DecorEarth} alt={t('grid.sources')} />
+          <figcaption>{t('grid.sources')}</figcaption>
         </figure>
 
         <button>
@@ -65,8 +69,8 @@ const Grid = function({share}) {
 
       <a className="grid-guide" href="/" target="_blank" rel="noreferrer">
         <figure>
-          <img src={DecorList} alt="List decor" />
-          <figcaption>Download all advices from battle as a guide</figcaption>
+          <img src={DecorList} alt={t('grid.guide')} />
+          <figcaption>{t('grid.guide')}</figcaption>
         </figure>
 
         <button>
@@ -76,8 +80,8 @@ const Grid = function({share}) {
 
       <div className="grid-standings">
         <figure>
-          <img src={DecorCup} alt="Cup decor" />
-          <figcaption>See yourself in the standings</figcaption>
+          <img src={DecorCup} alt={t('grid.standings')} />
+          <figcaption>{t('grid.standings')}</figcaption>
         </figure>
 
         <button>
@@ -87,8 +91,8 @@ const Grid = function({share}) {
 
       <div className="grid-share">
         <figure>
-          <img src={DecorMegaphone} alt="Megaphone decor" />
-          <figcaption>Share the project</figcaption>
+          <img src={DecorMegaphone} alt={t('grid.share')} />
+          <figcaption>{t('grid.share')}</figcaption>
 
           <Sharing name={share.name} />
         </figure>

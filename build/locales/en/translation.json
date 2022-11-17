@@ -4,7 +4,8 @@
   },
   "summary": {
     "start": [
-      "Our planet is a football field on which we lose. The rival destroys nature, pollutes the oceans, deprives us of the future.",
+      "Our planet is a football field on which we lose.",
+      "The rival destroys nature, pollutes the oceans, deprives us of the future.",
       "We created this enemy ourselves and we can defeat him."
     ]
   },
@@ -46,6 +47,19 @@
     ],
     "social": "Share the project, each new member of the eco-team is significant to make a change",
     "sources": "see project sources"
+  },
+  "final": {
+    "title": "Congratulations!",
+    "description": "You beat the opponent and now you are a member of the eco-friendly team."
+  },
+  "grid": {
+    "uniform": "You can download your form on device",
+    "stories": "Post story with form to Your Instagram",
+    "learn": "Learn more about Tiger Soda",
+    "sources": "See the project’s sources",
+    "guide": "Download all advices from battle as a guide",
+    "standings": "See yourself in the standings",
+    "share": "Share the project"
   },
   "notfound": {
     "title": "This page doesn't exist"

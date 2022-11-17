@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import Home from './pages/Home';
 import Fight from './pages/Fight';
 import Join from './pages/Join';
@@ -18,22 +21,39 @@ import './styles/animations.scss';
 import './index.scss';
 
 const App = function() {
+  const [loaded, setLoaded] = useState(false);
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    let language = 'en';
+
+    if (i18n.resolvedLanguage === 'es') {
+      language = 'es';
+    }
+
+    i18n.changeLanguage(language);
+
+    setLoaded(true);
+  }, [i18n]);
+
   const context = {
     enemies: [5, 6, 5, 6, 3, 7, 7, 6, 7, 2, 8]
   }
 
   return (
     <AppContext.Provider value={context}>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/fight/" element={<Fight />} />
-          <Route path="/fight/:id" element={<Fight />} />
-          <Route path="/join/" element={<Join />} />
-          <Route path="/kit/" element={<Kit />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
+      {loaded &&
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/fight/" element={<Fight />} />
+            <Route path="/fight/:id" element={<Fight />} />
+            <Route path="/join/" element={<Join />} />
+            <Route path="/kit/" element={<Kit />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </BrowserRouter>
+}
     </AppContext.Provider>
   );
 }
