@@ -3,16 +3,17 @@
 namespace Soda\EFA;
 
 use Exception;
+use PDO;
 use PosterEditor\PosterEditor;
 
 if (php_sapi_name() === 'cli') {
-    exit;
+//    exit;
 }
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 /**
- * Upload and save canvas posters to show them as sharing results.
+ * Save result to database and show sharing psoters
  *
  * @author  Anton Lukin
  * @version 1.0
@@ -29,6 +30,11 @@ final class Sharing
      * Current file directory.
      */
     public $dir = __DIR__;
+
+    /**
+     * SQLite storage instance.
+     */
+    private $db = null;
 
     /**
      * Redirect page to desired location;
@@ -103,22 +109,82 @@ final class Sharing
     }
 
     /**
-     * Upload and generate posters from js FormData.
+     * Create SQLite instance.
      */
-    private function upload_poster() {
-        $data = json_decode(file_get_contents('php://input'), true);
+    private function connect_database() {
+        if ($this->db !== null) {
+            return $this->db;
+        }
+
+        try {
+            $this->db = new PDO('sqlite://' . __DIR__ . '/database/users.db');
+
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+            $this->db->query("CREATE TABLE IF NOT EXISTS users (name TEXT, number TEXT, lang TEXT)");
+        } catch(Exception $e) {
+            exit('123');
+        }
+
+        return $this->db;
+    }
+
+    /**
+     * Get standings data
+     */
+    private function get_standings() {
+        $db = $this->connect_database();
+
+        $select = $db->query('SELECT name, number FROM users ORDER BY rowid DESC');
+        $results = $select->fetchAll();
+
+        $this->send_json_success($results);
+    }
+
+    /**
+     * Insert new user to standings
+     */
+    private function insert_user() {
+        $data = json_decode(file_get_contents('php://input'), false);
 
         if (empty($data)) {
             $this->send_json_error('Wrong data format', 400);
         }
 
-        $name = $this->get_unique_name();
+        if (!isset($data->name, $data->number, $data->lang)) {
+            $this->send_json_error('Wrong data format', 400);
+        }
 
+        if (!preg_match('~^.{1,14}$~u', $data->name)) {
+            $this->send_json_error('Wrong name format', 400);
+        }
+
+        if (!preg_match('~^[0-9]{1,2}$~', $data->number)) {
+            $this->send_json_error('Wrong number format', 400);
+        }
+
+        if (!in_array($data->lang, array('en', 'es'), true)) {
+            $this->send_json_error('Wrong lang format', 400);
+        }
+
+        $db = $this->connect_database();
+
+        $insert = $db->prepare('INSERT INTO users (name, number, lang) VALUES (?, ?, ?)');
+        $insert->execute(array($data->name, $data->number, $data->lang));
+
+        $this->upload_poster($data, $this->get_unique_name());
+    }
+
+    /**
+     * Upload and generate posters from JSON data
+     */
+    private function upload_poster($data, $key) {
         try {
             $work = new PosterEditor();
             $work->make(__DIR__ . '/assets/tshirt.png');
 
-            $work->text(mb_strtoupper($data['name']), array(
+            $work->text(mb_strtoupper($data->name), array(
                 'x' => 160,
                 'y' => 185,
                 'width' => 400,
@@ -130,7 +196,7 @@ final class Sharing
                 'color'      => '#000000',
             ));
 
-            $work->text($data['number'], array(
+            $work->text($data->number, array(
                 'x' => 160,
                 'y' => 295,
                 'width' => 400,
@@ -146,21 +212,21 @@ final class Sharing
             $story->make($this->dir . '/assets/story.png');
 
             $story->insert($work, array('x' => 120, 'y' => 700));
-            $story->save($this->dir . "/stories/{$name}.jpg", 70);
+            $story->save($this->dir . "/stories/{$key}.jpg", 70);
 
             $work->downsize(null, 540);
-            $work->save($this->dir . "/works/{$name}.png");
+            $work->save($this->dir . "/works/{$key}.png");
 
             $poster = new PosterEditor();
             $poster->make($this->dir . '/assets/poster.png');
 
             $poster->insert($work, array('x' => 120, 'y' => 40));
-            $poster->save($this->dir . "/posters/{$name}.jpg", 90);
+            $poster->save($this->dir . "/posters/{$key}.jpg", 90);
 
             $response = [
-                'name'  => $name,
-                'work'  => $this->url . "/share/works/{$name}.png",
-                'story' => $this->url . "/share/stories/{$name}.jpg",
+                'key'   => $key,
+                'work'  => $this->url . "/share/works/{$key}.png",
+                'story' => $this->url . "/share/stories/{$key}.jpg",
             ];
 
             $this->send_json_success($response);
@@ -223,8 +289,12 @@ final class Sharing
      * @param string $action Request control parameter.
      */
     private function route_request($action) {
-        if ('upload' === $action) {
-            return $this->upload_poster();
+        if ('insert' === $action) {
+            return $this->insert_user();
+        }
+
+        if ('standings' === $action) {
+            return $this->get_standings();
         }
 
         if ('gallery' === $action) {

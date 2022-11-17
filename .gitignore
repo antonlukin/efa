@@ -1,6 +1,7 @@
 vendor/
 share/posters/
 share/works/
+share/database/
 share/stories/
 
 node_modules/
