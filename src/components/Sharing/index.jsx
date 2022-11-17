@@ -4,11 +4,11 @@ import { ReactComponent as IconFacebook } from '../../images/icons/facebook.svg'
 
 import './styles.scss';
 
-function Sharing({name}) {
+function Sharing({share}) {
   let url = 'https://clash.notset.org/';
 
-  if (name) {
-    url = `${url}share/${name}`;
+  if (share) {
+    url = `${url}share/${share}`;
   }
 
   return (

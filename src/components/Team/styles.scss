@@ -32,9 +32,17 @@
     }
   }
 
+  .team-anchor {
+    margin: 0;
+    padding: 0;
+
+    visibility: hidden;
+  }
+
   .team-results {
     width: 100%;
     overflow: hidden;
+    table-layout: fixed;
 
     text-align: center;
     font-size: 1.5rem;
@@ -47,6 +55,9 @@
     td {
       height: 3.75rem;
       padding: 0.5rem 1rem 0.25rem;
+      overflow: hidden;
+
+      text-overflow: ellipsis;
 
       &:first-child {
         width: 20%;

@@ -29,7 +29,8 @@ const Header = function() {
           width="887"
           height="484"
           data-image="adult"
-          onLoad={(e) => e.target.dataset.loaded = 'loaded'}
+          data-loaded="hidden"
+          onLoad={(e) => e.target.dataset.loaded = 'visible'}
         />
 
         <img
@@ -38,7 +39,8 @@ const Header = function() {
           width="490"
           height="383"
           data-image="child"
-          onLoad={(e) => e.target.dataset.loaded = 'loaded'}
+          data-loaded="hidden"
+          onLoad={(e) => e.target.dataset.loaded = 'visible'}
         />
       </div>
 

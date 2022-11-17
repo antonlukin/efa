@@ -82,13 +82,8 @@
 
       width: 100%;
       height: auto;
-      opacity: 0;
 
       transition: filter 0.25s, opacity 0.5s;
-
-      &[data-loaded] {
-        opacity: 1;
-      }
 
       @media screen and (max-width: 1023px) {
         position: absolute;

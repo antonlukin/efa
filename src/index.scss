@@ -37,6 +37,14 @@ input, textarea {
 img {
   max-width: 100%;
   height: auto;
+
+  &[data-loaded="hidden"] {
+    opacity: 0;
+  }
+
+  &[data-loaded="visible"] {
+    animation: fade-in 0.5s forwards;
+  }
 }
 
 a {

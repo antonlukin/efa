@@ -1,5 +1,7 @@
 export default function transfer(callback) {
   setTimeout(() => {
+    window.scrollTo(0, 0);
+
     callback();
 
     setTimeout(() => {

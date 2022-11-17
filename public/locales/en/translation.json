@@ -10,7 +10,7 @@
     ]
   },
   "motivation": {
-    "title": "What to Do?",
+    "title": "What to do?",
     "description": "Only by acting together as a team we can defeat the rival!",
     "list": [
       "Get to know the enemy",
@@ -27,7 +27,7 @@
     "title": "Eco-team",
     "start": [
       "This is a team of players who care. They are aware of the environmental problems, know how to fight them and ready to take action.",
-      "Study all the opponent's players to get an eco-team uniform with your last name and favorite number."
+      "Study all the opponent's players to get an eco-team uniform with your last name and favorite number."
     ],
     "amount": "people already joined the Eco-team",
     "results": {

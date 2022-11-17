@@ -94,15 +94,6 @@
 
     margin: 0 auto;
 
-    img {
-      opacity: 0;
-      transition: opacity 0.25s;
-    }
-
-    img[data-loaded] {
-      opacity: 1;
-    }
-
     img[data-image='adult'] {
       display: block;
 

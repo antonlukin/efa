@@ -17,7 +17,7 @@ const Uniform = function() {
 
   const canvas = useRef();
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const changeName = (e) => {
@@ -38,7 +38,7 @@ const Uniform = function() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(label),
+      body: JSON.stringify({...label, lang: i18n.language}),
     }
 
     const showError = (error) => {
@@ -49,7 +49,7 @@ const Uniform = function() {
       event.target.dataset.loading = true;
 
       try {
-        const answer = await fetch('/share/upload/', options);
+        const answer = await fetch('/share/insert/', options);
         const result = await answer.json();
 
         delete event.target.dataset.loading;
@@ -62,7 +62,7 @@ const Uniform = function() {
 
         transfer(() => navigate('/kit/'));
       } catch(error) {
-        showError(error)
+        showError(error);
       }
     }
 

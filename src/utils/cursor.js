@@ -4,6 +4,7 @@ export default class Cursor {
 
   style = 'position: fixed; pointer-events: none; top: 0; left: 0;';
   body = document.querySelector('body');
+  moved = false;
 
   constructor(data) {
     this.count = data.count || 1;
@@ -39,7 +40,9 @@ export default class Cursor {
 
       cursors.forEach((cursor) => {
         this.position(cursor, clientX, clientY);
-      })
+      });
+
+      this.moved = true;
     })
   }
 
@@ -48,14 +51,16 @@ export default class Cursor {
   }
 
   status() {
-    if (this.targets instanceof Array) {
-      for (const target of this.targets) {
-        const targetEls = document.querySelectorAll(target);
+    if (!(this.targets instanceof Array)) {
+      return undefined;
+    }
 
-        for (const el of targetEls) {
-          el.addEventListener('mouseenter', this.hover.bind(this, target, true));
-          el.addEventListener('mouseleave', this.hover.bind(this, target, false));
-        }
+    for (const target of this.targets) {
+      const targetEls = document.querySelectorAll(target);
+
+      for (const el of targetEls) {
+        el.addEventListener('mouseenter', this.hover.bind(this, target, true));
+        el.addEventListener('mouseleave', this.hover.bind(this, target, false));
       }
     }
   }
@@ -63,10 +68,14 @@ export default class Cursor {
   hover(target, show) {
     const name = target.replace(/[.#!]/g, '');
 
-    if (show) {
-      this.body.classList.add(`cursor-hover--${name}`);
-    } else {
-      this.body.classList.remove(`cursor-hover--${name}`);
+    if (!this.moved) {
+      return undefined;
     }
+
+    if (show) {
+      return this.body.classList.add(`cursor-hover--${name}`);
+    }
+
+    this.body.classList.remove(`cursor-hover--${name}`);
   }
 }

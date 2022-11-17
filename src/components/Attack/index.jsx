@@ -34,7 +34,7 @@ const Attack = function({skipped, opened, current, setCurrent}) {
       setCurrent(next);
     }, 500);
 
-    figure.current.querySelector('img').removeAttribute('data-loaded');
+    figure.current.querySelector('img').dataset.loaded = 'hidden';
     document.body.classList.add('is-loading');
   }
 
@@ -124,7 +124,7 @@ const Attack = function({skipped, opened, current, setCurrent}) {
                 width="307"
                 height="429"
                 style={styles.mesh}
-                onLoad={(e) => e.target.dataset.loaded = 'loaded'}
+                onLoad={(e) => e.target.dataset.loaded = 'visible'}
               />
               <figcaption>{t(`attack.health`)}</figcaption>
 

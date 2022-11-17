@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import Sharing from '../Sharing';
@@ -13,10 +14,17 @@ import { ReactComponent as IconDownload } from '../../images/icons/download.svg'
 import { ReactComponent as IconChevron } from '../../images/icons/chevron.svg';
 import { ReactComponent as IconView } from '../../images/icons/view.svg';
 
+import transfer from '../../utils/transfer';
+
 import './styles.scss';
 
 const Grid = function({share}) {
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const transferPage = () => {
+    transfer(() => navigate('/#standings'));
+  }
 
   return (
     <div className="grid">
@@ -78,7 +86,7 @@ const Grid = function({share}) {
         </button>
       </a>
 
-      <div className="grid-standings">
+      <div className="grid-standings" role="button" onClick={transferPage}>
         <figure>
           <img src={DecorCup} alt={t('grid.standings')} />
           <figcaption>{t('grid.standings')}</figcaption>
@@ -94,7 +102,7 @@ const Grid = function({share}) {
           <img src={DecorMegaphone} alt={t('grid.share')} />
           <figcaption>{t('grid.share')}</figcaption>
 
-          <Sharing name={share.name} />
+          <Sharing share={share.key} />
         </figure>
       </div>
     </div>

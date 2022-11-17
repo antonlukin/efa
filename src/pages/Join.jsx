@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Gradients from '../components/Gradients';
 import Uniform from '../components/Uniform';
 
 import AppContext from '../context';
@@ -34,7 +35,10 @@ const Join = function() {
   }, [navigate]);
 
   return (
-    <Uniform />
+    <>
+      <Uniform />
+      <Gradients isPage={true} />
+    </>
   );
 }
 

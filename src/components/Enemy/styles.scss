@@ -5,8 +5,6 @@
   transition: transform 0.25s;
   will-change: transform;
 
-  cursor: none;
-
   img {
     display: block;
     width: 100%;
@@ -39,6 +37,8 @@
   }
 
   &.is-opened:hover {
-    transform: scale(1.075);
+    @media (hover: hover) {
+      transform: scale(1.075);
+    }
   }
 }

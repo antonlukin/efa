@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b9de817.css",
-    "main.js": "/static/js/main.7ebb7224.js",
+    "main.css": "/static/css/main.a48e6233.css",
+    "main.js": "/static/js/main.afc794d9.js",
     "static/media/adult.png": "/static/media/adult.458d33379f056d9fe78f.png",
     "static/media/tshirt-en.png": "/static/media/tshirt-en.7d0362c435f15056e726.png",
     "static/media/child.png": "/static/media/child.978e305447e456ef4181.png",
@@ -57,11 +57,11 @@
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "static/media/facebook.svg": "/static/media/facebook.4d7bd65b067783f81991e532f647e0d9.svg",
     "static/media/chevron.svg": "/static/media/chevron.1455599e503c035c8a46f277801369d2.svg",
-    "main.3b9de817.css.map": "/static/css/main.3b9de817.css.map",
-    "main.7ebb7224.js.map": "/static/js/main.7ebb7224.js.map"
+    "main.a48e6233.css.map": "/static/css/main.a48e6233.css.map",
+    "main.afc794d9.js.map": "/static/js/main.afc794d9.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b9de817.css",
-    "static/js/main.7ebb7224.js"
+    "static/css/main.a48e6233.css",
+    "static/js/main.afc794d9.js"
   ]
 }

@@ -19,7 +19,9 @@ const Home = function() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      offset: 20,
+    });
 
     ['is-opened', 'is-locked'].forEach(cl => {
       document.body.classList.remove(`cursor-hover--${cl}`);
