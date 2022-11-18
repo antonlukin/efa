@@ -124,7 +124,7 @@ final class Sharing
 
             $this->db->query("CREATE TABLE IF NOT EXISTS users (name TEXT, number TEXT, lang TEXT)");
         } catch(Exception $e) {
-            exit('123');
+           $this->send_json_error('Database connection error', 500);
         }
 
         return $this->db;
@@ -136,16 +136,36 @@ final class Sharing
     private function get_standings() {
         $db = $this->connect_database();
 
-        $select = $db->query('SELECT name, number FROM users ORDER BY rowid DESC');
-        $results = $select->fetchAll();
+         try {
+            $select = $db->query('SELECT name, number FROM users ORDER BY rowid DESC');
+            $results = $select->fetchAll();
+         } catch(Exception $e) {
+           $this->send_json_error('Error occured while selecting standings from database', 500);
+        }
 
         $this->send_json_success($results);
     }
 
     /**
-     * Insert new user to standings
+     * Insert user into database
+     *
+     * @param object $data User data
      */
-    private function insert_user() {
+    private function insert_user($data) {
+        $db = $this->connect_database();
+
+        try {
+            $insert = $db->prepare('INSERT INTO users (name, number, lang) VALUES (?, ?, ?)');
+            $insert->execute(array($data->name, $data->number, $data->lang));
+        } catch(Exception $e) {
+           $this->send_json_error('Error occured while inserting new user to database', 500);
+        }
+    }
+
+    /**
+     * Validate and handle new user
+     */
+    private function upload_data() {
         $data = json_decode(file_get_contents('php://input'), false);
 
         if (empty($data)) {
@@ -168,18 +188,14 @@ final class Sharing
             $this->send_json_error('Wrong lang format', 400);
         }
 
-        $db = $this->connect_database();
-
-        $insert = $db->prepare('INSERT INTO users (name, number, lang) VALUES (?, ?, ?)');
-        $insert->execute(array($data->name, $data->number, $data->lang));
-
-        $this->upload_poster($data, $this->get_unique_name());
+        $this->insert_user($data);
+        $this->create_posters($data, $this->get_unique_name());
     }
 
     /**
      * Upload and generate posters from JSON data
      */
-    private function upload_poster($data, $key) {
+    private function create_posters($data, $key) {
         try {
             $work = new PosterEditor();
             $work->make(__DIR__ . '/assets/tshirt.png');
@@ -289,8 +305,8 @@ final class Sharing
      * @param string $action Request control parameter.
      */
     private function route_request($action) {
-        if ('insert' === $action) {
-            return $this->insert_user();
+        if ('upload' === $action) {
+            return $this->upload_data();
         }
 
         if ('standings' === $action) {
