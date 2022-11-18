@@ -75,11 +75,11 @@ const Opposing = function() {
   return (
     <section className="opposing">
       <Lead className="opposing-start">
-        <h2 data-aos="fade" dangerouslySetInnerHTML={{ __html: t('opposing.title')}} />
-        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('opposing.description')}} />
+        <h2 data-aos="fade">{t('opposing.title')}</h2>
+        <p data-aos="fade">{t('opposing.description')}</p>
       </Lead>
 
-      <p className="opposing-helper" dangerouslySetInnerHTML={{ __html: t('opposing.helper')}} />
+      <p className="opposing-helper">{t('opposing.helper')}</p>
 
       {swiper &&
         <Swiper className="opposing-slider" {...swiper}>

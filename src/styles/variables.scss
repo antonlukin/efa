@@ -14,6 +14,10 @@
   --gradient-left: linear-gradient(to left, rgba(36, 36, 36, 0), rgb(36, 36, 36));
   --gradient-forms: linear-gradient(152.28deg, #696565 5.3%, #272727 100%);
   --gradient-border: linear-gradient(120deg, #91FF6A, #FA67B6);
+  --gradient-green: radial-gradient(circle, rgba(14, 230, 100, 0.35) 0%, rgba(14, 230, 100, 0) 70%);
+  --gradient-purple: radial-gradient(circle, rgba(255, 0, 168, 0.35) 0%, rgba(255, 0, 168, 0) 70%);
+  --gradient-slider: linear-gradient(180deg, rgba(44, 15, 112, 0) 0%, #2C0F70 52.08%, rgba(44, 15, 112, 0) 100%);
+  --gradient-loading: linear-gradient(45deg, rgba(0, 0, 0, 0.25) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.25) 75%, transparent 75%, transparent);
 
   --width-content: 42.5rem;
   --width-site: 71rem;

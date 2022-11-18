@@ -94,6 +94,14 @@
     }
   }
 
+  .team-button {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    margin-top: -2rem;
+  }
+
   @media screen and (max-width: 767px) {
     margin: 4.25rem auto 0;
   }

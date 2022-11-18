@@ -39,7 +39,7 @@ const Grid = function({share}) {
         </button>
       </a>
 
-      <a className="grid-stories" href={share.story} download="story.png">
+      <a className="grid-stories" href={share.story} download="story.jpg">
         <figure>
           <p>
             <img src={share.story} alt={t('grid.stories')} />

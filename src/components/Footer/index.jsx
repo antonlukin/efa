@@ -12,12 +12,12 @@ const Footer = function() {
       <div className="footer-description">
         <h4>{t('footer.made')} <a href="/">Tiger Soda</a></h4>
 
-        <p dangerouslySetInnerHTML={{ __html: t('footer.description.0')}} />
-        <p dangerouslySetInnerHTML={{ __html: t('footer.description.1')}} />
+        <p data-aos="fade">{t('footer.description.0')}</p>
+        <p data-aos="fade">{t('footer.description.1')}</p>
       </div>
 
       <div className="footer-social">
-        <p dangerouslySetInnerHTML={{ __html: t('footer.social')}} />
+        <p data-aos="fade">{t('footer.social')}</p>
         <Sharing />
 
         <p>

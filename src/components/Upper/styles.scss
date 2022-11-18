@@ -56,7 +56,7 @@
     }
   }
 
-  .upper-back {
+  .upper-text {
     display: block;
 
     button {
@@ -68,6 +68,26 @@
       margin-right: 1rem;
       fill: var(--color-black);
       transform: rotate(180deg);
+    }
+  }
+
+  .upper-chevron {
+    display: block;
+
+    button {
+      width: 3.125rem;
+      height: 3.125rem;
+      padding: 0;
+
+      @media screen and (max-width: 479px) {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+    }
+
+    svg {
+      fill: var(--color-black);
+      transform: rotate(180deg) translateX(0.125rem);
     }
   }
 

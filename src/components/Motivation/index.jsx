@@ -11,7 +11,7 @@ const Motivation = function() {
     <section className="motivation">
       <Lead className="motivation-start">
         <h2 data-aos="fade">{t('motivation.title')}</h2>
-        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('motivation.description')}} />
+        <p data-aos="fade">{t('motivation.description')}</p>
       </Lead>
 
       <ul data-aos="fade" className="motivation-list">

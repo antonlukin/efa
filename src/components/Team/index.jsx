@@ -2,13 +2,30 @@ import { useEffect, useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Lead from '../../components/Lead';
+import Button from '../../components/Button';
 
 import './styles.scss';
 
 const Team = function() {
   const [standings, setStandings] = useState(null);
+  const [offset, setOffset] = useState(0);
+
   const anchor = useRef();
   const { t } = useTranslation();
+
+  const limit = 8;
+
+  const loadMore = (e) => {
+    const count = offset + limit;
+
+    setOffset(count);
+
+    if (count + limit > standings.length) {
+      e.target.parentNode.remove();
+    }
+
+    anchor.current.scrollIntoView({ behavior: 'smooth' });
+  }
 
   useEffect(() => {
     const options = {
@@ -23,7 +40,7 @@ const Team = function() {
       const result = await answer.json();
 
       if (!result.success || !result.data) {
-        return;
+        return undefined;
       }
 
       setStandings(result.data);
@@ -41,8 +58,8 @@ const Team = function() {
       <Lead className="team-start">
         <h2 data-aos="fade">{t('team.title')}</h2>
 
-        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('team.start.0')}} />
-        <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('team.start.1')}} />
+        <p data-aos="fade">{t('team.start.0')}</p>
+        <p data-aos="fade">{t('team.start.1')}</p>
       </Lead>
 
       <hr className="team-anchor" ref={anchor} />
@@ -50,7 +67,7 @@ const Team = function() {
       {standings &&
         <>
           <h3 className="team-amount" data-aos="fade">
-            <strong>{standings.length}</strong> <span dangerouslySetInnerHTML={{ __html: t('team.amount')}} />
+            <strong>{standings.length}</strong> <span>{t('team.amount')}</span>
           </h3>
 
           <table className="team-results">
@@ -63,15 +80,23 @@ const Team = function() {
             </thead>
 
             <tbody>
-              {standings.map((row, i) =>
+              {standings.slice(offset, offset + limit).map((row, i) =>
                 <tr key={i}>
-                  <td>{i + 1}.</td>
+                  <td>{offset + i + 1}.</td>
                   <td>{row.name}</td>
                   <td>{row.number}</td>
                 </tr>
               )}
+
+              <tr>
+                <td colSpan={3}></td>
+              </tr>
             </tbody>
           </table>
+
+          <div className="team-button">
+            <Button onClick={loadMore}>See more</Button>
+          </div>
         </>
       }
     </section>

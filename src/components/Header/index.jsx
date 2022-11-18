@@ -14,7 +14,7 @@ const Header = function() {
   return (
     <div className="header">
       <div className="header-upper">
-        <Upper back={false} />
+        <Upper back="logo" />
       </div>
 
       <h1 className="header-title">

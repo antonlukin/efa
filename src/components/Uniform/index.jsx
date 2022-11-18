@@ -49,7 +49,7 @@ const Uniform = function() {
       event.target.dataset.loading = true;
 
       try {
-        const answer = await fetch('/share/insert/', options);
+        const answer = await fetch('/share/upload/', options);
         const result = await answer.json();
 
         delete event.target.dataset.loading;
@@ -131,6 +131,7 @@ const Uniform = function() {
       writeName(ctx, width, label.name);
     }
 
+
     if (tshirt) {
       drawCanvas();
 
@@ -154,6 +155,10 @@ const Uniform = function() {
 
         <figure>
           <canvas ref={canvas} />
+
+          {!tshirt &&
+            <span></span>
+          }
         </figure>
 
         <fieldset>

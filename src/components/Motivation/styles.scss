@@ -4,13 +4,11 @@
   z-index: 2;
 
   width: 100%;
-  margin: 1.25rem auto 0;
+  margin: 3.25rem auto 0;
 
   overflow: hidden;
 
-  background-image:
-    radial-gradient(circle, rgba(14, 230, 100, 0.35) 0%, rgba(14, 230, 100, 0) 70%),
-    radial-gradient(circle, rgba(255, 0, 168, 0.35) 0%, rgba(255, 0, 168, 0) 70%);
+  background-image: var(--gradient-green), var(--gradient-purple);
 
   background-position: calc(50% - 4rem) calc(100% - 4rem), calc(50% + 4rem) calc(100% - 10rem);
   background-size: 30rem 30rem, 30rem 30rem;

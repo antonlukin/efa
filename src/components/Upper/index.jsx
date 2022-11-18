@@ -9,7 +9,7 @@ import transfer from '../../utils/transfer';
 
 import './styles.scss';
 
-const Upper = function({back = true}) {
+const Upper = function({back = 'text'}) {
   const navigate = useNavigate();
   const { i18n } = useTranslation();
 
@@ -23,15 +23,21 @@ const Upper = function({back = true}) {
 
   return (
     <div className="upper">
-      {!back &&
+      {(back === 'logo') &&
         <a className="upper-logo" href="/" onClick={transferPage}>
             <ImageLogo />
         </a>
       }
 
-      {back &&
-        <div className="upper-back">
+      {(back === 'text') &&
+        <div className="upper-text">
           <Button onClick={transferPage}><IconChevron />main page</Button>
+        </div>
+      }
+
+      {(back === 'chevron') &&
+        <div className="upper-chevron">
+          <Button onClick={transferPage}><IconChevron /></Button>
         </div>
       }
 

@@ -7,9 +7,9 @@ const Summary = function() {
 
   return (
     <section className="summary">
-      <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.0')}} />
-      <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.1')}} />
-      <p data-aos="fade" dangerouslySetInnerHTML={{ __html: t('summary.start.2')}} />
+      <p data-aos="fade">{t('summary.start.0')}</p>
+      <p data-aos="fade">{t('summary.start.1')}</p>
+      <p data-aos="fade">{t('summary.start.2')}</p>
     </section>
   );
 }
