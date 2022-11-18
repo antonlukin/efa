@@ -9,7 +9,6 @@ const Summary = function() {
     <section className="summary">
       <p data-aos="fade">{t('summary.start.0')}</p>
       <p data-aos="fade">{t('summary.start.1')}</p>
-      <p data-aos="fade">{t('summary.start.2')}</p>
     </section>
   );
 }

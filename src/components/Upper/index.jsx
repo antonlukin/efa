@@ -11,14 +11,15 @@ import './styles.scss';
 
 const Upper = function({back = 'text'}) {
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const transferPage = () => {
     transfer(() => navigate('/'));
   }
 
-  const changeLanguage = (lng) => {
-    transfer(() => i18n.changeLanguage(lng));
+  const changeLanguage = (language) => {
+    document.body.dataset.language = language;
+    transfer(() => i18n.changeLanguage(language));
   };
 
   return (
@@ -31,7 +32,7 @@ const Upper = function({back = 'text'}) {
 
       {(back === 'text') &&
         <div className="upper-text">
-          <Button onClick={transferPage}><IconChevron />main page</Button>
+          <Button onClick={transferPage}><IconChevron />{t(`upper.home`)}</Button>
         </div>
       }
 

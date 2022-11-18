@@ -20,7 +20,7 @@ const Team = function() {
 
     setOffset(count);
 
-    if (count + limit > standings.length) {
+    if (e.target.parentNode && count + limit >= standings.length) {
       e.target.parentNode.remove();
     }
 

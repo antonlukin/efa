@@ -32,6 +32,7 @@ const App = function() {
     }
 
     i18n.changeLanguage(language);
+    document.body.dataset.language = language;
 
     setLoaded(true);
   }, [i18n]);

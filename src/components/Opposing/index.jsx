@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Navigation } from 'swiper';
+import { Navigation, Keyboard } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Lead from '../../components/Lead';
@@ -44,10 +44,13 @@ const Opposing = function() {
       slidesPerView: 'auto',
       allowTouchMove: true,
       centeredSlides: true,
-      modules: [Navigation],
+      modules: [Navigation, Keyboard],
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
+      },
+      keyboard: {
+        enabled: true,
       },
       preloadImages: true,
       updateOnImagesReady: true,

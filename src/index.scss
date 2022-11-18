@@ -37,13 +37,14 @@ input, textarea {
 img {
   max-width: 100%;
   height: auto;
+  transition: opacity 0.25s;
 
   &[data-loaded="hidden"] {
     opacity: 0;
   }
 
   &[data-loaded="visible"] {
-    animation: fade-in 0.5s forwards;
+    opacity: 1;
   }
 }
 

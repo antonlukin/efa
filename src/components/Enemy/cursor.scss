@@ -1,30 +1,17 @@
-.cursor-hover--is-locked [data-cursor] {
-  display: none;
-  z-index: 9;
-
-  width: 4rem;
-  height: 4rem;
-
-  background: #f0f;
-  border-radius: 50%;
-
-  animation: fade-in 0.25s;
-
-  @media (hover: hover) {
-    display: block;
-  }
-}
-
 .cursor-hover--is-opened {
   cursor: none;
 }
 
-.cursor-hover--is-opened [data-cursor] {
+.cursor-hover--is-locked {
+  cursor: none;
+}
+
+.cursor-hover--is-locked [data-cursor] {
   display: none;
   z-index: 9;
 
-  width: 6rem;
-  height: 6rem;
+  width: 5.25rem;
+  height: 5.25rem;
 
   &::after {
     content: '';
@@ -33,7 +20,7 @@
     width: 100%;
     height: 100%;
 
-    background-image: url('/images/decors/cursor.png');
+    background-image: url('/images/decors/locked-en.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -46,4 +33,41 @@
   @media (hover: hover) {
     display: block;
   }
+}
+
+.cursor-hover--is-locked[data-language="es"] [data-cursor]::after {
+  background-image: url('/images/decors/locked-es.png');
+}
+
+.cursor-hover--is-opened [data-cursor] {
+  display: none;
+  z-index: 9;
+
+  width: 5.25rem;
+  height: 5.25rem;
+
+  &::after {
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url('/images/decors/cursor-en.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    border-radius: 50%;
+
+    animation: fade-in 0.25s, rotation 5s linear infinite;
+  }
+
+  @media (hover: hover) {
+    display: block;
+  }
+}
+
+.cursor-hover--is-opened[data-language="es"] [data-cursor]::after {
+  background-image: url('/images/decors/cursor-es.png');
 }
