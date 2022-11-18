@@ -225,9 +225,9 @@ final class Sharing
             ));
 
             $story = new PosterEditor();
-            $story->make($this->dir . '/assets/story.png');
+            $story->make($this->dir . '/assets/story.jpg');
 
-            $story->insert($work, array('x' => 120, 'y' => 700));
+            $story->insert($work, array('x' => 120, 'y' => 950));
             $story->save($this->dir . "/stories/{$key}.jpg", 70);
 
             $work->downsize(null, 540);
