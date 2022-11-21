@@ -25,13 +25,13 @@
     height: auto;
 
     @media screen and (max-width: 479px) {
-      top: 4rem;
-      left: -1rem;
+      top: 3rem;
+      left: -3rem;
 
       width: 8rem;
       max-width: 32vw;
 
-      transform: scale(-1, 1);
+      transform: scale(-1, 1) rotate(-10deg);
     }
   }
 

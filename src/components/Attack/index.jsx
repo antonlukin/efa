@@ -55,7 +55,9 @@ const Attack = function({skipped, opened, current, setCurrent}) {
     setStrikes(currentStrike);
   }
 
-  const goFinish = () => {
+  const transferFinish = (e) => {
+    e.preventDefault();
+
     transfer(() => navigate('/kit/'));
   }
 
@@ -157,7 +159,7 @@ const Attack = function({skipped, opened, current, setCurrent}) {
               }
 
               {skipped &&
-                <Button onClick={goFinish}>{t(`attack.kit`)} <IconChevron/></Button>
+                <Button onClick={transferFinish}>{t(`attack.kit`)} <IconChevron/></Button>
               }
             </figure>
           </div>

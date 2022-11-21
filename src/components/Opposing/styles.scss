@@ -12,17 +12,33 @@
 
   .opposing-helper {
     display: none;
+    justify-content: center;
+    position: relative;
 
+    height: 2rem;
     margin: 0;
 
     font-size: 0.875rem;
     text-align: center;
-    opacity: 0.5;
 
-    color: var(--color-text);
+    color: var(--color-white);
+
+    &::after {
+      content: '';
+
+      position: relative;
+
+      width: 2rem;
+      height: 2rem;
+      margin-left: 0.5rem;
+
+      background-image: url('/images/decors/tap.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
 
     @media screen and (max-width: 1023px) {
-      display: block;
+      display: flex;
     }
   }
 

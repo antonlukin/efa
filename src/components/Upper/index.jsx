@@ -13,7 +13,9 @@ const Upper = function({back = 'text'}) {
   const navigate = useNavigate();
   const { i18n, t } = useTranslation();
 
-  const transferPage = () => {
+  const transferHome = (e) => {
+    e.preventDefault();
+
     transfer(() => navigate('/'));
   }
 
@@ -25,20 +27,20 @@ const Upper = function({back = 'text'}) {
   return (
     <div className="upper">
       {(back === 'logo') &&
-        <a className="upper-logo" href="/" onClick={transferPage}>
+        <a className="upper-logo" href="/" onClick={transferHome}>
             <ImageLogo />
         </a>
       }
 
       {(back === 'text') &&
         <div className="upper-text">
-          <Button onClick={transferPage}><IconChevron />{t(`upper.home`)}</Button>
+          <Button onClick={transferHome}><IconChevron />{t(`upper.home`)}</Button>
         </div>
       }
 
       {(back === 'chevron') &&
         <div className="upper-chevron">
-          <Button onClick={transferPage}><IconChevron /></Button>
+          <Button onClick={transferHome}><IconChevron /></Button>
         </div>
       }
 

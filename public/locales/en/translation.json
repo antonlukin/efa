@@ -23,7 +23,7 @@
   "opposing": {
     "title": "Opposing team",
     "description": "Each player on this team represents a global environmental issue. Find out more about them and get tips to counter their influence.",
-    "helper": "tap on card to see more"
+    "helper": "tap"
   },
   "team": {
     "title": "Eco-team",
@@ -52,7 +52,7 @@
   },
   "final": {
     "title": "Congratulations!",
-    "description": "You beat the opponent and now you are a member of the eco-friendly team."
+    "description": "You beat the opponent! Welcome to the eco-friendly team!"
   },
   "grid": {
     "uniform": "You can download your form on device",
@@ -78,6 +78,9 @@
     "name": "Your name",
     "number": "Your number",
     "get": "Get the kit!"
+  },
+  "annotations": {
+    "title": "Project’s sources"
   },
   "fight": [
     {

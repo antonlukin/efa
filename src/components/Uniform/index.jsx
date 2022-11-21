@@ -167,7 +167,7 @@ const Uniform = function() {
               type="text"
               placeholder={t(`uniform.name`)}
               value={label.name}
-              pattern=".{1,14}"
+              pattern="[A-Za-z0-9-_\s]{1,14}"
               onChange={changeName}
             />
           </p>

@@ -10,6 +10,7 @@ import Fight from './pages/Fight';
 import Join from './pages/Join';
 import Kit from './pages/Kit';
 import Error from './pages/Error';
+import Sources from './pages/Sources';
 
 import AppContext from './context';
 import './i18n';
@@ -51,6 +52,7 @@ const App = function() {
             <Route path="/fight/:id" element={<Fight />} />
             <Route path="/join/" element={<Join />} />
             <Route path="/kit/" element={<Kit />} />
+            <Route path="/sources/" element={<Sources />} />
             <Route path="*" element={<Error />} />
           </Routes>
         </BrowserRouter>

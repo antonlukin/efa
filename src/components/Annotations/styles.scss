@@ -1,0 +1,99 @@
+.annotations {
+  display: block;
+  position: relative;
+  z-index: 2;
+
+  width: var(--width-site);
+  max-width: calc(100% - 3rem);
+  margin: 0 auto;
+  padding: 1.5rem 0 2.5rem;
+
+  .annotations-header {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 1rem;
+
+    @media screen and (max-width: 1023px) {
+      width: var(--width-content);
+      margin-bottom: 2rem;
+    }
+  }
+
+  .annotations-content {
+    width: 100%;
+    max-width: 100%;
+
+    h2 {
+      display: block;
+      margin: 0;
+
+      font-size: 3.5rem;
+      font-weight: 700;
+      font-family: var(--font-caption);
+      text-transform: uppercase;
+
+      @media screen and (max-width: 1023px) {
+        font-size: 3rem;
+      }
+
+      @media screen and (max-width: 479px) {
+        font-size: 2.5rem;
+      }
+
+      @media screen and (max-width: 359px) {
+        font-size: 2rem;
+      }
+    }
+
+    ol {
+      margin: 0;
+      padding-left: 1rem;
+    }
+
+    li {
+      max-width: var(--width-content);
+      margin: 1.5rem 0;
+      padding: 0;
+      padding-left: 1rem;
+
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.75;
+
+      &::marker {
+        font-weight: 500;
+      }
+
+      @media screen and (max-width: 479px) {
+        font-size: 0.875rem;
+      }
+    }
+
+    a {
+      color: var(--color-text);
+      border-bottom: solid 1px;
+
+      transition: border 0.25s;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      width: var(--width-content);
+      margin: 0 auto 2rem;
+    }
+  }
+
+  .final-grid {
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem auto;
+
+    @media screen and (max-width: 1023px) {
+      width: var(--width-content);
+      margin: 0 auto 1rem;
+    }
+  }
+}

@@ -67,10 +67,13 @@
       font-size: 0.875rem;
       font-weight: 300;
 
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+
       color: var(--color-links);
 
       @media screen and (max-width: 767px) {
-        display: none;
+        text-align: center;
       }
     }
 

@@ -22,8 +22,14 @@ const Grid = function({share}) {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const transferPage = () => {
+  const transferStandings = () => {
     transfer(() => navigate('/#standings'));
+  }
+
+  const transferSources = (e) => {
+    e.preventDefault();
+
+    transfer(() => navigate('/sources/'));
   }
 
   return (
@@ -64,7 +70,7 @@ const Grid = function({share}) {
         </button>
       </a>
 
-      <a className="grid-sources" href="/" target="_blank" rel="noreferrer">
+      <a className="grid-sources" href="/sources/" onClick={transferSources}>
         <figure>
           <img src={DecorEarth} alt={t('grid.sources')} />
           <figcaption>{t('grid.sources')}</figcaption>
@@ -86,7 +92,7 @@ const Grid = function({share}) {
         </button>
       </a>
 
-      <div className="grid-standings" role="button" onClick={transferPage}>
+      <div className="grid-standings" role="button" onClick={transferStandings}>
         <figure>
           <img src={DecorCup} alt={t('grid.standings')} />
           <figcaption>{t('grid.standings')}</figcaption>

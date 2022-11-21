@@ -10,7 +10,7 @@ const Enemy = function({id, current}) {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const transferPage = () => {
+  const transferEnemy = () => {
     transfer(() => navigate(`/fight/${id + 1}/`));
   }
 
@@ -20,7 +20,7 @@ const Enemy = function({id, current}) {
   classes.push(opened ? 'is-opened' : 'is-locked');
 
   return (
-    <div className={classes.join(' ')} onClick={opened ? transferPage : null}>
+    <div className={classes.join(' ')} onClick={opened ? transferEnemy : null}>
       <h4>{t(`fight.${id}.title`)}</h4>
 
       {id < current

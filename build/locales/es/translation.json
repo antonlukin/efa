@@ -23,7 +23,7 @@
   "opposing": {
     "title": "Equipo opuesto",
     "description": "Cada jugador del equipo representa un asunto global de medio ambiente. Conoce más sobre cada uno y lee los tips para reducir su influencia.",
-    "helper": "toca la tarjeta para ver más"
+    "helper": "toca"
   },
   "team": {
     "title": "Equipo ecológico",
@@ -78,6 +78,9 @@
     "name": "Introduce el nombre",
     "number": "Introduce el número",
     "get": " ¡Consigue tu pack!"
+  },
+  "annotations": {
+    "title": "Project’s sources"
   },
   "fight": [
     {
