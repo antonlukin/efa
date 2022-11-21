@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f1b427fe.css",
-    "main.js": "/static/js/main.3cfd1f26.js",
+    "main.js": "/static/js/main.37371ae0.js",
     "static/media/adult.png": "/static/media/adult.458d33379f056d9fe78f.png",
     "static/media/tshirt-en.png": "/static/media/tshirt-en.7d0362c435f15056e726.png",
     "static/media/child.png": "/static/media/child.978e305447e456ef4181.png",
@@ -52,19 +52,19 @@
     "static/media/locked-es.png": "/static/media/locked-es.6d6d9ec21729cd8952f2.png",
     "static/media/logo.svg": "/static/media/logo.9eb1729bb3be7e8dd441c8b6f2f19d22.svg",
     "static/media/view.svg": "/static/media/view.0a85c7daf297558e05742da2c2a5924a.svg",
+    "index.html": "/index.html",
     "static/media/twitter.svg": "/static/media/twitter.34b048b52d533ea3f61c23d6b05dea9c.svg",
     "static/media/telegram.svg": "/static/media/telegram.d99a71df61114b61643329cb6c37f44e.svg",
     "static/media/ellipse.svg": "/static/media/ellipse.8648db4751486dc3dfd3.svg",
-    "index.html": "/index.html",
     "static/media/download.svg": "/static/media/download.f94c01b2b8b391c8e3695cfe717a4107.svg",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "static/media/facebook.svg": "/static/media/facebook.4d7bd65b067783f81991e532f647e0d9.svg",
     "static/media/chevron.svg": "/static/media/chevron.1455599e503c035c8a46f277801369d2.svg",
     "main.f1b427fe.css.map": "/static/css/main.f1b427fe.css.map",
-    "main.3cfd1f26.js.map": "/static/js/main.3cfd1f26.js.map"
+    "main.37371ae0.js.map": "/static/js/main.37371ae0.js.map"
   },
   "entrypoints": [
     "static/css/main.f1b427fe.css",
-    "static/js/main.3cfd1f26.js"
+    "static/js/main.37371ae0.js"
   ]
 }

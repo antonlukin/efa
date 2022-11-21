@@ -20,10 +20,6 @@ const Team = function() {
 
     setOffset(count);
 
-    if (e.target.parentNode && count + limit >= standings.length) {
-      e.target.parentNode.remove();
-    }
-
     anchor.current.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -94,9 +90,12 @@ const Team = function() {
             </tbody>
           </table>
 
-          <div className="team-button">
-            <Button onClick={loadMore}>See more</Button>
-          </div>
+
+          {offset + limit < standings.length &&
+            <div className="team-button">
+              <Button onClick={loadMore}>See more</Button>
+            </div>
+          }
         </>
       }
     </section>

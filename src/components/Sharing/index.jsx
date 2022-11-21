@@ -5,7 +5,7 @@ import { ReactComponent as IconFacebook } from '../../images/icons/facebook.svg'
 import './styles.scss';
 
 function Sharing({share}) {
-  let url = 'https://clash.notset.org/';
+  let url = process.env.REACT_APP_PROJECT_URL;
 
   if (share) {
     url = `${url}share/${share}`;
@@ -13,9 +13,9 @@ function Sharing({share}) {
 
   return (
     <nav className="sharing">
-      <a href={'https://www.facebook.com/sharer/sharer.php?u=' + url}><IconFacebook /></a>
-      <a href={'https://t.me/share/url?url=' + url}><IconTelegram /></a>
-      <a href={'https://twitter.com/intent/tweet?text=' + url}><IconTwitter /></a>
+      <a target="_blank" rel="noreferrer" href={'https://www.facebook.com/sharer/sharer.php?u=' + url}><IconFacebook /></a>
+      <a target="_blank" rel="noreferrer" href={'https://t.me/share/url?url=' + url}><IconTelegram /></a>
+      <a target="_blank" rel="noreferrer" href={'https://twitter.com/intent/tweet?text=' + url}><IconTwitter /></a>
     </nav>
   );
 }
