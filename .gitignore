@@ -5,3 +5,5 @@ share/database/
 share/stories/
 
 node_modules/
+
+.env

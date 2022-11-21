@@ -4,6 +4,7 @@ namespace Soda\EFA;
 
 use Exception;
 use PDO;
+use Dotenv;
 use PosterEditor\PosterEditor;
 
 if (php_sapi_name() === 'cli') {
@@ -24,7 +25,7 @@ final class Sharing
     /**
      * Url to project home page.
      */
-    public $url = 'https://clash.notset.org';
+    public $url = '/';
 
     /**
      * Current file directory.
@@ -50,17 +51,8 @@ final class Sharing
     /**
      * Generate unique poster name.
      */
-    private function get_unique_name() {
+    private function get_unique_key() {
         return sha1(uniqid('', true));
-    }
-
-    /**
-     * Decode base64 image from POST request.
-     *
-     * @param string $image Base64 encoded png image.
-     */
-    private function decode_image($image) {
-        return base64_decode(str_replace('data:image/jpeg;base64,', '', $image));
     }
 
     /**
@@ -99,7 +91,7 @@ final class Sharing
      * @param mixed $data   Success data.
      * @param int   $status HTTP status code. By default: 500.
      */
-    private function send_json_success($data) {
+    private function send_json_success($data = null) {
         $output = array(
             'success' => true,
             'data'    => $data,
@@ -122,7 +114,7 @@ final class Sharing
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-            $this->db->query("CREATE TABLE IF NOT EXISTS users (name TEXT, number TEXT, lang TEXT)");
+            $this->db->query("CREATE TABLE IF NOT EXISTS users (name TEXT, number TEXT, lang TEXT, key TEXT)");
         } catch(Exception $e) {
            $this->send_json_error('Database connection error', 500);
         }
@@ -150,13 +142,14 @@ final class Sharing
      * Insert user into database
      *
      * @param object $data User data
+     * @param string $key  Unique key
      */
-    private function insert_user($data) {
+    private function insert_user($data, $key) {
         $db = $this->connect_database();
 
         try {
-            $insert = $db->prepare('INSERT INTO users (name, number, lang) VALUES (?, ?, ?)');
-            $insert->execute(array($data->name, $data->number, $data->lang));
+            $insert = $db->prepare('INSERT INTO users (name, number, lang, key) VALUES (?, ?, ?, ?)');
+            $insert->execute(array($data->name, $data->number, $data->lang, $key));
         } catch(Exception $e) {
            $this->send_json_error('Error occured while inserting new user to database', 500);
         }
@@ -176,7 +169,7 @@ final class Sharing
             $this->send_json_error('Wrong data format', 400);
         }
 
-        if (!preg_match('~^.{1,14}$~u', $data->name)) {
+        if (!preg_match('~^[A-Za-z0-9-_\s]{1,14}$~u', $data->name)) {
             $this->send_json_error('Wrong name format', 400);
         }
 
@@ -188,12 +181,17 @@ final class Sharing
             $this->send_json_error('Wrong lang format', 400);
         }
 
-        $this->insert_user($data);
-        $this->create_posters($data, $this->get_unique_name());
+        $key = $this->get_unique_key();
+
+        $this->insert_user($data, $key);
+        $this->create_posters($data, $key);
     }
 
     /**
      * Upload and generate posters from JSON data
+     *
+     * @param object $data User data
+     * @param string $key  Unique key
      */
     private function create_posters($data, $key) {
         try {
@@ -252,29 +250,39 @@ final class Sharing
     }
 
     /**
-     * Show posters galllery
+     * Delete user by rowid
+     *
+     * @param int $rowid Row id to delete from users
      */
-    private function show_gallery() {
-        $posters = array();
+    private function delete_user($rowid) {
+        $db = $this->connect_database();
 
-        $files = glob('posters/*.png');
-
-        usort($files, function( $a, $b ) {
-            return filemtime($b) - filemtime($a);
-        });
-
-        foreach ($files as $name) {
-            $posters[] = $this->url . "/share/{$name}";
+        try {
+            $delete = $db->query('DELETE FROM users WHERE rowid = ?');
+            $delete->execute(array($rowid));
+        } catch(Exception $e) {
+           $this->send_json_error('Error occured while deleteing user from database', 500);
         }
 
-        $total = ceil(count($posters) / 30);
+        $this->send_json_success($rowid);
+    }
 
-        // Get page from query param
-        $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    /**
+     * Show posters galllery
+     */
+    private function show_dashboard() {
+        if (!empty($_POST['delete'])) {
+            return $this->delete_user(intval($_POST['delete']));
+        }
 
-        $posters = array_slice($posters, ($page - 1) * 30, 30);
+        $db = $this->connect_database();
 
-        include_once __DIR__ . '/assets/gallery.php';
+        $select = $db->query('SELECT rowid, name, number, lang, key FROM users ORDER BY rowid DESC');
+        $results = $select->fetchAll();
+
+        $amount = array_count_values(array_column($results, 'lang'));
+
+        include_once __DIR__ . '/assets/dashboard.php';
     }
 
     /**
@@ -283,15 +291,14 @@ final class Sharing
      * @param string $name Poster name.
      */
     private function show_tags($name) {
-        if (!file_exists($this->dir . "/posters/{$name}.png")) {
+        if (!file_exists($this->dir . "/posters/{$name}.jpg")) {
             $this->redirect_page($this->url);
         }
 
         $meta = array(
-            'poster'      => $this->url . "/share/posters/{$name}.png",
-            'work'        => $this->url . "/share/works/{$name}.jpg",
-            'title'       => 'Глядите, это мое произведение!',
-            'description' => 'Это великолепие создано на сайте онлайн-музея ЖЭК-арта dvor.digital.',
+            'poster'      => $this->url . "/share/posters/{$name}.jpg",
+            'title'       => 'EFA World Cup 2022',
+            'description' => 'Eco-friendly activities contest',
         );
 
         extract($meta);
@@ -313,8 +320,8 @@ final class Sharing
             return $this->get_standings();
         }
 
-        if ('gallery' === $action) {
-            return $this->show_gallery();
+        if ('dashboard' === $action) {
+            return $this->show_dashboard();
         }
 
         $this->show_tags($action);
@@ -326,6 +333,13 @@ final class Sharing
      * @param string $request Request URI.
      */
     public function init($request) {
+        $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+        $dotenv->load();
+
+        if (isset($_ENV['REACT_APP_PROJECT_URL'])) {
+            $this->url = $_ENV['REACT_APP_PROJECT_URL'];
+        }
+
         $args = explode('/', trim($request, '/'));
 
         if (empty($args[1])) {
