@@ -20,7 +20,7 @@ import './styles.scss';
 
 const Grid = function({share}) {
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const transferStandings = () => {
     transfer(() => navigate('/#standings'));
@@ -81,7 +81,7 @@ const Grid = function({share}) {
         </button>
       </a>
 
-      <a className="grid-guide" href="/" target="_blank" rel="noreferrer">
+      <a className="grid-guide" href={`/guide-${i18n.language}.pdf`} target="_blank" rel="noreferrer">
         <figure>
           <img src={DecorList} alt={t('grid.guide')} />
           <figcaption>{t('grid.guide')}</figcaption>
