@@ -5,102 +5,106 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Dashboard</title>
+    <title>EFA Admin Dashboard</title>
 
     <style>
         * {
             box-sizing: border-box;
         }
 
+
+        html {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 767px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
         body {
-            display: block;
-
-            margin: 0;
-            padding: 0;
-
-            font: 400 16px/1.5 -apple-system, 'Segoe UI', Roboto, Ubuntu, 'Open Sans', sans-serif;
-
-            color: #121215;
-            background-color: #fff;
-        }
-
-        .title {
-            display: block;
-            margin: 0 0 2.5rem;
-            padding-bottom: 1.5rem;
-            font-weight: 300;
-            border-bottom: solid 1px #ccc;
-        }
-
-        .page {
-            display: block;
-
-            width: 100%;
-            max-width: 980px;
-
-            margin: 4rem auto;
-        }
-
-        .logo svg {
-            display: block;
-
-            width: auto;
-            height: 2rem;
-            max-width: 100%;
-            fill: #000;
-        }
-
-        .content {
             display: flex;
-            align-items: flex-start;
-            gap: 2rem;
-        }
 
-        .summary {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: 1fr 1fr;
-            flex: 0 0 16rem;
+            width: 80rem;
+            max-width: 100%;
 
+            margin: 0 auto;
             padding: 1rem;
-            font-size: 1.125rem;
 
-            background: #eee;
-            border: solid 1px #aaa;
-            border-radius: 0.5rem;
+            font: 400 1rem/1.375 -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+
+            color: #333;
+            background-color: #eee;
         }
 
-        .summary p {
-            margin: 0 0 1rem;
+        @media screen and (max-width: 1023px) {
+            body {
+                flex-flow: column wrap; 
+                padding: 0;
+            }
         }
 
-        .summary span {
-            text-align: center;
-        }
-
-        .list {
+        section {
             display: grid;
             grid-template-columns: repeat(4, auto);
-            gap: 1.25rem;
+            gap: 1rem;
             flex: 1 1 auto;
 
-            max-height: 30rem;
+            max-height: calc(100vh - 3rem);
+            margin: 0.5rem;
             padding: 1rem;
             overflow: scroll;
             font-size: 1.125rem;
 
-            background: #eee;
-            border: solid 1px #aaa;
+            background: #fff;
             border-radius: 0.5rem;
+        } 
+
+        aside {
+            display: flex; 
+            align-items: flex-start;
+
+            flex: 0 0 20rem;
+
+            margin: 0.5rem;
+            padding: 1rem 1.5rem;
+            font-size: 1.125rem;
+
+            background: #fff;
+            border-radius: 0.375rem;
         }
 
-        .list p {
+        @media screen and (max-width: 1023px) {
+            aside {
+                flex: 1 1 100%;
+            }
+        }
+
+        aside figure {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+            width: 100%;
+            margin: 0;
+        }
+
+        aside figure strong {
+            font-weight: 500;
+        }
+
+        aside figure span {
+            text-align: right;
+        }
+
+        section p {
             display: flex;
             align-items: center;
             margin: 0;
         }
 
-        .list span, .list a {
+        section span, section a {
             display: block;
             margin: 0;
             max-width: 10rem;
@@ -108,12 +112,12 @@
             text-overflow: ellipsis;
         }
 
-        .list a {
+        section a {
             color: #08c;
             text-decoration: none;
         }
 
-        .list button {
+        section button {
             display: block;
             cursor: pointer;
 
@@ -131,47 +135,43 @@
     </style>
 </head>
 <body>
-    <div class="page">
-        <h1 class="title">Dashboard: Efa World Cup</h1>
+    <aside>
+        <figure>
+            <strong>Total users:</strong>
+            <span><?php echo count($results); ?></span>
 
-        <div class="content">
-            <div class="summary">
-                <strong>Total users:</strong>
-                <span><?php echo count($results); ?></span>
+            <strong>EN locale:</strong>
+            <span><?php echo $amount['en'] ?></span>
 
-                <strong>EN locale:</strong>
-                <span><?php echo $amount['en'] ?></span>
+            <strong>ES locale:</strong>
+            <span><?php echo $amount['es'] ?></span>
+        </figure>
+    </aside>
 
-                <strong>ES locale:</strong>
-                <span><?php echo $amount['es'] ?></span>
-            </div>
+    <section>
+        <?php foreach ($results as $result) : ?>
+            <p data-id="<?php echo $result['rowid']; ?>">
+                <a href="/share/works/<?php echo $result['key']; ?>.png" target="_blank">
+                    <?php echo $result['name']; ?>
+                </a>
+            </p>
 
-            <div class="list">
-                <?php foreach ($results as $result) : ?>
-                    <p data-id="<?php echo $result['rowid']; ?>">
-                        <a href="/share/works/<?php echo $result['key']; ?>.png" target="_blank">
-                            <?php echo $result['name']; ?>
-                        </a>
-                    </p>
+            <p data-id="<?php echo $result['rowid']; ?>">
+                <span><?php echo $result['number']; ?></span>
+            </p>
 
-                    <p data-id="<?php echo $result['rowid']; ?>">
-                        <span><?php echo $result['number']; ?></span>
-                    </p>
+            <p data-id="<?php echo $result['rowid']; ?>">
+                <span><?php echo $result['lang']; ?></span>
+            </p>
 
-                    <p data-id="<?php echo $result['rowid']; ?>">
-                        <span><?php echo $result['lang']; ?></span>
-                    </p>
-
-                    <p data-id="<?php echo $result['rowid']; ?>">
-                        <button>Delete</button>
-                    </p>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
+            <p data-id="<?php echo $result['rowid']; ?>">
+                <button>Delete</button>
+            </p>
+        <?php endforeach; ?>
+    </section>
 
     <script>
-        document.querySelectorAll('.list button').forEach(button => {
+        document.querySelectorAll('section button').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
 
@@ -189,7 +189,7 @@
                         return alert(response.data || 'Unexpected error');
                     }
 
-                    document.querySelectorAll('.list p[data-id="' + response.data + '"]').forEach(item => {
+                    document.querySelectorAll('section p[data-id="' + response.data + '"]').forEach(item => {
                         item.remove();
                     });
                 };
