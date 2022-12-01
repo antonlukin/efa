@@ -19,7 +19,7 @@ const Header = function() {
 
       <h1 className="header-title">
         <strong>EFA World Cup </strong>
-        <span>Eco-friendly activities contest</span>
+        <span>{t('header.title')}</span>
       </h1>
 
       <div className="header-mesh">

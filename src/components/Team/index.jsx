@@ -15,8 +15,12 @@ const Team = function() {
 
   const limit = 8;
 
-  const loadMore = (e) => {
-    const count = offset + limit;
+  const loadMore = () => {
+    let count = offset + limit;
+
+    if (count > standings.length) {
+      count = 0;
+    }
 
     setOffset(count);
 
@@ -90,12 +94,9 @@ const Team = function() {
             </tbody>
           </table>
 
-
-          {offset + limit < standings.length &&
-            <div className="team-button">
-              <Button onClick={loadMore}>See more</Button>
-            </div>
-          }
+          <div className="team-button">
+            <Button onClick={loadMore}>{t('team.more')}</Button>
+          </div>
         </>
       }
     </section>

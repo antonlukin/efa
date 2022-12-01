@@ -12,6 +12,7 @@
 
   .opposing-helper {
     display: none;
+    align-items: center;
     justify-content: center;
     position: relative;
 
@@ -35,6 +36,8 @@
       background-image: url('/images/decors/tap.png');
       background-repeat: no-repeat;
       background-size: contain;
+
+      animation: pulse 2s infinite linear;
     }
 
     @media screen and (max-width: 1023px) {

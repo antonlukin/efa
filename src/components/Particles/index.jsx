@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { Parallax } from 'react-scroll-parallax';
 
 import ParticleCan from '../../images/particles/can.png';
@@ -15,9 +17,13 @@ import ParticlePaper from '../../images/particles/paper.png';
 import './styles.scss';
 
 const Paritcles = function() {
+  useEffect(() => {
+
+  }, []);
+
   return (
     <div className="particles">
-      <Parallax data-particle="ball">
+      <Parallax data-particle="ball" rotate={[0, 60]}>
         <img
           src={ParticleBall}
           alt="Particle ball"

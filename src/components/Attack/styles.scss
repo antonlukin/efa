@@ -295,7 +295,6 @@
     figure {
       display: flex;
       justify-content: center;
-      gap: 1rem;
 
       margin: 0;
       padding: 0;
@@ -307,6 +306,7 @@
       }
 
       button:not(:first-child) {
+        margin-left: 1.5rem;
         color: var(--color-links);
         background-color: transparent;
         border: solid 2px var(--color-links);

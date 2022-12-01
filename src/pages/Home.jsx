@@ -21,6 +21,7 @@ const Home = function() {
   useEffect(() => {
     AOS.init({
       offset: 20,
+      once: true
     });
 
     ['is-opened', 'is-locked'].forEach(cl => {

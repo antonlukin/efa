@@ -1,6 +1,7 @@
 {
   "header": {
-    "slogan": "Lucha por el futuro"
+    "slogan": "Lucha por el futuro",
+    "title": "Reto de hábitos ecoconscientes"
   },
   "upper": {
     "home": "inicio"
@@ -31,6 +32,7 @@
       "Es un equipo de jugadores para los que eso sí importa. Están conscientes de los problemas medioambientales y están dispuestos a actuar.",
       "Analiza a todos los jugadores opositores para recibir el uniforme con tu apellido y número favorito."
     ],
+    "more": "Ver más",
     "amount": "personas ya se sumaron al equipo ecológico",
     "results": {
       "name": "Nombre",
