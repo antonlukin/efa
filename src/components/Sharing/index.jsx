@@ -8,7 +8,7 @@ function Sharing({share}) {
   let url = process.env.REACT_APP_PROJECT_URL;
 
   if (share) {
-    url = `${url}share/${share}`;
+    url = `${url}/share/${share}`;
   }
 
   return (
