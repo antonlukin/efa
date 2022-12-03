@@ -59,7 +59,7 @@ const Grid = function({share}) {
         </button>
       </a>
 
-      <a className="grid-learn" href="/" target="_blank" rel="noreferrer">
+      <a className="grid-learn" href="https://tigersoda.agency/" target="_blank" rel="noreferrer">
         <figure>
           <img src={DecorCan} alt={t('grid.learn')} />
           <figcaption>{t('grid.learn')}</figcaption>

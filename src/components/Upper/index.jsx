@@ -27,7 +27,7 @@ const Upper = function({back = 'text'}) {
   return (
     <div className="upper">
       {(back === 'logo') &&
-        <a className="upper-logo" href="/" onClick={transferHome}>
+        <a className="upper-logo" href="https://tigersoda.agency/" target="_blank" rel="noreferrer">
             <ImageLogo />
         </a>
       }
