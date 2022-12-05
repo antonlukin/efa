@@ -1,21 +1,11 @@
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import Sharing from '../Sharing';
 
-import transfer from '../../utils/transfer';
-
 import './styles.scss';
 
 const Footer = function() {
-  const navigate = useNavigate();
   const { t } = useTranslation();
-
-  const transferSources = (e) => {
-    e.preventDefault();
-
-    transfer(() => navigate('/sources/'));
-  }
 
   return (
     <footer className="footer" data-aos="fade">
@@ -31,7 +21,7 @@ const Footer = function() {
         <Sharing />
 
         <p>
-          <a href="/sources/" onClick={transferSources}>{t('footer.sources')}</a>
+          <a href="/sources/" target="_blank">{t('footer.sources')}</a>
         </p>
       </div>
     </footer>

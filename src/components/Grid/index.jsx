@@ -26,12 +26,6 @@ const Grid = function({share}) {
     transfer(() => navigate('/#standings'));
   }
 
-  const transferSources = (e) => {
-    e.preventDefault();
-
-    transfer(() => navigate('/sources/'));
-  }
-
   return (
     <div className="grid">
       <a className="grid-uniform" href={share.work} download="t-shirt.png">
@@ -70,7 +64,7 @@ const Grid = function({share}) {
         </button>
       </a>
 
-      <a className="grid-sources" href="/sources/" onClick={transferSources}>
+      <a className="grid-sources" href="/sources/" target="_blank">
         <figure>
           <img src={DecorEarth} alt={t('grid.sources')} />
           <figcaption>{t('grid.sources')}</figcaption>
