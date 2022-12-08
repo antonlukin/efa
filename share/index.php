@@ -114,7 +114,7 @@ final class Sharing
             $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-            $this->db->query("CREATE TABLE IF NOT EXISTS users (name TEXT, number TEXT, lang TEXT, key TEXT)");
+            $this->db->query("CREATE TABLE IF NOT EXISTS users (name TEXT, number TEXT, lang TEXT, key TEXT, created TEXT)");
         } catch(Exception $e) {
            $this->send_json_error('Database connection error', 500);
         }
@@ -147,9 +147,12 @@ final class Sharing
     private function insert_user($data, $key) {
         $db = $this->connect_database();
 
+        // Get current datetime
+        $created = date('Y-m-d H:i:s');
+
         try {
-            $insert = $db->prepare('INSERT INTO users (name, number, lang, key) VALUES (?, ?, ?, ?)');
-            $insert->execute(array($data->name, $data->number, $data->lang, $key));
+            $insert = $db->prepare('INSERT INTO users (name, number, lang, key, created) VALUES (?, ?, ?, ?, ?)');
+            $insert->execute(array($data->name, $data->number, $data->lang, $key, $created));
         } catch(Exception $e) {
            $this->send_json_error('Error occured while inserting new user to database', 500);
         }
@@ -277,7 +280,7 @@ final class Sharing
 
         $db = $this->connect_database();
 
-        $select = $db->query('SELECT rowid, name, number, lang, key FROM users ORDER BY rowid DESC');
+        $select = $db->query('SELECT rowid, * FROM users ORDER BY rowid DESC');
         $results = $select->fetchAll();
 
         $amount = array_count_values(array_column($results, 'lang'));
