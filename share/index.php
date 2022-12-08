@@ -232,7 +232,7 @@ final class Sharing
             $work->save($this->dir . "/works/{$key}.png");
 
             $poster = new PosterEditor();
-            $poster->make($this->dir . '/assets/poster.png');
+            $poster->make($this->dir . "/assets/poster-{$data->lang}.png");
 
             $poster->insert($work, array('x' => 120, 'y' => 40));
             $poster->save($this->dir . "/posters/{$key}.jpg", 90);
