@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://efa.earth/icon-32.png"/>
 
     <title>EFA Admin Dashboard</title>
 
@@ -46,30 +47,39 @@
         }
 
         section {
-            display: grid;
-            grid-template-columns: repeat(4, auto);
-            gap: 1rem;
+            display: block;
             flex: 1 1 auto;
 
             max-height: calc(100vh - 3rem);
+            overflow: scroll;
+
             margin: 0.5rem;
             padding: 1rem;
-            overflow: scroll;
-            font-size: 1.125rem;
 
             background: #fff;
             border-radius: 0.5rem;
+
+        }
+
+        section figure {
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            gap: 1rem;
+
+            width: 100%;
+            margin: 0;
+            font-size: 1rem;
         } 
 
         aside {
-            display: flex; 
+            display: block; 
             align-items: flex-start;
 
-            flex: 0 0 20rem;
+            flex: 0 0 24rem;
 
             margin: 0.5rem;
             padding: 1rem 1.5rem;
-            font-size: 1.125rem;
+            font-size: 1rem;
 
             background: #fff;
             border-radius: 0.375rem;
@@ -132,10 +142,17 @@
 
             border: 0;
         }
+
+        h2 {
+            margin: 0 0 1.25rem;
+            font-size: 1.375rem;
+        }
     </style>
 </head>
 <body>
     <aside>
+        <h2>Summary</h2>
+
         <figure>
             <strong>Total users:</strong>
             <span><?php echo count($results); ?></span>
@@ -149,25 +166,33 @@
     </aside>
 
     <section>
-        <?php foreach ($results as $result) : ?>
-            <p data-id="<?php echo $result['rowid']; ?>">
-                <a href="/share/works/<?php echo $result['key']; ?>.png" target="_blank">
-                    <?php echo $result['name']; ?>
-                </a>
-            </p>
+        <h2>Users</h2>
 
-            <p data-id="<?php echo $result['rowid']; ?>">
-                <span><?php echo $result['number']; ?></span>
-            </p>
+        <figure>
+            <?php foreach ($results as $result) : ?>
+                <p data-id="<?php echo $result['rowid']; ?>">
+                    <a href="/share/works/<?php echo $result['key']; ?>.png" target="_blank">
+                        <?php echo $result['name']; ?>
+                    </a>
+                </p>
 
-            <p data-id="<?php echo $result['rowid']; ?>">
-                <span><?php echo $result['lang']; ?></span>
-            </p>
+                <p data-id="<?php echo $result['rowid']; ?>">
+                    <span><?php echo $result['number']; ?></span>
+                </p>
 
-            <p data-id="<?php echo $result['rowid']; ?>">
-                <button>Delete</button>
-            </p>
-        <?php endforeach; ?>
+                <p data-id="<?php echo $result['rowid']; ?>">
+                    <span><?php echo $result['lang']; ?></span>
+                </p>
+
+                <p data-id="<?php echo $result['rowid']; ?>">
+                    <span><?php echo $result['created']; ?></span>
+                </p>
+
+                <p data-id="<?php echo $result['rowid']; ?>">
+                    <button>Delete</button>
+                </p>
+            <?php endforeach; ?>
+        </figure>
     </section>
 
     <script>
