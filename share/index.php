@@ -1,6 +1,6 @@
 <?php
 
-namespace Soda\EFA;
+namespace TigerSoda\EFA;
 
 use Exception;
 use PDO;
@@ -8,13 +8,13 @@ use Dotenv;
 use PosterEditor\PosterEditor;
 
 if (php_sapi_name() === 'cli') {
-//    exit;
+    exit;
 }
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 /**
- * Save result to database and show sharing psoters
+ * Save result to database and show sharing posters
  *
  * @author  Anton Lukin
  * @version 1.0
